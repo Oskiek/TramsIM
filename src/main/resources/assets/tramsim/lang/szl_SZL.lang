@@ -1,0 +1,79 @@
+//trams
+item.Konstal105Na.name=Konstal 105Na
+item.Konstal105Na#135R.name=Konstal 105Na #135R
+item.Konstal105NaMl.name=Konstal 105NaMl
+item.TatraT3.name=Tatra T3
+item.DuewagPT8.name=Duewag PT8
+item.ModerusAlfa.name=Moderus Alfa
+item.BombardierCR4000.name=Bombardier CR4000
+item.FGV4300_Motor.name=Metrovalencia FGV 4300
+item.FGV3700_Motor.name=Metrovalencia FGV 3700 Gen. I
+item.FGV3700_Motor_v2.name=Metrovalencia FGV 3700 Gen. II
+item.BNLRV_A.name=BN LRV
+item.PCC.name=PCC
+item.BVG_G.name=BVG Class G
+item.TatraT3Short.name=Fest mało Tatra T3
+item.FGV3600_Motor.name=Metrovalencia FGV 3600
+item.Combino_end.name=Siemens Combino
+item.KonstalN.name=Konstal N
+item.RussiaOne_end.name=Russia One
+item.Triebwagen105.name=Triebwagen 105
+
+item.DuewagPT8_MiddleSegment.name=Duewag PT8 (środek)
+item.FGV4300_Middle_wbogies.name=Metrovalencia FGV 4300 (środek)
+item.FGV3700_Tail.name=Metrovalencia FGV 3700 Gen. I (tył)
+item.FGV3700_Tail_v2.name=Metrovalencia FGV 3700 Gen. II (tył)
+item.BNLRV_B.name=BN LRV (tył)
+item.FGV4300_Tail.name=Metrovalencia FGV 4300 (tył)
+item.FGV3600_Tail.name=Metrovalencia FGV 3600 (tył)
+item.Combino_Middle.name=Siemens Combino (środek)
+item.Combino_Halfmiddle_1.name=Siemens Combino (półsrodek 1)
+item.Combino_Halfmiddle_2.name=Siemens Combino (półśrodek 2)
+item.Combino_Halfmiddle_1_bidir.name=Siemens Combino (półśrodek 1, dwu-kjerunkowy)
+item.Combino_Halfmiddle_2_ticket.name=Siemens Combino (półśrodek 2 ze budkom biletowom)
+item.RussiaOne_middle.name=Russia One (środek)
+item.RussiaOne_end_nopanto.name=Russia One (tył)
+item.FGV3600_Middle.name=Metrovalencia FGV 3600 (środek)
+
+//shelters
+tile.busstop_2_left_1.name=Przystonek (lewy szlus)
+tile.busstop_2_right_1.name=Przystonek (prowy szuls)
+tile.busstop_2_middle_1.name=Przystonek (środek, szyba ze ławkom)
+tile.busstop_2_middle_2.name=Przystonek (środek, szyba)
+tile.busstop_2_middle_3.name=Przystonek (środek, szyba ze rozkładem)
+tile.busstop_2_middle_4.name=Przystonek (środek, wzór)
+tile.busstop_2_middle_5.name=Przystonek (środek, wzór ze ławkom)
+tile.busstop_3_left_1.name=Shelter (left end)
+tile.busstop_3_right_1.name=Shelter (right end)
+tile.busstop_3_middle_1.name=Shelter (middle)
+
+//ticket machines
+tile.ticketmachine_kzkgop.name=Biletowo maszinka (KZKGOP)
+tile.ticketmachine_brno.name=Biletowo maszinka (IDSJMK)
+
+//countries
+menu.item.poland=Polska
+menu.item.czechia=Czechy
+menu.item.silesia=NotPoland
+menu.item.germany=Njymcy
+menu.item.spain=Hiszpanijo
+menu.item.usa=Amerika
+menu.item.russia=Rusyjo
+
+//tabs
+item.tabVeh=Trams in Motion - Bany
+item.tabBlo=Trams in Motion - Klocki
+
+//platforms
+tile.platform.name=Platforma
+tile.platform_pole.name=Platforma (ze słupym)
+tile.edge_plain.name=Brzeg platformy
+tile.edge_led.name=Brzeg platformy (ze paskiem LED)
+tile.edge_checkerboard.name=Brzeg platformy (szachownica)
+tile.edge_ledlined.name=Brzeg platformy (LED, przedziały)
+tile.edge_leftcorner.name=Brzeg platformy (prowy szlus)
+tile.edge_yellowthick.name=Brzeg platformy (żółta linia)
+tile.edge_rightcorner.name=Brzeg platformy (lewy szlus)
+tile.edge_british.name=Brzeg platformy (brytyjski)
+tile.edge_lined.name=Brzeg platformy (przedziały)
+tile.edge_yellowlined.name=Brzeg platformy (żółto kryska, przedziały)

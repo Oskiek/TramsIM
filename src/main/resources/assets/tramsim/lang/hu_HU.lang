@@ -1,0 +1,126 @@
+﻿//trams
+item.Konstal105Na.name=Konstal 105Na
+item.Konstal105Na#135R.name=Konstal 105Na #135R
+item.Konstal105NaMl.name=Konstal 105NaMl
+item.TatraT3.name=Tatra T3
+item.DuewagPT8.name=Düwag PT8
+item.ModerusAlfa.name=Moderus Alfa
+item.BombardierCR4000.name=Bombardier CR4000
+item.FGV4300_Motor.name=Metrovalencia FGV 4300
+item.FGV3700_Motor.name=Metrovalencia FGV 3700 I. Generáció
+item.FGV3700_Motor_v2.name=Metrovalencia FGV 3700 II. Generáció
+item.BNLRV_A.name=BN LRV
+item.PCC.name=PCC
+item.BVG_G.name=BVG Class G
+item.TatraT3Short.name=Apró Tatra T3
+item.FGV3600_Motor.name=Metrovalencia FGV 3600
+item.Combino_end.name=Siemens Combino
+item.KonstalN.name=Konstal N
+item.RussiaOne_end.name=Russia One
+item.Triebwagen105.name=Triebwagen 105
+
+item.DuewagPT8_MiddleSegment.name=Düwag PT8 (Közép)
+item.FGV4300_Middle_wbogies.name=Metrovalencia FGV 4300 (Közép)
+item.FGV3700_Tail.name=Metrovalencia FGV 3700 Gen. I (Vég)
+item.FGV3700_Tail_v2.name=Metrovalencia FGV 3700 Gen. II (Vég)
+item.BNLRV_B.name=BN LRV (Vég)
+item.FGV4300_Tail.name=Metrovalencia FGV 4300 (Vég)
+item.FGV3600_Tail.name=Metrovalencia FGV 3600 (vég)
+item.Combino_Middle.name=Siemens Combino (Közép)
+item.Combino_Halfmiddle_1.name=Siemens Combino (Félközép 1)
+item.Combino_Halfmiddle_2.name=Siemens Combino (Félközép 2)
+item.Combino_Halfmiddle_1_bidir.name=Siemens Combino (Félközép 1, kétirányú)
+item.Combino_Halfmiddle_2_ticket.name=Siemens Combino (Félközép 2, jegykiadóval)
+item.RussiaOne_middle.name=Russia One (Közép)
+item.RussiaOne_end_nopanto.name=Russia One (Vég)
+item.FGV3600_Middle.name=Metrovalencia FGV 3600 (Közép)
+
+//shelters
+tile.busstop_2_left_1.name=Megálló (bal széle)
+tile.busstop_2_right_1.name=Megálló (jobb széle)
+tile.busstop_2_middle_1.name=Megálló (középrész üveg fallal, paddal)
+tile.busstop_2_middle_2.name=Megálló (középrész üveg fallal)
+tile.busstop_2_middle_3.name=Megálló (középrész üveg fallal, menetrenddel)
+tile.busstop_2_middle_4.name=Megálló (középrész mintával)
+tile.busstop_2_middle_5.name=Megálló (középrész mintával, paddal)
+tile.busstop_3_left_1.name=Esőbeálló (bal széle)
+tile.busstop_3_right_1.name=Esőbeálló (jobb széle)
+tile.busstop_3_middle_1.name=Esőbeálló (középrész)
+
+//ticket machines
+tile.ticketmachine_kzkgop.name=Jegygép (KZKGOP)
+tile.ticketmachine_brno.name=Jegygép (IDSJMK)
+
+//countries
+menu.item.poland=Lengyelország
+menu.item.czechia=Csehország
+menu.item.silesia=Szilézia
+menu.item.germany=Németország
+menu.item.spain=Spanyolország
+menu.item.usa=Egyesült Államok
+
+//tabs
+item.tabVeh=Trams in Motion - Járművek
+item.tabBlo=Trams in Motion - Blokkok
+
+//platforms
+tile.platform.name=Peron
+tile.platform_pole.name=Peron (oszloppal)
+tile.edge_plain.name=Peron széle
+tile.edge_led.name=Peron széle (LED csíkkal)
+tile.edge_checkerboard.name=Peron széle (pepita)
+tile.edge_ledlined.name=Peron széle (led, csíkozott)
+tile.edge_leftcorner.name=Peron széle (jobb sarok)
+tile.edge_yellowthick.name=Peron széle (sárga csík)
+tile.edge_rightcorner.name=Peron széle (bal sarok)
+tile.edge_british.name=Peron széle (angol)
+tile.edge_lined.name=Peron széle (csíkozott)
+tile.edge_yellowlined.name=Peron széle (sárga csík, csíkozott)
+
+
+//in regions
+in.silesia=Sziléziában
+in.poznan=Poznanban
+in.belgium=Belgiumban
+in.amsterdam=Amsterdamban
+in.frankfurt=Frankfurtba
+in.elblag=Elblagban
+in.chicago=Chicagoban
+in.brno=Brnoban
+in.praha=Prágában
+in.olomouc=Olmützben
+in.most=Mostban
+in.halle=Halléban
+in.riga=Rigában
+in.ostrava=Osztravában
+in.liberec=Liberecben
+in.wuppertal=Wuppertalban
+
+//livery descriptions
+standardlivery=Alap kinézet használatban
+anniversary.description=Minecraft Ünnepi kinézet
+shorttram.description=A Tatra T3 rövid verziója...
+
+//special
+anniversary=Ünnepi
+shorttram=Rövid
+
+//company names DO NOT TRANSLATE UNLESS COMPANY NAMES ARE TRANSLATED IN YOUR LANGUAGE
+
+company.silesia=Tramwaje Śląskie
+company.poznan=MPK Poznań
+company.chicago=Chicago Transit Authority
+company.tec=TEC Charleroi
+company.gvb=Gemeentelijk Vervoerbedrijf
+company.frankfurt=Stadtwerke Verkehrsgesellschaft Frankfurt am Main
+company.vbbr=Verkehrsbetriebe Brandenburg an der Havel
+company.elblag=Tramwaje Elbląskie
+company.olomouc=Dopravní podnik města Olomouce
+company.brno=Integrovaný Dopravní Systém Jihomoravského Kraje
+company.ostrava=Dopravní podnik Ostrava
+company.praha=Dopravní podnik hlavního města Prahy
+company.most=Dopravní podnik měst Mostu a Litvínova
+company.odessa=КП «Одесміськелектротранс»
+company.riga=Rīgas Satiksme
+company.halle=Hallesche Verkehrs-AG
+company.elberfeld=Wuppertali Függővasút

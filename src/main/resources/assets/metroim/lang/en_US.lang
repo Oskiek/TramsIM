@@ -1,0 +1,17 @@
+//trams
+item.FGV4300_Motor.name=Metrovalencia FGV 4300
+item.FGV3700_Motor.name=Metrovalencia FGV 3700 Gen. I
+item.FGV3700_Motor_v2.name=Metrovalencia FGV 3700 Gen. II
+item.BVG_G.name=BVG Class G
+item.FGV3600_Motor.name=Metrovalencia FGV 3600
+
+item.FGV4300_Middle_wbogies.name=Metrovalencia FGV 4300 (Middle)
+item.FGV3700_Tail.name=Metrovalencia FGV 3700 Gen. I (Tail)
+item.FGV3700_Tail_v2.name=Metrovalencia FGV 3700 Gen. II (Tail)
+item.FGV4300_Tail.name=Metrovalencia FGV 4300 (Tail)
+item.FGV3600_Tail.name=Metrovalencia FGV 3600 (Tail)
+item.FGV3600_Middle.name=Metrovalencia FGV 3600 (Middle)
+
+//tabs
+item.metroimTabVeh=Metro in Motion - Vehicles
+item.metroimTabBlo=Metro in Motion - Blocks

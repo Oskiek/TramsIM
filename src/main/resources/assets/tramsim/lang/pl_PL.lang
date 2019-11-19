@@ -1,0 +1,126 @@
+//trams
+item.Konstal105Na.name=Konstal 105Na
+item.Konstal105Na#135R.name=Konstal 105Na #135R
+item.Konstal105NaMl.name=Konstal 105NaMl
+item.TatraT3.name=Tatra T3
+item.DuewagPT8.name=Duewag PT8
+item.ModerusAlfa.name=Moderus Alfa
+item.BombardierCR4000.name=Bombardier CR4000
+item.FGV4300_Motor.name=Metrovalencia FGV 4300
+item.FGV3700_Motor.name=Metrovalencia FGV 3700 Gen. I
+item.FGV3700_Motor_v2.name=Metrovalencia FGV 3700 Gen. II
+item.BNLRV_A.name=BN LRV
+item.PCC.name=PCC
+item.BVG_G.name=BVG Class G
+item.TatraT3Short.name=Bardzo mała Tatra T3
+item.FGV3600_Motor.name=Metrovalencia FGV 3600
+item.Combino_end.name=Siemens Combino
+item.KonstalN.name=Konstal N
+item.RussiaOne_end.name=Russia One
+item.Triebwagen105.name=Triebwagen 105
+
+item.DuewagPT8_MiddleSegment.name=Duewag PT8 (Środkowy)
+item.FGV4300_Middle_wbogies.name=Metrovalencia FGV 4300 (Środkowy)
+item.FGV3700_Tail.name=Metrovalencia FGV 3700 Gen. I (Tylni)
+item.FGV3700_Tail_v2.name=Metrovalencia FGV 3700 Gen. II (Tylni)
+item.BNLRV_B.name=BN LRV (Tylni)
+item.FGV4300_Tail.name=Metrovalencia FGV 4300 (Tylni)
+item.FGV3600_Tail.name=Metrovalencia FGV 3600 (Tylni)
+item.Combino_Middle.name=Siemens Combino (Środkowy)
+item.Combino_Halfmiddle_1.name=Siemens Combino (Półśrodkowy 1)
+item.Combino_Halfmiddle_2.name=Siemens Combino (Półśrodkowy 2)
+item.Combino_Halfmiddle_1_bidir.name=Siemens Combino (Półśrodkowy 1, dwukierunkowy)
+item.Combino_Halfmiddle_2_ticket.name=Siemens Combino (Półśrodkowy 2 z budką biletową)
+item.RussiaOne_middle.name=Russia One (Środkowy)
+item.RussiaOne_end_nopanto.name=Russia One (Końcowy)
+item.FGV3600_Middle.name=Metrovalencia FGV 3600 (Środkowy)
+
+//shelters
+tile.busstop_2_left_1.name=Przystanek (lewy koniec)
+tile.busstop_2_right_1.name=Przystanek (prawy koniec)
+tile.busstop_2_middle_1.name=Przystanek (środkowy, szkło z ławką)
+tile.busstop_2_middle_2.name=Przystanek (środkowy, szkło)
+tile.busstop_2_middle_3.name=Przystanek (środkowy, szkło z rozkładem)
+tile.busstop_2_middle_4.name=Przystanek (środkowy, wzór)
+tile.busstop_2_middle_5.name=Przystanek (środkowy, wzór z ławką)
+tile.busstop_3_left_1.name=Przystanek (lewy koniec)
+tile.busstop_3_right_1.name=Przystanek (prawy koniec)
+tile.busstop_3_middle_1.name=Przystanek (środkowy)
+
+//ticket machines
+tile.ticketmachine_kzkgop.name=Biletomat (KZKGOP)
+tile.ticketmachine_brno.name=Biletomat (IDSJMK)
+
+//countries
+menu.item.poland=Polska
+menu.item.czechia=Czechy
+menu.item.silesia=Nie Polska
+menu.item.germany=Niemcy
+menu.item.spain=Hiszpania
+menu.item.usa=Stany Zjednoczone
+menu.item.russia=Rosja
+
+//tabs
+item.tabVeh=Trams in Motion - Pojazdy
+item.tabBlo=Trams in Motion - Bloki
+
+//platforms
+tile.platform.name=Platforma
+tile.platform_pole.name=Platforma (z słupem)
+tile.edge_plain.name=Brzeg platformy
+tile.edge_led.name=Brzeg platformy (z paskiem LED)
+tile.edge_checkerboard.name=Brzeg platformy (szachownica)
+tile.edge_ledlined.name=Brzeg platformy (LED, przedziały)
+tile.edge_leftcorner.name=Brzeg platformy (prawy koniec)
+tile.edge_yellowthick.name=Brzeg platformy (żółta linia)
+tile.edge_rightcorner.name=Brzeg platformy (lewy koniec)
+tile.edge_british.name=Brzeg platformy (brytyjski)
+tile.edge_lined.name=Brzeg platformy (przedziały)
+tile.edge_yellowlined.name=Brzeg platformy (żółta linia, przedziały)
+
+
+//in regions
+in.silesia=na Śląsku
+in.poznan=w Poznaniu
+in.belgium=w Belgii
+in.amsterdam=w Amsterdamie
+in.frankfurt=w Frankfurcie
+in.elblag=w Elbląg
+in.chicago=w Chicago
+in.brno=w Brnie
+in.praha=w Pradze
+in.olomouc=w Ołomuńcu
+in.most=w Moście
+in.halle=w Halle
+in.riga=w Rydze
+in.ostrava=w Ostrawie
+in.liberec=w Libercu
+in.wuppertal=w Wuppertal
+
+//livery descriptions
+standardlivery=Typowe malowanie używane
+anniversary.description=Rocznicowy Skin Minecraft
+shorttram.description=Krótka wersja Tatry T3...
+
+//special
+anniversary=Rocznicowy
+shorttram=Krótki
+
+//company names DO NOT TRANSLATE UNLESS COMPANY NAMES ARE TRANSLATED IN YOUR LANGUAGE
+company.silesia=Tramwaje Śląskie
+company.poznan=MPK Poznań
+company.chicago=Chicago Transit Authority
+company.tec=TEC Charleroi
+company.gvb=Gemeentelijk Vervoerbedrijf
+company.frankfurt=Stadtwerke Verkehrsgesellschaft Frankfurt am Main
+company.vbbr=Verkehrsbetriebe Brandenburg an der Havel
+company.elblag=Tramwaje Elbląskie
+company.olomouc=Dopravní podnik města Olomouce
+company.brno=Integrovaný Dopravní Systém Jihomoravského Kraje
+company.ostrava=Dopravní podnik Ostrava
+company.praha=Dopravní podnik hlavního města Prahy
+company.most=Dopravní podnik měst Mostu a Litvínova
+company.odessa=КП «Одесміськелектротранс»
+company.riga=Rīgas Satiksme
+company.halle=Hallesche Verkehrs-AG
+company.elberfeld=Wuppertaler Schwebebahn

@@ -1,0 +1,125 @@
+﻿//trams
+item.Konstal105Na.name=Konstal 105Na
+item.Konstal105Na#135R.name=Konstal 105Na #135R
+item.Konstal105NaMl.name=Konstal 105NaMl
+item.TatraT3.name=Tatra T3
+item.DuewagPT8.name=Duewag PT8
+item.ModerusAlfa.name=Moderus Alfa
+item.BombardierCR4000.name=Bombardier CR4000
+item.FGV4300_Motor.name=Metrovalencia FGV 4300
+item.FGV3700_Motor.name=Metrovalencia FGV 3700 Gen. I
+item.FGV3700_Motor_v2.name=Metrovalencia FGV 3700 Gen. II
+item.BNLRV_A.name=BN LRV
+item.PCC.name=PCC
+item.BVG_G.name=BVG Littera G
+item.TatraT3Short.name=Väldigt Liten Tatra T3
+item.FGV3600_Motor.name=Metrovalencia FGV 3600
+item.Combino_end.name=Siemens Combino
+item.KonstalN.name=Konstal N
+item.RussiaOne_end.name=Russia One
+item.Triebwagen105.name=Triebwagen 105
+
+item.DuewagPT8_MiddleSegment.name=Duewag PT8 (Mittdel)
+item.FGV4300_Middle_wbogies.name=Metrovalencia FGV 4300 (Mittdel)
+item.FGV3700_Tail.name=Metrovalencia FGV 3700 Gen. I (Bakre Del)
+item.FGV3700_Tail_v2.name=Metrovalencia FGV 3700 Gen. II (Bakre Del)
+item.BNLRV_B.name=BN LRV (Bakre Del)
+item.FGV4300_Tail.name=Metrovalencia FGV 4300 (Bakre Del)
+item.FGV3600_Tail.name=Metrovalencia FGV 3600 (Bakre Del)
+item.Combino_Middle.name=Siemens Combino (Mittdel)
+item.Combino_Halfmiddle_1.name=Siemens Combino (Halvmitt 1)
+item.Combino_Halfmiddle_2.name=Siemens Combino (Halvmitt 2)
+item.Combino_Halfmiddle_1_bidir.name=Siemens Combino (Halvmitt 1, dubbelriktad)
+item.Combino_Halfmiddle_2_ticket.name=Siemens Combino (Halvmitt 2 med biljettlucka)
+item.RussiaOne_middle.name=Russia One (Mittdel)
+item.RussiaOne_end_nopanto.name=Russia One (Bakre Del)
+item.FGV3600_Middle.name=Metrovalencia FGV 3600 (Mittdel)
+
+//shelters
+tile.busstop_2_left_1.name=Väntkur (vänster del)
+tile.busstop_2_right_1.name=Väntkur (höger del)
+tile.busstop_2_middle_1.name=Väntkur (mittdel, glas med bänk)
+tile.busstop_2_middle_2.name=Väntkur (mittdel, glas)
+tile.busstop_2_middle_3.name=Väntkur (mittdel, glas med tidtabell)
+tile.busstop_2_middle_4.name=Väntkur (mittdel, mönster)
+tile.busstop_2_middle_5.name=Väntkur (mittdel, mönster med bänk)
+tile.busstop_3_left_1.name=Väntkur (vänster del)
+tile.busstop_3_right_1.name=Väntkur (höger del)
+tile.busstop_3_middle_1.name=Väntkur (mittdel)
+
+//ticket machines
+tile.ticketmachine_kzkgop.name=Biljettautomat (KZKGOP)
+tile.ticketmachine_brno.name=Biljettautomat (IDSJMK)
+
+//countries
+menu.item.poland=Polen
+menu.item.czechia=Tjeckien
+menu.item.silesia=Schlesien
+menu.item.germany=Tyskland
+menu.item.spain=Spanien
+menu.item.usa=USA
+menu.item.russia=Ryssland
+
+//tabs
+item.tramsimTabVeh=Trams in Motion - Fordon
+item.tramsimTabBlo=Trams in Motion - Block
+
+//platforms
+tile.platform.name=Perrong
+tile.platform_pole.name=Perrong (med stolpe)
+tile.edge_plain.name=Perrongkant
+tile.edge_led.name=Perrongkant (med LED list)
+tile.edge_checkerboard.name=Perrongkant (schackrutig)
+tile.edge_ledlined.name=Perrongkant (led, linjer)
+tile.edge_leftcorner.name=Perrongkant (höger hörn)
+tile.edge_yellowthick.name=Perrongkant (gul rand)
+tile.edge_rightcorner.name=Perrongkant (vänster hörn)
+tile.edge_british.name=Perrongkant (brittisk)
+tile.edge_lined.name=Perrongkant (linjerad)
+tile.edge_yellowlined.name=Perrongkant (gul rand, linjerad)
+
+//in regions
+in.silesia=i Schlesien
+in.poznan=i Poznań
+in.belgium=i Belgien
+in.amsterdam=i Amsterdam
+in.frankfurt=i Frankfurt
+in.elblag=i Elbląg
+in.chicago=i Chicago
+in.brno=i Brno
+in.praha=i Prag
+in.olomouc=i Olomouc
+in.most=i Most
+in.halle=i Halle
+in.riga=i Riga
+in.ostrava=i Ostrava
+in.liberec=i Liberec
+in.wuppertal=i Wuppertal
+
+//livery descriptions	
+standardlivery=Standardfärgsättning använd
+anniversary.description=Minecraft Jubileum skin
+shorttram.description=Kort version av Tatra T3...
+
+//special
+anniversary=Jubileum
+shorttram=Kort
+
+//company names DO NOT TRANSLATE UNLESS COMPANY NAMES ARE TRANSLATED IN YOUR LANGUAGE
+company.silesia=Tramwaje Śląskie
+company.poznan=MPK Poznań
+company.chicago=Chicago Transit Authority
+company.tec=TEC Charleroi
+company.gvb=Gemeentelijk Vervoerbedrijf
+company.frankfurt=Stadtwerke Verkehrsgesellschaft Frankfurt am Main
+company.vbbr=Verkehrsbetriebe Brandenburg an der Havel
+company.elblag=Tramwaje Elbląskie
+company.olomouc=Dopravní podnik města Olomouce
+company.brno=Integrovaný Dopravní Systém Jihomoravského Kraje
+company.ostrava=Dopravní podnik Ostrava
+company.praha=Dopravní podnik hlavního města Prahy
+company.most=Dopravní podnik měst Mostu a Litvínova
+company.odessa=КП «Одесміськелектротранс»
+company.riga=Rīgas Satiksme
+company.halle=Hallesche Verkehrs-AG
+company.elberfeld=Wuppertaler Schwebebahn

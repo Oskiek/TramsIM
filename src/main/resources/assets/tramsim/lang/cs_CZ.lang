@@ -1,0 +1,126 @@
+﻿//trams
+item.Konstal105Na.name=Konstal 105Na
+item.Konstal105Na#135R.name=Konstal 105Na #135R
+item.Konstal105NaMl.name=Konstal 105NaMl
+item.TatraT3.name=Tatra T3
+item.DuewagPT8.name=Duewag PT8
+item.ModerusAlfa.name=Moderus Alfa
+item.BombardierCR4000.name=Bombardier CR4000
+item.FGV4300_Motor.name=Metrovalencia FGV 4300
+item.FGV3700_Motor.name=Metrovalencia FGV 3700 I. gen.
+item.FGV3700_Motor_v2.name=Metrovalencia FGV 3700 II. gen.
+item.BNLRV_A.name=BN LRV
+item.PCC.name=PCC
+item.BVG_G.name=BVG třída G
+item.TatraT3Short.name=Velmi malá Tatra T3
+item.FGV3600_Motor.name=Metrovalencia FGV 3600
+item.Combino_end.name=Siemens Combino
+item.KonstalN.name=Konstal N
+item.RussiaOne_end.name=Russia One (koncový článek)
+item.Triebwagen105.name=Triebwagen 105
+
+item.DuewagPT8_MiddleSegment.name=Duewag PT8 (střední článek)
+item.FGV4300_Middle_wbogies.name=Metrovalencia FGV 4300 (střední článek)
+item.FGV3700_Tail.name=Metrovalencia FGV 3700 I. gen. (koncový článek)
+item.FGV3700_Tail_v2.name=Metrovalencia FGV 3700 II. gen. (koncový článek)
+item.BNLRV_B.name=BN LRV (koncový článek)
+item.FGV4300_Tail.name=Metrovalencia FGV 4300 (koncový článek)
+item.FGV3600_Tail.name=Metrovalencia FGV 3600 (koncový článek)
+item.Combino_Middle.name=Siemens Combino (střední článek)
+item.Combino_Halfmiddle_1.name=Siemens Combino (střední poločlánek 1)
+item.Combino_Halfmiddle_2.name=Siemens Combino (střední poločlánek 2)
+item.Combino_Halfmiddle_1_bidir.name=Siemens Combino (střední poločlánek 1, obousměrný)
+item.Combino_Halfmiddle_2_ticket.name=Siemens Combino (střední poločlánek 2 s prodejem jízdenek)
+item.RussiaOne_middle.name=Russia One (střední článek)
+item.RussiaOne_end_nopanto.name=Russia One (koncový článek)
+item.FGV3600_Middle.name=Metrovalencia FGV 3600 (střední článek)
+
+//shelters
+tile.busstop_2_left_1.name=Přístřešek (levý okraj)
+tile.busstop_2_right_1.name=Přístřešek (pravý okraj)
+tile.busstop_2_middle_1.name=Přístřešek (prosklenný s lavičkou)
+tile.busstop_2_middle_2.name=Přístřešek (prosklenný)
+tile.busstop_2_middle_3.name=Přístřešek (prosklenný s jízdním řádem)
+tile.busstop_2_middle_4.name=Přístřešek (se vzorem)
+tile.busstop_2_middle_5.name=Přístřešek (se vzorem a lavičkou)
+tile.busstop_3_left_1.name=Červený Přístřešek (levý okraj)
+tile.busstop_3_right_1.name=Červený Přístřešek (pravý okraj)
+tile.busstop_3_middle_1.name=Červený Přístřešek (prostřední díl)
+
+//ticket machines
+tile.ticketmachine_kzkgop.name=Automat na jízdenky (KZKGOP)
+tile.ticketmachine_brno.name=Automat na jízdenky (IDSJMK)
+
+//countries
+menu.item.poland=Polsko
+menu.item.czechia=Česko
+menu.item.silesia=Slezsko
+menu.item.germany=Německo
+menu.item.spain=Španělsko
+menu.item.usa=USA
+menu.item.russia=Rusko
+
+//tabs
+item.tabVeh=Trams in Motion - Vozy
+item.tabBlo=Trams in Motion - Bloky
+
+//platforms
+tile.platform.name=Nástupiště
+tile.platform_pole.name=Nástupiště (se sloupem)
+tile.edge_plain.name=Okraj nástupiště
+tile.edge_led.name=Okraj nástupiště (s LED)
+tile.edge_checkerboard.name=Okraj nástupiště (šachovnice)
+tile.edge_ledlined.name=Okraj nástupiště (pruhovaný s LED)
+tile.edge_leftcorner.name=Okraj nástupiště (pravý konec)
+tile.edge_yellowthick.name=Okraj nástupiště (široký žlutý pruh)
+tile.edge_rightcorner.name=Okraj nástupiště (levý konec)
+tile.edge_british.name=Okraj nástupiště (Britský slepecký)
+tile.edge_lined.name=Okraj nástupiště (pruhovaný)
+tile.edge_yellowlined.name=Okraj nástupiště (pruhovaný se žlutým pruhem)
+
+
+//in regions
+in.silesia=in Silesia
+in.poznan=in Poznan
+in.belgium=in Belgium
+in.amsterdam=in Amsterdam
+in.frankfurt=in Frankfurt
+in.elblag=in Elblag
+in.chicago=in Chicago
+in.brno=in Brno
+in.praha=in Prague
+in.olomouc=in Olomouc
+in.most=in Most
+in.halle=in Halle
+in.riga=in Riga
+in.ostrava=in Ostrava
+in.liberec=in Liberec
+in.wuppertal=in Wuppertal
+
+//livery descriptions
+standardlivery=Standard livery used
+anniversary.description=Minecraft Anniversary skin
+shorttram.description=Short version of Tatra T3...
+
+//special
+anniversary=Anniversary
+shorttram=Short
+
+//company names DO NOT TRANSLATE UNLESS COMPANY NAMES ARE TRANSLATED IN YOUR LANGUAGE
+company.silesia=Tramwaje Śląskie
+company.poznan=MPK Poznań
+company.chicago=Chicago Transit Authority
+company.tec=TEC Charleroi
+company.gvb=Gemeentelijk Vervoerbedrijf
+company.frankfurt=Stadtwerke Verkehrsgesellschaft Frankfurt am Main
+company.vbbr=Verkehrsbetriebe Brandenburg an der Havel
+company.elblag=Tramwaje Elbląskie
+company.olomouc=Dopravní podnik města Olomouce
+company.brno=Integrovaný Dopravní Systém Jihomoravského Kraje
+company.ostrava=Dopravní podnik Ostrava
+company.praha=Dopravní podnik hlavního města Prahy
+company.most=Dopravní podnik měst Mostu a Litvínova
+company.odessa=КП «Одесміськелектротранс»
+company.riga=Rīgas Satiksme
+company.halle=Hallesche Verkehrs-AG
+company.elberfeld=Wuppertaler Schwebebahn
