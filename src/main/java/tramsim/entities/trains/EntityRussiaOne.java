@@ -58,7 +58,7 @@ public class EntityRussiaOne extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/russia_one_end.png", "textures/trams/bogies/russia_one_bogie.png",
+        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/russia_one_end.png",/* "textures/trams/bogies/russia_one_bogie.png",*/
         "company.unknown", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.russia") + ".");
     }
 

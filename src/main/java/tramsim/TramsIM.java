@@ -105,7 +105,8 @@ public class TramsIM {
                 new EntityTatraT3Short(null),
 /*/Pre-release 2 blocked*/                new EntityCombinoEnd(null),
 /*/Pre-release 2 blocked*/                new EntityRussiaOne(null),
-/*/Pre-release 2 blocked*/                new EntityMGT6D(null)
+/*/Pre-release 2 blocked*/                new EntityMGT6D(null),
+                new EntityTatraK2_End(null)
         };
     }
     public static GenericRailTransport[] listWagonTrams() {
@@ -121,7 +122,7 @@ public class TramsIM {
 /*/Pre-release 2 blocked*/                new EntityRussiaOne_Middle(null),
 /*/Pre-release 2 blocked*/                new EntityRussiaOne_NoPanto(null),
 /*/Pre-release 2 blocked*/                new EntityMGT6D_Middle(null),
-
+                new EntityTatraK2_Back(null)
         };
     }
 
@@ -133,8 +134,8 @@ public class TramsIM {
         tramsimtabblock = new TiMTab(event.getSide().isClient(),"Trams in Motion blocks", MODID, "tramsimTabBlo");
 
         //blocks added
-        //blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BlockTicketMachine_Kzkgop().setCreativeTab(tramsimtabblock.tabBlock).setBlockTextureName("trams:ticketmachine_kzkgop"), null, "ticketmachine_kzkgop.name", null, proxy.getRenderBusStop()));
-        //blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BlockTicketMachine_Brno().setCreativeTab(tramsimtabblock.tabBlock).setBlockTextureName("trams:ticketmachine_brno"), null, "ticketmachine_brno.name", null, proxy.getRenderBusStop()));
+        //blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BlockTicketMachine_Kzkgop().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:ticketmachine_kzkgop"), null, "ticketmachine_kzkgop.name", null, proxy.getRenderBusStop()));
+        //blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BlockTicketMachine_Brno().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:ticketmachine_brno"), null, "ticketmachine_brno.name", null, proxy.getRenderBusStop()));
 
         blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BusStop_2_Left_1().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/l_end"), null, "busstop_2_left_1", null, proxy.getRenderBusStop()));
         blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BusStop_2_Middle_1().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/m-glass-bench"), null, "busstop_2_middle_1", null, proxy.getRenderBusStop()));

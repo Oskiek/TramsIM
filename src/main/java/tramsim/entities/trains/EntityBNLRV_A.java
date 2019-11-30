@@ -62,9 +62,9 @@ public class EntityBNLRV_A extends TrainBase {
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/bnlrv_1.png", "textures/trams/bogies/bnlrv_bogie.png",
                 "company.tec", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.belgium") + ".");
     }
-    @Override
+
     public String[][] getTankFilters() {
-        return new String[0][];
+        return FuelHandler.DefaultTanks.ELECTRIC.value();
     }
     @Override
     public float transportTopSpeed(){return 80f;}
@@ -141,7 +141,7 @@ public class EntityBNLRV_A extends TrainBase {
     public boolean isReinforced(){return false;}
 
     @Override
-    public int[] getTankCapacity(){return new int[]{91610, 8000};}
+    public int[] getTankCapacity(){return new int[]{8000};}
 
     @Override
     public int getRFCapacity() {

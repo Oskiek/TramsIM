@@ -58,7 +58,7 @@ public class EntityPCC extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/pcc_chicago.png", new String[]{"textures/trams/bogies/pcc_bogie.png"},
+        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/pcc_chicago.png", /*new String[]{"textures/trams/bogies/pcc_bogie.png"},*/
         "company.chicago", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.chicago") + ".");
     }
     @Override

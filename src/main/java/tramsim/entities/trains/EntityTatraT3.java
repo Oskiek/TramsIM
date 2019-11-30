@@ -82,56 +82,26 @@ public class EntityTatraT3 extends TrainBase {
                 "anniversary", RailUtility.translate("anniversary.description"));
     }
 
-    /*
-     * <h1>Variable Overrides</h1>
-     * We override the functions defined in the super here, to give them different values.
-     * This is more efficient than having to store them in the super, or actual variables, because we won't have to store them in the NBT or RAM.
-     */
+
 
     @Override
     public String[][] getTankFilters() {
         return new String[0][];
     }
-    /**
-     * <h2>Max speed</h2>
-     * @return the value of the max speed in km/h
-     */
+
     @Override
     public float transportTopSpeed(){return 62f;}
-    /**
-     * <h2>Bogie Offset</h2>
-     * @return the list of offsets for the bogies, 0 being the center. negative values are towards the front of the train.
-     * Must always go from front to back. First and last values must always be exact opposites.
-     */
+
     @Override
     public List<Double> getRenderBogieOffsets(){return  Arrays.asList(-2.0, 2.0);}
-    /**
-     * <h2>Inventory Size</h2>
-     * @return the size of the inventory not counting any fuel or crafting slots, those are defined by the type.
-     */
+
     @Override
     public int getInventoryRows(){return 1;}
-    /**
-     * <h2>Type</h2>
-     * @return the type which will define it's features, GUI, a degree of storage (like crafting slots), and a number of other things.
-     */
+
     @Override
     public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
-    /**
-     * <h2>Max Fuel</h2>
-     * @return the maxstorage of fuel the train can store.
-     * @see GenericRailTransport#getMaxFuel() for more info.
-     * @see FuelHandler for information on fuel consumption.
-     */
     @Override
     public float getMaxFuel(){return 1;}
-    /**
-     * <h2>Rider offset</h2>
-     * @return defines the offsets of the riders in blocks, the first value is how far back, and the second is how high.
-     *     Negative values are towards the front, ground, or right. In that order.
-     *     Each set of floats represents a different rider.
-     *     Only the first 3 values of each set of floats are actually used.
-     */
     @Override
     public float[][] getRiderOffsets(){return new float[][]{{-2.85f,1f, 0.1875f}};}
 
@@ -140,11 +110,6 @@ public class EntityTatraT3 extends TrainBase {
         return new float[]{7f,2f,1.5f};
     }
 
-    /**
-     * <h2>Acceleration</h2>
-     * <h4>TRAINS ONLY.</h4>
-     * @return defines the acceleration.
-     */
     @Override
     public float transportMetricHorsePower(){return 75f;}
 
@@ -165,30 +130,14 @@ public class EntityTatraT3 extends TrainBase {
         };
     }
 
-    /**
-     * <h2>Hitbox offsets</h2>
-     * @return defines the positions for the hitboxes in blocks. 0 being the center, negative values being towards the front. the first and last values define the positions of the couplers
-     */
 
-    /**
-     * <h2>Animation radius</h2>
-     * @return defines the radius in microblocks (1/16 of a block) for the piston rotations.
-     */
     @Override
     public float getPistonOffset(){return 0.5f;}
-    /**
-     * <h2>Smoke offset</h2>
-     * @return defines the array of positions in blocks for smoke.
-     * the first number in the position defines the X/Z axis, negative values are towards the front of the train.
-     * the second number defines the Y position, 0 is the rails, higher values are towards the sky.
-     * the third number defines left to right, negative values are towards the right.
-     * the forth number defines the grayscale color from 255 (white) to 0 (black)
-     * the 5th number is for density, there's no min/max but larger numbers will create more lag.
-     */
+
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{1.65f,0.075f,0f,},{-1.65f,0.0751f,0f}};}
+        return new float[][]{{1.65f,0.075f,0f,},{-1.65f,0.075f,0f}};}
 
     @Override
     public ModelBase[] bogieModels() { return new ModelBase[]{new ModelKT4_Bogie()};}
@@ -206,26 +155,15 @@ public class EntityTatraT3 extends TrainBase {
     @Override
     public float[][] modelOffsets() { return new float[][]{{0,-0.15f,0}}; }
 
-    /**
-     * <h2>rider sit or stand</h2>
-     * @return true if the rider(s) should be sitting, false if the rider should be standing.
-     */
     @Override
     public boolean shouldRiderSit(){
         return true;
     }
 
-    /**
-     * <h2>reinforced transport</h2>
-     * this returns if this specific entity is reinforced (explosion proof and damage resistant).
-     * since this is a function it can be conditional as well, for instance if it has a specific skin.
-     */
     @Override
     public boolean isReinforced(){return false;}
 
-    /**
-     * <h2>Fluid Tank Capacity</h2>
-     */
+
     @Override
     public int[] getTankCapacity(){return new int[]{8000};}
 
@@ -234,14 +172,6 @@ public class EntityTatraT3 extends TrainBase {
         return 0;
     }
 
-    /**
-     * <h2>fluid filter</h2>
-     * defines what fluids can and can't be stored in the tank.
-     * for instance if you have a wooden tanker car, you can deny fluids that are fire sources (like lava).
-     */
-
-    //todo: maybe make some util functions or something to simplify this stuff?
-    //seems kinda complicated for something that should be the difficulty of a config file.
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
         switch (slot){
@@ -250,24 +180,14 @@ public class EntityTatraT3 extends TrainBase {
         }
     }
 
-    /**
-     * <h2>fuel management</h2>
-     * defines how the transport manages burnHeat, both in consuming items, and in managing the burnHeat.
-     */
     @Override
     public void manageFuel(){
         fuelHandler.manageElectric(this);
     }
 
-    /**
-     * <h2>pre-assigned values</h2>
-     * These return values are defined from the top of the class.
-     * These should only need modification for advanced users, and even that's a stretch.
-     */
     public Item getItem(){
         return thisItem;
     }
-
 
     @Override
     public Bogie[] getBogieModels(){return null;}
@@ -275,9 +195,6 @@ public class EntityTatraT3 extends TrainBase {
     @Override
     public ModelBase[] getModel(){return new ModelBase[]{new TatraT3()};}
 
-    /**
-     * <h2>sets the resource location for sounds, like horn and the sound made for the engine running</h2>
-     */
     @SideOnly(Side.CLIENT)
     @Override
     public ResourceLocation getHorn(){return URIRegistry.SOUND_HORN.getResource("h080brigadelok.ogg");}

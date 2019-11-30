@@ -61,6 +61,9 @@ public class Entity3700Motor extends TrainBase {
         SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/fgv3700_red.png", "textures/trams/bogies/fgv3700_bogie.png",
         "default", "Standard livery used in Valencia.");
     }
+    public String[][] getTankFilters() {
+        return FuelHandler.DefaultTanks.ELECTRIC.value();
+    }
 
     @Override
     public float transportTopSpeed(){return 80f;}
@@ -131,30 +134,8 @@ public class Entity3700Motor extends TrainBase {
         };
     }
 
-    /**
-     * <h2>Hitbox offsets</h2>
-     * @return defines the positions for the hitboxes in blocks. 0 being the center, negative values being towards the front. the first and last values define the positions of the couplers
-     */
-    @Override
-    public double[][] getHitboxPositions(){return new double[][]{{-2.1875d,0.25d,0d},{-4d,0.25d,0d},{0d,0.25d,0d},{4d, 0.25d,0d},{2.1875d,0.25d,0d}};}
-
-    /**
-     * <h2>Animation radius</h2>
-     * @return defines the radius in microblocks (1/16 of a block) for the piston rotations.
-     */
     @Override
     public float getPistonOffset(){return 0f;}
-    /**
-     * <h2>Smoke offset</h2>
-     * @return defines the array of positions in blocks for smoke.
-     * the first number in the position defines the X/Z axis, negative values are towards the front of the train.
-     * the second number defines the Y position, 0 is the rails, higher values are towards the sky.
-     * the third number defines left to right, negative values are towards the right.
-     * the forth number defines the grayscale color from 255 (white) to 0 (black)
-     * the 5th number is for density, there's no min/max but larger numbers will create more lag.
-     */
-    @Override
-    public float[][] getSmokeOffset(){return null; }
 
     @Override
     public float[][] bogieModelOffsets() {
@@ -209,14 +190,7 @@ public class Entity3700Motor extends TrainBase {
      * defines what fluids can and can't be stored in the tank.
      * for instance if you have a wooden tanker car, you can deny fluids that are fire sources (like lava).
      */
-    @Override
-    public String[] getTankFilters(int tank){
-        switch (tank){
-            default:{
-                return new String[]{FluidRegistry.WATER.getName()};
-            }
-        }
-    }
+
 
     //todo: maybe make some util functions or something to simplify this stuff?
     //seems kinda complicated for something that should be the difficulty of a config file.
