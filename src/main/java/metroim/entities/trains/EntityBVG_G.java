@@ -180,19 +180,6 @@ public class EntityBVG_G extends TrainBase {
     public int[] getTankCapacity(){return new int[]{91610, 8000};}
 
     @Override
-    public int getRFCapacity() {
-        return 0;
-    }
-
-    /**
-     * <h2>fluid filter</h2>
-     * defines what fluids can and can't be stored in the tank.
-     * for instance if you have a wooden tanker car, you can deny fluids that are fire sources (like lava).
-     */
-
-    //todo: maybe make some util functions or something to simplify this stuff?
-    //seems kinda complicated for something that should be the difficulty of a config file.
-    @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
         switch (slot){
             case 400:{return stack!=null && stack.getItem() == Items.redstone;}

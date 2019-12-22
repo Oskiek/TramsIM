@@ -202,10 +202,6 @@ public class EntityTriebwagen105 extends TrainBase {
     @Override
     public int[] getTankCapacity(){return new int[]{9161, 800};}
 
-    @Override
-    public int getRFCapacity() {
-        return 0;
-    }
 
     /**
      * <h2>fluid filter</h2>

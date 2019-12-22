@@ -14,7 +14,7 @@ public class Konstal105Na extends ModelBase //Same as Filename
 
 	public Konstal105Na() //Same as Filename
 	{
-		bodyModel = new ModelRendererTurbo[240];
+		bodyModel = new ModelRendererTurbo[242];
 
 		initbodyModel_1();
 	}
@@ -169,7 +169,7 @@ public class Konstal105Na extends ModelBase //Same as Filename
 		bodyModel[145] = new ModelRendererTurbo(this, 113, 25, textureX, textureY); // Box 166
 		bodyModel[146] = new ModelRendererTurbo(this, 201, 33, textureX, textureY); // Box 167
 		bodyModel[147] = new ModelRendererTurbo(this, 145, 65, textureX, textureY); // Box 168
-		bodyModel[148] = new ModelRendererTurbo(this, 153, 65, textureX, textureY); // Box 169
+		bodyModel[148] = new ModelRendererTurbo(this, 153, 65, textureX, textureY); // Lamp 1
 		bodyModel[149] = new ModelRendererTurbo(this, 113, 105, textureX, textureY); // Box 172
 		bodyModel[150] = new ModelRendererTurbo(this, 449, 57, textureX, textureY); // Box 173
 		bodyModel[151] = new ModelRendererTurbo(this, 353, 97, textureX, textureY); // Box 175
@@ -261,6 +261,8 @@ public class Konstal105Na extends ModelBase //Same as Filename
 		bodyModel[237] = new ModelRendererTurbo(this, 41, 33, textureX, textureY); // Box 250
 		bodyModel[238] = new ModelRendererTurbo(this, 41, 33, textureX, textureY); // Box 251
 		bodyModel[239] = new ModelRendererTurbo(this, 89, 57, textureX, textureY); // Box 252
+		bodyModel[240] = new ModelRendererTurbo(this, 0, 0, textureX, textureY, StaticModelAnimator.tagLamp(0,5)); // LightPoint1
+		bodyModel[241] = new ModelRendererTurbo(this, 0, 0, textureX, textureY, StaticModelAnimator.tagLamp(0,5)); // LightPoint2
 
 		bodyModel[0].addShapeBox(0F, 0F, 0F, 33, 1, 20, 0F,0F, 0F, -0.35F, 0F, 0F, -0.35F, 0F, 0F, -0.35F, 0F, 0F, -0.35F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F); // Box 0
 		bodyModel[0].setRotationPoint(-16F, 6F, -10F);
@@ -984,6 +986,12 @@ public class Konstal105Na extends ModelBase //Same as Filename
 
 		bodyModel[239].addShapeBox(0F, 0F, 0F, 1, 6, 2, 0F,0F, 0F, -0.25F, -0.5F, 0F, -0.25F, -0.5F, 0F, -0.25F, 0F, 0F, -0.25F, 5F, 0F, -0.25F, -5.5F, 0F, -0.25F, -5.5F, 0F, -0.25F, 5F, 0F, -0.25F); // Box 252
 		bodyModel[239].setRotationPoint(-24.5F, -23F, -1F);
+
+		bodyModel[240].addBox(0F, 0F, 0F, 0, 0, 0, 0F); // LightPoint1
+		bodyModel[240].setRotationPoint(-60.5F, -2F, 3F);
+
+		bodyModel[241].addBox(0F, 0F, 0F, 0, 0, 0, 0F); // LightPoint2
+		bodyModel[241].setRotationPoint(-60.5F, -2F, -4F);
 		this.flipAll();
 	}
 }

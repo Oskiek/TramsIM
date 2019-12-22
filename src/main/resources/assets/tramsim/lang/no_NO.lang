@@ -80,34 +80,37 @@ tile.edge_yellowlined.name=Plattformkant (Gul stripe, Riller)
 
 
 //in regions
-in.silesia=in Silesia
-in.poznan=in Poznan
-in.belgium=in Belgium
-in.amsterdam=in Amsterdam
-in.frankfurt=in Frankfurt
-in.elblag=in Elblag
-in.chicago=in Chicago
-in.brno=in Brno
-in.praha=in Prague
-in.olomouc=in Olomouc
-in.most=in Most
-in.halle=in Halle
-in.riga=in Riga
-in.ostrava=in Ostrava
-in.liberec=in Liberec
-in.wuppertal=in Wuppertal
+in.silesia=i Silesia
+in.krakow=i Krakow
+in.poznan=i Poznan
+in.belgium=i Belgia
+in.amsterdam=i Amsterdam
+in.frankfurt=i Frankfurt
+in.elblag=i Elblag
+in.chicago=i Chicago
+in.brno=i Brno
+in.praha=i Praha
+in.olomouc=i Olomouc
+in.most=i Most
+in.halle=i Halle
+in.riga=i Riga
+in.ostrava=i Ostrava
+in.liberec=i Liberec
+in.wuppertal=i Wuppertal
 
 //livery descriptions
-standardlivery=Standard livery used
-anniversary.description=Minecraft Anniversary skin
-shorttram.description=Short version of Tatra T3...
+standardlivery=Standard maling brukt
+anniversary.description=Minecraft jubileums skin
+shorttram.description=Kort versjon av Tatra T3
 
 //special
-anniversary=Anniversary
-shorttram=Short
+anniversary=Jubileum
+shorttram=Kort
 
 //company names DO NOT TRANSLATE UNLESS COMPANY NAMES ARE TRANSLATED IN YOUR LANGUAGE
 company.silesia=Tramwaje Śląskie
+company.silesiaOld=Tramwaje Śląskie (Gamle)
+comapny.krakow=MPK Kraków
 company.poznan=MPK Poznań
 company.chicago=Chicago Transit Authority
 company.tec=TEC Charleroi

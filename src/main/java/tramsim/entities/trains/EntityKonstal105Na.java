@@ -5,6 +5,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import ebf.tim.TrainsInMotion;
 import ebf.tim.api.SkinRegistry;
 import ebf.tim.api.TrainBase;
+import ebf.tim.api.skin;
 import ebf.tim.entities.GenericRailTransport;
 import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
@@ -21,9 +22,11 @@ import net.minecraftforge.fluids.FluidRegistry;
 import tramsim.TramsIM;
 import tramsim.models.bogies.Konstal105NaBogie;
 import tramsim.models.bogies.ModelKT4_Bogie;
+import tramsim.models.decorations.Konstal105Na_Christmas_lights;
 import tramsim.models.trains.Konstal105Na;
 import tramsim.models.trains.TatraT3;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -35,6 +38,7 @@ public class EntityKonstal105Na extends TrainBase {
 
     public static final Item thisItem = new ItemTransport(new EntityKonstal105Na(null), TramsIM.MODID,TramsIM.tramsimtabvehicle);
 
+    private LocalDateTime now = LocalDateTime.now();
 
     public EntityKonstal105Na(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
@@ -61,61 +65,47 @@ public class EntityKonstal105Na extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/konstal105na_silesia.png", "textures/trams/bogies/105nabogie.png",
-                "company.silesia", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.silesia") + ".");
+        if(now.getMonthValue()==12||now.getMonthValue()==1)
+        {
+            SkinRegistry.addSkin(this.getClass(), new skin(TramsIM.MODID, new String[]{"textures/trams/konstal105na_silesia.png", "textures/trams/decorations/105na_christmas_lights.png"},
+                    "company.silesia", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.silesia") + ".").setBogieTextures("textures/trams/bogies/105nabogie.png"));
+
+            SkinRegistry.addSkin(this.getClass(), new skin(TramsIM.MODID, new String[]{"textures/trams/konstal105na_krakow.png", "textures/trams/decorations/105na_christmas_lights.png"},
+                    "company.krakow", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.krakow") + ".").setBogieTextures("textures/trams/bogies/105nabogie.png"));
+        }
+        else {
+            SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/konstal105na_silesia.png", "textures/trams/bogies/105nabogie.png",
+                    "company.silesia", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.silesia") + ".");
+            SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/konstal105na_krakow.png", "textures/trams/bogies/105nabogie.png",
+                    "company.krakow", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.krakow") + ".");
+        }
 
     }
 
-    /*
-     * <h1>Variable Overrides</h1>
-     * We override the functions defined in the super here, to give them different values.
-     * This is more efficient than having to store them in the super, or actual variables, because we won't have to store them in the NBT or RAM.
-     */
+    //@Override
+    //public String getDefaultSkin(){
+    //    return "company.silesia";
+    //}
     @Override
     public String[][] getTankFilters() {
         return new String[0][];
     }
 
-    /**
-     * <h2>Max speed</h2>
-     * @return the value of the max speed in km/h
-     */
     @Override
     public float transportTopSpeed(){return 72f;}
-    /**
-     * <h2>Bogie Offset</h2>
-     * @return the list of offsets for the bogies, 0 being the center. negative values are towards the front of the train.
-     * Must always go from front to back. First and last values must always be exact opposites.
-     */
+
     @Override
     public List<Double> getRenderBogieOffsets(){return  Arrays.asList(-1.9, 1.9);}
-    /**
-     * <h2>Inventory Size</h2>
-     * @return the size of the inventory not counting any fuel or crafting slots, those are defined by the type.
-     */
+
     @Override
     public int getInventoryRows(){return 1;}
-    /**
-     * <h2>Type</h2>
-     * @return the type which will define it's features, GUI, a degree of storage (like crafting slots), and a number of other things.
-     */
+
     @Override
     public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
-    /**
-     * <h2>Max Fuel</h2>
-     * @return the maxstorage of fuel the train can store.
-     * @see GenericRailTransport#getMaxFuel() for more info.
-     * @see FuelHandler for information on fuel consumption.
-     */
+
     @Override
     public float getMaxFuel(){return 1;}
-    /**
-     * <h2>Rider offset</h2>
-     * @return defines the offsets of the riders in blocks, the first value is how far back, and the second is how high.
-     *     Negative values are towards the front, ground, or right. In that order.
-     *     Each set of floats represents a different rider.
-     *     Only the first 3 values of each set of floats are actually used.
-     */
+
     @Override
     public float[][] getRiderOffsets(){return new float[][]{{-3.375f,1.1f, 0.0625f}};}
 
@@ -124,11 +114,6 @@ public class EntityKonstal105Na extends TrainBase {
         return new float[]{8f,2.25f,1.5f};
     }
 
-    /**
-     * <h2>Acceleration</h2>
-     * <h4>TRAINS ONLY.</h4>
-     * @return defines the acceleration.
-     */
     @Override
     public float transportMetricHorsePower(){return 75f;}
 
@@ -149,26 +134,8 @@ public class EntityKonstal105Na extends TrainBase {
         };
     }
 
-    /**
-     * <h2>Hitbox offsets</h2>
-     * @return defines the positions for the hitboxes in blocks. 0 being the center, negative values being towards the front. the first and last values define the positions of the couplers
-     */
-
-    /**
-     * <h2>Animation radius</h2>
-     * @return defines the radius in microblocks (1/16 of a block) for the piston rotations.
-     */
     @Override
     public float getPistonOffset(){return 0.5f;}
-    /**
-     * <h2>Smoke offset</h2>
-     * @return defines the array of positions in blocks for smoke.
-     * the first number in the position defines the X/Z axis, negative values are towards the front of the train.
-     * the second number defines the Y position, 0 is the rails, higher values are towards the sky.
-     * the third number defines left to right, negative values are towards the right.
-     * the forth number defines the grayscale color from 255 (white) to 0 (black)
-     * the 5th number is for density, there's no min/max but larger numbers will create more lag.
-     */
 
     @Override
     public float[][] bogieModelOffsets() {
@@ -190,20 +157,11 @@ public class EntityKonstal105Na extends TrainBase {
     @Override
     public float[][] modelOffsets() { return new float[][]{{0,-0.1f,0}}; }
 
-    /**
-     * <h2>rider sit or stand</h2>
-     * @return true if the rider(s) should be sitting, false if the rider should be standing.
-     */
     @Override
     public boolean shouldRiderSit(){
         return true;
     }
 
-    /**
-     * <h2>reinforced transport</h2>
-     * this returns if this specific entity is reinforced (explosion proof and damage resistant).
-     * since this is a function it can be conditional as well, for instance if it has a specific skin.
-     */
     @Override
     public boolean isReinforced(){return false;}
 
@@ -213,16 +171,7 @@ public class EntityKonstal105Na extends TrainBase {
     @Override
     public int[] getTankCapacity(){return new int[]{8000};}
 
-    @Override
-    public int getRFCapacity() {
-        return 0;
-    }
 
-    /**
-     * <h2>fluid filter</h2>
-     * defines what fluids can and can't be stored in the tank.
-     * for instance if you have a wooden tanker car, you can deny fluids that are fire sources (like lava).
-     */
 
     //todo: maybe make some util functions or something to simplify this stuff?
     //seems kinda complicated for something that should be the difficulty of a config file.
@@ -257,7 +206,16 @@ public class EntityKonstal105Na extends TrainBase {
     public Bogie[] getBogieModels(){return null;}
 
     @Override
-    public ModelBase[] getModel(){return new ModelBase[]{new Konstal105Na()};}
+    public ModelBase[] getModel(){
+        if(now.getMonthValue()==12||now.getMonthValue()==1)
+        {
+        return new ModelBase[]{new Konstal105Na(), new Konstal105Na_Christmas_lights()};
+        }
+        else
+        {
+        return new ModelBase[]{new Konstal105Na()};
+        }
+    }
 
     /**
      * <h2>sets the resource location for sounds, like horn and the sound made for the engine running</h2>

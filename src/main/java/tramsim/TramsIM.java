@@ -92,21 +92,22 @@ public class TramsIM {
     public static GenericRailTransport[] listElectricTrams() {
         return new GenericRailTransport[]{
                 new EntityKonstal105Na(null),
-/*/Pre-release 2 blocked*/                new EntityKonstalN(null),
+//                new EntityKonstalN(null),
                 new EntityKonstal105NaMl(null),
                 new EntityKonstal105Na135R(null),
                 new EntityTatraT3(null),
                 //       new EntityBombardierCR4000(null),
                 new EntityDuewagPT8 (null),
                 new EntityModerusAlfa (null),
-/*/Pre-release 2 blocked*/                new EntityPCC( null),
-/*/Pre-release 2 blocked*/                new EntityTriebwagen105(null),
+//                new EntityPCC( null),
+//                new EntityTriebwagen105(null),
                 new EntityBNLRV_A(null),
                 new EntityTatraT3Short(null),
-/*/Pre-release 2 blocked*/                new EntityCombinoEnd(null),
-/*/Pre-release 2 blocked*/                new EntityRussiaOne(null),
-/*/Pre-release 2 blocked*/                new EntityMGT6D(null),
-                new EntityTatraK2_End(null)
+//                new EntityCombinoEnd(null),
+                new EntityRussiaOne(null),
+//                new EntityMGT6D(null),
+//                new EntityTatraK2_End(null),
+//                new EntityLohnerE1(null)
         };
     }
     public static GenericRailTransport[] listWagonTrams() {
@@ -114,15 +115,17 @@ public class TramsIM {
                 //       new EntityBombardierCR4000_Middle(null)
                 new EntityDuewagPT8_Middle(null),
                 new EntityBNLRV_B( null),
-/*/Pre-release 2 blocked*/                new EntityCombino_Halfmiddle_1(null),
-/*/Pre-release 2 blocked*/                new EntityCombino_Halfmiddle_2(null),
-/*/Pre-release 2 blocked*/                new EntityCombino_Middle(null),
-/*/Pre-release 2 blocked*/                new EntityCombino_Halfmiddle_2_ticket(null),
-/*/Pre-release 2 blocked*/                new EntityCombino_Halfmiddle_1_bidir(null),
-/*/Pre-release 2 blocked*/                new EntityRussiaOne_Middle(null),
-/*/Pre-release 2 blocked*/                new EntityRussiaOne_NoPanto(null),
-/*/Pre-release 2 blocked*/                new EntityMGT6D_Middle(null),
-                new EntityTatraK2_Back(null)
+//                new EntityCombino_Halfmiddle_1(null),
+//                new EntityCombino_Halfmiddle_2(null),
+//                new EntityCombino_Middle(null),
+//                new EntityCombino_Halfmiddle_2_ticket(null),
+//                new EntityCombino_Halfmiddle_1_bidir(null),
+                new EntityRussiaOne_Middle(null),
+                new EntityRussiaOne_NoPanto(null),
+//                new EntityMGT6D_Middle(null),
+//                new EntityTatraK2_Back(null),
+//                new EntityLohnerE1_Back(null)
+
         };
     }
 
@@ -130,24 +133,26 @@ public class TramsIM {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
 
-        tramsimtabvehicle = new TiMTab( event.getSide().isClient(),"Trams in Motion vehicles" , MODID ,"tramsimTabVeh");
-        tramsimtabblock = new TiMTab(event.getSide().isClient(),"Trams in Motion blocks", MODID, "tramsimTabBlo");
+        tramsimtabvehicle = new TiMTab("Trams in Motion vehicles" , MODID ,"tramsimTabVeh");
+        tramsimtabblock = new TiMTab("Trams in Motion blocks", MODID, "tramsimTabBlo");
 
         //blocks added
         //blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BlockTicketMachine_Kzkgop().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:ticketmachine_kzkgop"), null, "ticketmachine_kzkgop.name", null, proxy.getRenderBusStop()));
         //blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BlockTicketMachine_Brno().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:ticketmachine_brno"), null, "ticketmachine_brno.name", null, proxy.getRenderBusStop()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BlockTicketMachine_Kzkgop().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/iconTicketmachineKZKGOP"), null, "ticketmachine_kzkgop.name", null, proxy.getRenderTicketMachine()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BlockTicketMachine_Brno().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/iconTicketmachineBrno"), null, "ticketmachine_brno.name", null, proxy.getRenderTicketMachine()));
 
-        blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BusStop_2_Left_1().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/l_end"), null, "busstop_2_left_1", null, proxy.getRenderBusStop()));
-        blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BusStop_2_Middle_1().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/m-glass-bench"), null, "busstop_2_middle_1", null, proxy.getRenderBusStop()));
-        blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BusStop_2_Middle_2().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/m-glass"), null, "busstop_2_middle_2", null, proxy.getRenderBusStop()));
-        blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BusStop_2_Middle_3().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/m-glass-ttable"), null, "busstop_2_middle_3", null, proxy.getRenderBusStop()));
-        blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BusStop_2_Middle_4().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/m-pat"), null, "busstop_2_middle_4", null, proxy.getRenderBusStop()));
-        blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BusStop_2_Middle_5().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/m-pat-timetable"), null, "busstop_2_middle_5", null, proxy.getRenderBusStop()));
-        blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BusStop_2_Right_1().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/r_end"), null, "busstop_2_right_1", null, proxy.getRenderBusStop()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BusStop_2_Left_1().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/l_end"), null, "busstop_2_left_1", null, proxy.getRenderBusStop()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BusStop_2_Middle_1().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/m-glass-bench"), null, "busstop_2_middle_1", null, proxy.getRenderBusStop()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BusStop_2_Middle_2().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/m-glass"), null, "busstop_2_middle_2", null, proxy.getRenderBusStop()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BusStop_2_Middle_3().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/m-glass-ttable"), null, "busstop_2_middle_3", null, proxy.getRenderBusStop()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BusStop_2_Middle_4().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/m-pat"), null, "busstop_2_middle_4", null, proxy.getRenderBusStop()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BusStop_2_Middle_5().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/m-pat-timetable"), null, "busstop_2_middle_5", null, proxy.getRenderBusStop()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BusStop_2_Right_1().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/r_end"), null, "busstop_2_right_1", null, proxy.getRenderBusStop()));
 
-        blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BusStop_3_Left_1().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var3/"), null, "busstop_3_left_1", null, proxy.getRenderBusStop()));
-        blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BusStop_3_Middle_1().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var3/"), null, "busstop_3_middle_1", null, proxy.getRenderBusStop()));
-        blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BusStop_3_Right_1().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var3/"), null, "busstop_3_right_1", null, proxy.getRenderBusStop()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BusStop_3_Left_1().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var3/"), null, "busstop_3_left_1", null, proxy.getRenderBusStop()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BusStop_3_Middle_1().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var3/"), null, "busstop_3_middle_1", null, proxy.getRenderBusStop()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BusStop_3_Right_1().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var3/"), null, "busstop_3_right_1", null, proxy.getRenderBusStop()));
 
 
         /*
@@ -159,8 +164,8 @@ public class TramsIM {
         }
 */
 
-        TiMGenericRegistry.registerTransports(event.getSide().isClient(), MODID, listElectricTrams(), null);
-        TiMGenericRegistry.registerTransports(event.getSide().isClient(), MODID, listWagonTrams(), null);
+        TiMGenericRegistry.registerTransports(MODID, listElectricTrams(), (Object)null);
+        TiMGenericRegistry.registerTransports(MODID, listWagonTrams(), (Object)null);
         if (event.getSide().isClient()) {
             MinecraftForge.EVENT_BUS.register(ClientProxy.eventManager);
             FMLCommonHandler.instance().bus().register(ClientProxy.eventManager);

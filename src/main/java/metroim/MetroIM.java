@@ -66,11 +66,11 @@ public class MetroIM {
     public void init(FMLInitializationEvent event) {
 
 
-        metroimtabvehicle = new TiMTab( event.getSide().isClient(),"Metro in Motion vehicles" , MODID ,"metroimTabVeh");
-        metroimtabblock = new TiMTab(event.getSide().isClient(),"Metro in Motion blocks", MODID, "metroimTabBlo");
+        metroimtabvehicle = new TiMTab("Metro in Motion vehicles" , MODID ,"metroimTabVeh");
+        metroimtabblock = new TiMTab("Metro in Motion blocks", MODID, "metroimTabBlo");
 
-        TiMGenericRegistry.registerTransports(event.getSide().isClient(), MODID, listElectricTrams(), null);
-        TiMGenericRegistry.registerTransports(event.getSide().isClient(), MODID, listWagonTrams(), null);
+        TiMGenericRegistry.registerTransports(MODID, listElectricTrams(), (Object)null);
+        TiMGenericRegistry.registerTransports(MODID, listWagonTrams(), (Object)null);
         if (event.getSide().isClient()) {
             MinecraftForge.EVENT_BUS.register(ClientProxy.eventManager);
             FMLCommonHandler.instance().bus().register(ClientProxy.eventManager);

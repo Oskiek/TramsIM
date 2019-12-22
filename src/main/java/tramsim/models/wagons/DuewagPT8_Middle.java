@@ -7,7 +7,7 @@ import fexcraft.tmt.slim.ModelRendererTurbo;
 public class DuewagPT8_Middle extends ModelBase //Same as Filename
 {
 	int textureX = 512;
-	int textureY = 256;
+	int textureY = 128;
 
 	public DuewagPT8_Middle() //Same as Filename
 	{

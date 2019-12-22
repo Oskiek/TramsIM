@@ -80,35 +80,38 @@ tile.edge_yellowlined.name=Okraj nástupiště (pruhovaný se žlutým pruhem)
 
 
 //in regions
-in.silesia=in Silesia
-in.poznan=in Poznan
-in.belgium=in Belgium
-in.amsterdam=in Amsterdam
-in.frankfurt=in Frankfurt
-in.elblag=in Elblag
-in.chicago=in Chicago
-in.brno=in Brno
-in.praha=in Prague
-in.olomouc=in Olomouc
-in.most=in Most
-in.halle=in Halle
-in.riga=in Riga
-in.ostrava=in Ostrava
-in.liberec=in Liberec
-in.wuppertal=in Wuppertal
+in.silesia=ve Slezsku
+in.poznan=v Poznani
+in.krakow=v Krakově
+in.belgium=v Belgii
+in.amsterdam=v Amsterdamu
+in.frankfurt=ve Frankfurtu
+in.elblag=v Elblagu
+in.chicago=v Chicagu
+in.brno=v Brně
+in.praha=v Praze
+in.olomouc=v Olomouci
+in.most=v Mostě
+in.halle=v Halle
+in.riga=v Rize
+in.ostrava=v Ostravě
+in.liberec=v Liberci
+in.wuppertal=ve Wuppertalu
 
 //livery descriptions
-standardlivery=Standard livery used
-anniversary.description=Minecraft Anniversary skin
-shorttram.description=Short version of Tatra T3...
+standardlivery=Standardní nátěr použit
+anniversary.description=Výroční nátěr Minecraftu
+shorttram.description=Krátká verze Tatry T3...
 
 //special
-anniversary=Anniversary
-shorttram=Short
+anniversary=Výroční
+shorttram=Krátká
 
 //company names DO NOT TRANSLATE UNLESS COMPANY NAMES ARE TRANSLATED IN YOUR LANGUAGE
 company.silesia=Tramwaje Śląskie
+company.silesiaOld=Tramwaje Śląskie (Staré)
 company.poznan=MPK Poznań
+comapny.krakow=MPK Kraków
 company.chicago=Chicago Transit Authority
 company.tec=TEC Charleroi
 company.gvb=Gemeentelijk Vervoerbedrijf

@@ -183,10 +183,6 @@ public class EntityEuskotren200 extends TrainBase {
     @Override
     public int[] getTankCapacity(){return new int[]{91610, 8000};}
 
-    @Override
-    public int getRFCapacity() {
-        return 0;
-    }
 
 
     //todo: maybe make some util functions or something to simplify this stuff?

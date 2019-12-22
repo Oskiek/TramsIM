@@ -81,6 +81,7 @@ tile.edge_yellowlined.name=Platform Edge (yellow strip, lined)
 //in regions
 in.silesia=in Silesia
 in.poznan=in Poznan
+in.krakow=in Krakow
 in.belgium=in Belgium
 in.amsterdam=in Amsterdam
 in.frankfurt=in Frankfurt
@@ -107,6 +108,8 @@ shorttram=Short
 
 //company names DO NOT TRANSLATE UNLESS COMPANY NAMES ARE TRANSLATED IN YOUR LANGUAGE
 company.silesia=Tramwaje Śląskie
+company.silesiaOld=Tramwaje Śląskie (Old)
+comapny.krakow=MPK Kraków
 company.poznan=MPK Poznań
 company.chicago=Chicago Transit Authority
 company.tec=TEC Charleroi

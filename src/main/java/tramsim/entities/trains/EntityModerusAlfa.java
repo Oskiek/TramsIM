@@ -5,6 +5,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import ebf.tim.TrainsInMotion;
 import ebf.tim.api.SkinRegistry;
 import ebf.tim.api.TrainBase;
+import ebf.tim.api.skin;
 import ebf.tim.entities.GenericRailTransport;
 import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
@@ -20,8 +21,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidRegistry;
 import tramsim.TramsIM;
 import tramsim.models.bogies.Konstal105NaBogie;
+import tramsim.models.decorations.Konstal105Na_Christmas_lights;
 import tramsim.models.trains.ModerusAlfa;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -33,6 +36,7 @@ public class EntityModerusAlfa extends TrainBase {
 
     public static final Item thisItem = new ItemTransport(new EntityModerusAlfa(null), TramsIM.MODID, TramsIM.tramsimtabvehicle);
 
+    private LocalDateTime now = LocalDateTime.now();
 
     public EntityModerusAlfa(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
@@ -58,12 +62,22 @@ public class EntityModerusAlfa extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/moderusalfa_poznan.png", new String[]{"textures/trams/bogies/105nabogie.png"},
-                "company.poznan", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.poznan") + ".");
-        SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/moderusalfa_silesia_old.png", new String[]{"textures/trams/bogies/105nabogie.png"},
-                "company.silesia"+" (1)", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.silesia") + ".");
-        SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/moderusalfa_silesia_new.png", new String[]{"textures/trams/bogies/105nabogie.png"},
-                "company.silesia"+" (2)", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.silesia") + ".");
+        if(now.getMonthValue()==12||now.getMonthValue()==1)
+        {
+            SkinRegistry.addSkin(this.getClass(), new skin(TramsIM.MODID, new String[]{ "textures/trams/moderusalfa_poznan.png", "textures/trams/decorations/105na_christmas_lights.png"},
+                    "company.poznan", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.poznan") + ".").setBogieTextures("textures/trams/bogies/105nabogie.png"));
+            SkinRegistry.addSkin(this.getClass(), new skin(TramsIM.MODID, new String[]{"textures/trams/moderusalfa_silesia_old.png", "textures/trams/decorations/105na_christmas_lights.png"},
+                    "company.silesiaOld", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.silesia") + ".").setBogieTextures("textures/trams/bogies/105nabogie.png"));
+            SkinRegistry.addSkin(this.getClass(), new skin(TramsIM.MODID, new String[]{ "textures/trams/moderusalfa_silesia_new.png", "textures/trams/decorations/105na_christmas_lights.png"},
+                    "company.silesia", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.silesia") + ".").setBogieTextures("textures/trams/bogies/105nabogie.png"));
+        } else {
+            SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/moderusalfa_poznan.png", new String[]{"textures/trams/bogies/105nabogie.png"},
+                    "company.poznan", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.poznan") + ".");
+            SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/moderusalfa_silesia_old.png", new String[]{"textures/trams/bogies/105nabogie.png"},
+                    "company.silesia" + " (1)", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.silesia") + ".");
+            SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/moderusalfa_silesia_new.png", new String[]{"textures/trams/bogies/105nabogie.png"},
+                    "company.silesia" + " (2)", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.silesia") + ".");
+        }
     }
     @Override
     public String[][] getTankFilters() {
@@ -203,10 +217,6 @@ public class EntityModerusAlfa extends TrainBase {
     @Override
     public int[] getTankCapacity(){return new int[]{8000};}
 
-    @Override
-    public int getRFCapacity() {
-        return 0;
-    }
 
     /**
      * <h2>fluid filter</h2>
@@ -246,13 +256,17 @@ public class EntityModerusAlfa extends TrainBase {
     @Override
     public Bogie[] getBogieModels(){return null;}
 
-    //@Override
-    //public ModelBase[] getBogieModels(){return new ModelBase[]{new Konstal105NaBogie()};}
     @Override
     public ModelBase[] getModel(){
-        return new ModelBase[]{new ModerusAlfa()};
+        if(now.getMonthValue()==12||now.getMonthValue()==1)
+        {
+            return new ModelBase[]{new ModerusAlfa(), new Konstal105Na_Christmas_lights()};
         }
-
+        else
+        {
+            return new ModelBase[]{new ModerusAlfa()};
+        }
+    }
     /**
      * <h2>sets the resource location for sounds, like horn and the sound made for the engine running</h2>
      */

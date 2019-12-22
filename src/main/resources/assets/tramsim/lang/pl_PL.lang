@@ -54,7 +54,7 @@ tile.ticketmachine_brno.name=Biletomat (IDSJMK)
 //countries
 menu.item.poland=Polska
 menu.item.czechia=Czechy
-menu.item.silesia=Nie Polska
+menu.item.silesia=Śląsk
 menu.item.germany=Niemcy
 menu.item.spain=Hiszpania
 menu.item.usa=Stany Zjednoczone
@@ -82,6 +82,7 @@ tile.edge_yellowlined.name=Brzeg platformy (żółta linia, przedziały)
 //in regions
 in.silesia=na Śląsku
 in.poznan=w Poznaniu
+in.krakow=w Krakowie
 in.belgium=w Belgii
 in.amsterdam=w Amsterdamie
 in.frankfurt=w Frankfurcie
@@ -108,6 +109,8 @@ shorttram=Krótki
 
 //company names DO NOT TRANSLATE UNLESS COMPANY NAMES ARE TRANSLATED IN YOUR LANGUAGE
 company.silesia=Tramwaje Śląskie
+company.silesiaOld=Tramwaje Śląskie (Stare)
+comapny.krakow=MPK Kraków
 company.poznan=MPK Poznań
 company.chicago=Chicago Transit Authority
 company.tec=TEC Charleroi

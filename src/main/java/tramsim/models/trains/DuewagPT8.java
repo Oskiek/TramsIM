@@ -10,7 +10,7 @@ import org.lwjgl.opengl.GL11;
 public class DuewagPT8 extends ModelBase //Same as Filename
 {
 	int textureX = 512;
-	int textureY = 256;
+	int textureY = 128;
 	public DuewagPT8() //Same as Filename
 	{
 

@@ -12,25 +12,25 @@ import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import tramsim.TramsIM;
 import tramsim.models.bogies.BNLRV_Bogie;
-import tramsim.models.bogies.ModelKT4_Bogie;
+import tramsim.models.bogies.LohnerE1_Bogie;
 import tramsim.models.wagons.BNLRV_B;
-import tramsim.models.wagons.TatraK2_End;
+import tramsim.models.wagons.LohnerE1_Back;
 
 import java.util.List;
 import java.util.UUID;
 
 import static ebf.tim.utility.RailUtility.DefineStack;
 
-public class EntityTatraK2_Back extends RollingstockBase {
+public class EntityLohnerE1_Back extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
             "\u00A77" + StatCollector.translateToLocal("menu.item.weight") +": 2 " + StatCollector.translateToLocal("menu.item.tons"),
             "\u00A77" + StatCollector.translateToLocal("menu.item.seats") +": 4 " + StatCollector.translateToLocal("menu.item.players")};
-    public static final Item thisItem = new ItemTransport(new EntityTatraK2_Back(null), TramsIM.MODID, TramsIM.tramsimtabvehicle);
+    public static final Item thisItem = new ItemTransport(new EntityLohnerE1_Back(null), TramsIM.MODID, TramsIM.tramsimtabvehicle);
 
-    public EntityTatraK2_Back(UUID owner, World world, double xPos, double yPos, double zPos) {
+    public EntityLohnerE1_Back(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
     }
-    public EntityTatraK2_Back(World world){
+    public EntityLohnerE1_Back(World world){
         super(world);
     }
 
@@ -40,10 +40,10 @@ public class EntityTatraK2_Back extends RollingstockBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{-0.8f,0f,0}};}
+        return new float[][]{{-1f,0f,0}};}
 
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{new ModelKT4_Bogie()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{new LohnerE1_Bogie()};}
 
 
     /**
@@ -51,7 +51,7 @@ public class EntityTatraK2_Back extends RollingstockBase {
      */
     @Override
     public float[] bogieLengthFromCenter() {
-        return new float[]{2.8f,-0.8f};
+        return new float[]{1f, -1.75f};
     }
 
     @Override
@@ -66,8 +66,8 @@ public class EntityTatraK2_Back extends RollingstockBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/k2_brno.png", "textures/trams/bogies/kt4_bogie.png",
-                "default", "Standard livery used in Czechia.");
+        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/lohner_e1_back_damrstadt.png", "textures/trams/bogies/lohner_e1_bogie_darmstadt.png",
+                "default", "Standard livery used in Darmstadt.");
     }
 
 
@@ -104,7 +104,7 @@ public class EntityTatraK2_Back extends RollingstockBase {
     @Override
     public ItemStack[] getRecipie() {
         return new ItemStack[]{
-                null, null, null,
+                DefineStack(Items.bed, 1), null, null,
                 null, null, null,
                 null, null, null
         };
@@ -112,17 +112,17 @@ public class EntityTatraK2_Back extends RollingstockBase {
 
     @Override
     public String transportName() {
-        return "TatraK2_Back";
+        return "LohnerE1_Back";
     }
 
     @Override
     public String transportcountry() {
-        return "Czechia";
+        return "Germany";
     }
 
     @Override
     public String transportYear() {
-        return "1980+";
+        return "1959";
     }
 
     @Override
@@ -176,11 +176,11 @@ public class EntityTatraK2_Back extends RollingstockBase {
      * <h2>Rider offsets</h2>
      */
     @Override
-    public float[][] getRiderOffsets(){return new float[][]{{0f,1.1f, 0f}};}
+    public float[][] getRiderOffsets(){return new float[][]{{-1.90625f,1.1f, 0f}};}
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{5.5f,1.75f,1.5f};
+        return new float[]{4.125f,1.75f,1.5f};
     }
 
     @Override
@@ -189,7 +189,7 @@ public class EntityTatraK2_Back extends RollingstockBase {
     }
 
     @Override
-    public ModelBase[] getModel(){return new ModelBase[]{new TatraK2_End()};}
+    public ModelBase[] getModel(){return new ModelBase[]{new LohnerE1_Back()};}
 
     /**
      * <h2>pre-asigned values</h2>

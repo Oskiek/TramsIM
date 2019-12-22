@@ -34,6 +34,11 @@ public class ClientProxy extends CommonProxy {
 	public Object getRenderBusStop()
 	{return rendererBusStop;}
 
+	public static RenderTicketMachine renderTicketMachine = new RenderTicketMachine();
+	@Override
+	public Object getRenderTicketMachine()
+	{return renderTicketMachine;}
+
 
 	@Override
 	public void registerRenderers(){

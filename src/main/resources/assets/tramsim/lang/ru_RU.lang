@@ -82,6 +82,7 @@ tile.edge_yellowlined.name=Край платформы (желтая линия)
 //in regions
 in.silesia=в Силезии
 in.poznan=в Познани
+in.krakow=в Kракове
 in.belgium=в Бельгии
 in.amsterdam=в Амстердаме
 in.frankfurt=в Франкфурте
@@ -108,6 +109,8 @@ shorttram=Короткий
 
 //company names DO NOT TRANSLATE UNLESS COMPANY NAMES ARE TRANSLATED IN YOUR LANGUAGE
 company.silesia=Tramwaje Śląskie
+company.silesiaOld=Tramwaje Śląskie (Старые)
+comapny.krakow=MPK Kraków
 company.poznan=MPK Poznań
 company.chicago=Chicago Transit Authority
 company.tec=TEC Charleroi

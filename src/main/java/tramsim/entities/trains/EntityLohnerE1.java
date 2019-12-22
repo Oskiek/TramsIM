@@ -1,51 +1,54 @@
-package metroim.entities.trains;
+package tramsim.entities.trains;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ebf.tim.TrainsInMotion;
 import ebf.tim.api.SkinRegistry;
 import ebf.tim.api.TrainBase;
-import ebf.tim.entities.GenericRailTransport;
 import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
 import ebf.tim.utility.FuelHandler;
+import ebf.tim.utility.RailUtility;
 import fexcraft.tmt.slim.ModelBase;
-import metroim.MetroIM;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import net.minecraftforge.fluids.FluidRegistry;
-import metroim.models.bogies.FGV4300_Bogie;
-import metroim.models.trains.Motor4300;
+import tramsim.TramsIM;
+import tramsim.models.bogies.BNLRV_Bogie;
+import tramsim.models.bogies.BNLRV_Gelenk;
+import tramsim.models.bogies.LohnerE1_Bogie;
+import tramsim.models.bogies.LohnerE1_Gelenk;
+import tramsim.models.trains.BNLRV_A;
+import tramsim.models.trains.LohnerE1;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
 
-public class Entity4300Motor extends TrainBase {
+public class EntityLohnerE1 extends TrainBase {
 
 
 
-    public static final Item thisItem = new ItemTransport(new Entity4300Motor(null), MetroIM.MODID,MetroIM.metroimtabvehicle);
+    public static final Item thisItem = new ItemTransport(new EntityLohnerE1(null), TramsIM.MODID,TramsIM.tramsimtabvehicle);
 
 
-    public Entity4300Motor(UUID owner, World world, double xPos, double yPos, double zPos) {
+    public EntityLohnerE1(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
     }
-    public Entity4300Motor(World world){
+    public EntityLohnerE1(World world){
         super(world);
     }
 
     @Override
-    public String transportName(){return "FGV4300_Motor";}
+    public String transportName(){return "LohnerE1";}
     @Override
-    public String transportcountry(){return "Spain";}
+    public String transportcountry(){return "Germany";}
     @Override
-    public String transportYear(){return "2006+";}
+    public String transportYear(){return "1959";}
     @Override
     public String transportFuelType() {
         return "Electric";
@@ -57,26 +60,30 @@ public class Entity4300Motor extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/4300_motorcar.png", "textures/trams/bogies/fgv4300_bogie.png",
-        "default", "Standard livery used in Valencia.");
+        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/lohner_e1_front_darmstadt.png", "textures/trams/bogies/lohner_e1_bogie_darmstadt.png",
+                "company.tec", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.belgium") + ".");
     }
 
     public String[][] getTankFilters() {
         return FuelHandler.DefaultTanks.ELECTRIC.value();
     }
-
     @Override
     public float transportTopSpeed(){return 80f;}
+
     @Override
-    public List<Double> getRenderBogieOffsets(){return  Arrays.asList(0.75, -1.375);}
+    public List<Double> getRenderBogieOffsets(){return  Arrays.asList(0.625, -2.25);}
+
     @Override
     public int getInventoryRows(){return 1;}
+
     @Override
     public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
+
     @Override
     public float getMaxFuel(){return 1;}
+
     @Override
-    public float[][] getRiderOffsets(){return new float[][]{{-1.5625f,0.9f, 0f}};}
+    public float[][] getRiderOffsets(){return new float[][]{{-1.90625f,1.1f, 0f}};}
 
     @Override
     public float[] getHitboxSize() {
@@ -108,14 +115,14 @@ public class Entity4300Motor extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{0.75f,0.f,0},{-1.375f,0.0f,0}};}
+        return new float[][]{{0.625f,-0.1f,0},{-2.25f,-0.1f,0}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{new FGV4300_Bogie()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{new LohnerE1_Bogie(), new LohnerE1_Gelenk()};}
 
 
     @Override
     public float[] bogieLengthFromCenter() {
-        return new float[]{0.75f, -1.375f};
+        return new float[]{0.625f, -2.25f};
     }
 
     @Override
@@ -124,34 +131,20 @@ public class Entity4300Motor extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0f,0.1f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0f,-0.15f,0f}}; }
 
-    /**
-     * <h2>rider sit or stand</h2>
-     * @return true if the rider(s) should be sitting, false if the rider should be standing.
-     */
     @Override
     public boolean shouldRiderSit(){
         return true;
     }
 
-    /**
-     * <h2>reinforced transport</h2>
-     * this returns if this specific entity is reinforced (explosion proof and damage resistant).
-     * since this is a function it can be conditional as well, for instance if it has a specific skin.
-     */
     @Override
     public boolean isReinforced(){return false;}
 
-    /**
-     * <h2>Fluid Tank Capacity</h2>
-     */
     @Override
-    public int[] getTankCapacity(){return new int[]{91610, 8000};}
+    public int[] getTankCapacity(){return new int[]{8000};}
 
 
-    //todo: maybe make some util functions or something to simplify this stuff?
-    //seems kinda complicated for something that should be the difficulty of a config file.
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
         switch (slot){
@@ -160,20 +153,11 @@ public class Entity4300Motor extends TrainBase {
         }
     }
 
-    /**
-     * <h2>fuel management</h2>
-     * defines how the transport manages burnHeat, both in consuming items, and in managing the burnHeat.
-     */
     @Override
     public void manageFuel(){
         fuelHandler.manageElectric(this);
     }
 
-    /**
-     * <h2>pre-assigned values</h2>
-     * These return values are defined from the top of the class.
-     * These should only need modification for advanced users, and even that's a stretch.
-     */
     public Item getItem(){
         return thisItem;
     }
@@ -185,11 +169,8 @@ public class Entity4300Motor extends TrainBase {
 
 
     @Override
-    public ModelBase[] getModel(){return new ModelBase[]{new Motor4300()};}
+    public ModelBase[] getModel(){return new ModelBase[]{new LohnerE1()};}
 
-    /**
-     * <h2>sets the resource location for sounds, like horn and the sound made for the engine running</h2>
-     */
     @SideOnly(Side.CLIENT)
     @Override
     public ResourceLocation getHorn(){return URIRegistry.SOUND_HORN.getResource("h080brigadelok.ogg");}

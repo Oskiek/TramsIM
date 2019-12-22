@@ -81,6 +81,7 @@ tile.edge_yellowlined.name=Perrongkant (gul rand, linjerad)
 //in regions
 in.silesia=i Schlesien
 in.poznan=i Poznań
+in.krakow=i Krakow
 in.belgium=i Belgien
 in.amsterdam=i Amsterdam
 in.frankfurt=i Frankfurt
@@ -107,6 +108,8 @@ shorttram=Kort
 
 //company names DO NOT TRANSLATE UNLESS COMPANY NAMES ARE TRANSLATED IN YOUR LANGUAGE
 company.silesia=Tramwaje Śląskie
+company.silesiaOld=Tramwaje Śląskie (Gamla)
+comapny.krakow=MPK Kraków
 company.poznan=MPK Poznań
 company.chicago=Chicago Transit Authority
 company.tec=TEC Charleroi

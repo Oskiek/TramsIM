@@ -202,10 +202,7 @@ public class EntityKonstal105NaMl extends TrainBase {
     @Override
     public int[] getTankCapacity(){return new int[]{8000};}
 
-    @Override
-    public int getRFCapacity() {
-        return 0;
-    }
+
 
     /**
      * <h2>fluid filter</h2>

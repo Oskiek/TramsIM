@@ -167,10 +167,7 @@ public class EntityTatraT3 extends TrainBase {
     @Override
     public int[] getTankCapacity(){return new int[]{8000};}
 
-    @Override
-    public int getRFCapacity() {
-        return 0;
-    }
+
 
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){

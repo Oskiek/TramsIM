@@ -203,18 +203,6 @@ public class EntityKonstalN extends TrainBase {
     @Override
     public int[] getTankCapacity(){return new int[]{9161, 800};}
 
-    @Override
-    public int getRFCapacity() {
-        return 0;
-    }
-
-    /**
-     * <h2>fluid filter</h2>
-     * defines what fluids can and can't be stored in the tank.
-     * for instance if you have a wooden tanker car, you can deny fluids that are fire sources (like lava).
-     */
-
-
 
     //todo: maybe make some util functions or something to simplify this stuff?
     //seems kinda complicated for something that should be the difficulty of a config file.

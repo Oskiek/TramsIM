@@ -25,10 +25,10 @@ public class ModelKT4_Bogie extends ModelBase //Same as Filename
 		initbodyModel_1();
 	}
 	public void initbodyModel_1(){
-		bodyModel[0] = new ModelRendererTurbo(this, 1, 1, textureX, textureY); // Box 0
-		bodyModel[1] = new ModelRendererTurbo(this, 17, 1, textureX, textureY); // Box 1
-		bodyModel[2] = new ModelRendererTurbo(this, 33, 1, textureX, textureY); // Box 2
-		bodyModel[3] = new ModelRendererTurbo(this, 49, 1, textureX, textureY); // Box 3
+		bodyModel[0] = new ModelRendererTurbo(this, 1, 1, textureX, textureY, "wheel"); // Box 0
+		bodyModel[1] = new ModelRendererTurbo(this, 17, 1, textureX, textureY, "wheel"); // Box 1
+		bodyModel[2] = new ModelRendererTurbo(this, 33, 1, textureX, textureY, "wheel"); // Box 2
+		bodyModel[3] = new ModelRendererTurbo(this, 49, 1, textureX, textureY, "wheel"); // Box 3
 		bodyModel[4] = new ModelRendererTurbo(this, 65, 1, textureX, textureY); // Box 4
 		bodyModel[5] = new ModelRendererTurbo(this, 81, 1, textureX, textureY); // Box 5
 		bodyModel[6] = new ModelRendererTurbo(this, 97, 1, textureX, textureY); // Box 6

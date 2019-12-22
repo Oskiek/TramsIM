@@ -81,6 +81,7 @@ tile.edge_yellowlined.name=Peron széle (sárga csík, csíkozott)
 //in regions
 in.silesia=Sziléziában
 in.poznan=Poznanban
+in.krakow=Krakkóban
 in.belgium=Belgiumban
 in.amsterdam=Amsterdamban
 in.frankfurt=Frankfurtba
@@ -108,6 +109,8 @@ shorttram=Rövid
 //company names DO NOT TRANSLATE UNLESS COMPANY NAMES ARE TRANSLATED IN YOUR LANGUAGE
 
 company.silesia=Tramwaje Śląskie
+company.silesiaOld=Tramwaje Śląskie (Régi)
+comapny.krakow=MPK Kraków
 company.poznan=MPK Poznań
 company.chicago=Chicago Transit Authority
 company.tec=TEC Charleroi

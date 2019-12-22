@@ -1,6 +1,7 @@
 
 package tramsim.models.trains; //Path where the model is located
 
+import ebf.tim.models.StaticModelAnimator;
 import fexcraft.tmt.slim.ModelBase;
 import fexcraft.tmt.slim.ModelRendererTurbo;
 
@@ -117,7 +118,7 @@ public class Konstal105Na135R extends ModelBase //Same as Filename
         bodyModel[95] = new ModelRendererTurbo(this, 113, 25, textureX, textureY); // Box 166
         bodyModel[96] = new ModelRendererTurbo(this, 201, 33, textureX, textureY); // Box 167
         bodyModel[97] = new ModelRendererTurbo(this, 145, 65, textureX, textureY); // Box 168
-        bodyModel[98] = new ModelRendererTurbo(this, 153, 65, textureX, textureY); // Box 169
+        bodyModel[98] = new ModelRendererTurbo(this, 153, 65, textureX, textureY, StaticModelAnimator.tagLamp(0,5)); // Box 169
         bodyModel[99] = new ModelRendererTurbo(this, 113, 105, textureX, textureY); // Box 172
         bodyModel[100] = new ModelRendererTurbo(this, 449, 57, textureX, textureY); // Box 173
         bodyModel[101] = new ModelRendererTurbo(this, 353, 97, textureX, textureY); // Box 175
