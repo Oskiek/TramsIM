@@ -32,35 +32,36 @@ public class ModelBusStop_2_Middle_3 extends ModelBase //Same as Filename
 
 		bodyModel[0].addBox(0F, 0F, 0F, 16, 1, 1, 0F); // Box 1
 		bodyModel[0].setRotationPoint(-1F, -32F, 15F);
-		bodyModel[0].rotateAngleZ = 0.17453293F;
+		bodyModel[0].rotateAngleZ = -0.17453293F;
 
 		bodyModel[1].addBox(0F, 0F, 0F, 1, 29, 1, 0F); // Box 3
 		bodyModel[1].setRotationPoint(13F, -28.5F, 15F);
-		bodyModel[1].rotateAngleZ = 0.17453293F;
+		bodyModel[1].rotateAngleZ = -0.17453293F;
 
 		bodyModel[2].addBox(0F, 0F, 0F, 16, 1, 1, 0F); // Box 4
 		bodyModel[2].setRotationPoint(-1F, -32F, 0F);
-		bodyModel[2].rotateAngleZ = 0.17453293F;
+		bodyModel[2].rotateAngleZ = -0.17453293F;
 
 		bodyModel[3].addBox(0F, 0F, 0F, 1, 29, 1, 0F); // Box 5
 		bodyModel[3].setRotationPoint(13F, -28.5F, 0F);
-		bodyModel[3].rotateAngleZ = 0.17453293F;
+		bodyModel[3].rotateAngleZ = -0.17453293F;
 
 		bodyModel[4].addBox(0F, 0F, 0F, 1, 16, 14, 0F); // Box 6
 		bodyModel[4].setRotationPoint(13.15F, -29.5F, 1F);
-		bodyModel[4].rotateAngleZ = 0.17453293F;
+		bodyModel[4].rotateAngleZ = -0.17453293F;
 
 		bodyModel[5].addBox(0F, 0F, 0F, 19, 0, 16, 0F); // Box 7
 		bodyModel[5].setRotationPoint(-3F, -32.36F, 0F);
-		bodyModel[5].rotateAngleZ = 0.17453293F;
+		bodyModel[5].rotateAngleZ = -0.17453293F;
 
 		bodyModel[6].addBox(0F, 0F, 0F, 0, 29, 14, 0F); // Box 9
 		bodyModel[6].setRotationPoint(13.5F, -28.5F, 1F);
-		bodyModel[6].rotateAngleZ = 0.17453293F;
+		bodyModel[6].rotateAngleZ = -0.17453293F;
 
 		bodyModel[7].addBox(0F, 0F, 0F, 1, 2, 16, 0F); // Box 10
 		bodyModel[7].setRotationPoint(0F, -29F, 0F);
 
+		this.flipAll();
 
 
 	}

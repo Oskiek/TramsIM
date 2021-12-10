@@ -10,15 +10,16 @@ import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
 import ebf.tim.utility.FuelHandler;
+import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import metroim.MetroIM;
+import metroim.models.bogies.G_bogie;
+import metroim.models.bogies.StandardBogie;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import net.minecraftforge.fluids.FluidRegistry;
-import metroim.models.bogies.BVG_G_Bogie;
 import metroim.models.trains.BVG_G;
 
 import java.util.Arrays;
@@ -57,7 +58,7 @@ public class EntityBVG_G extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/bvg_g_berlin.png", "textures/trams/bogies/bvg_g_bogie.png",
+        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/Baureihe_G_motor.png", "textures/trams/bogies/bvg_g_bogie.png",
         "default", "Standard livery used in Berlin.");
     }
 
@@ -85,7 +86,7 @@ public class EntityBVG_G extends TrainBase {
      * @return the type which will define it's features, GUI, a degree of storage (like crafting slots), and a number of other things.
      */
     @Override
-    public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
+    public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
     /**
      * <h2>Max Fuel</h2>
      * @return the maxstorage of fuel the train can store.
@@ -106,7 +107,7 @@ public class EntityBVG_G extends TrainBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.125f,1.75f,1.5f};
+        return new float[]{4.25f,1.75f,1.5f};
     }
 
     /**
@@ -138,13 +139,13 @@ public class EntityBVG_G extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{1.6875f,-0.2f,0},{-1.4375f,-0.2f,0}};}
+        return new float[][]{{1.4875f,-0.25f,0},{-1.4375f,-0.25f,0}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{new BVG_G_Bogie()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{new G_bogie()};}
 
 
     @Override
-    public float[] bogieLengthFromCenter() {
+    public float[] rotationPoints() {
         return new float[]{1.6875f, -1.4375f};
     }
 
@@ -154,7 +155,7 @@ public class EntityBVG_G extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0f,-0.05f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0f,0.05f,0f}}; }
 
     /**
      * <h2>rider sit or stand</h2>
@@ -173,27 +174,24 @@ public class EntityBVG_G extends TrainBase {
     @Override
     public boolean isReinforced(){return false;}
 
-    /**
-     * <h2>Fluid Tank Capacity</h2>
-     */
+
     @Override
-    public int[] getTankCapacity(){return new int[]{91610, 8000};}
+    public int[] getTankCapacity(){return new int[]{8000};}
+    @Override
+    public ItemStackSlot fuelSlot(){
+        return new ItemStackSlot(this, 400,114,32).setOverlay(Items.redstone);
+    }
 
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
         switch (slot){
-            case 400:{return stack!=null && stack.getItem() == Items.redstone;}
+            case 400:{return stack!=null && stack.getItem() ==Items.redstone;}
             default:{return true;}
         }
     }
-
-    /**
-     * <h2>fuel management</h2>
-     * defines how the transport manages burnHeat, both in consuming items, and in managing the burnHeat.
-     */
     @Override
-    public void manageFuel(){
-        fuelHandler.manageElectric(this);
+    public void manageFuel() {
+        this.fuelHandler.manageElectric(this);
     }
 
     /**

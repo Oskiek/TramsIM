@@ -5,19 +5,19 @@ import cpw.mods.fml.relauncher.SideOnly;
 import ebf.tim.TrainsInMotion;
 import ebf.tim.api.SkinRegistry;
 import ebf.tim.api.TrainBase;
-import ebf.tim.entities.GenericRailTransport;
 import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
 import ebf.tim.utility.FuelHandler;
+import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import metroim.MetroIM;
+import metroim.models.bogies.StandardBogie;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import net.minecraftforge.fluids.FluidRegistry;
 import metroim.models.bogies.FGV3700_Bogie;
 import metroim.models.bogies.FGV3700_Gelenk;
 import metroim.models.trains.Motor3700_v1;
@@ -59,8 +59,13 @@ public class Entity3700Motor extends TrainBase {
     @Override
     public void registerSkins(){
         SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/fgv3700_red.png", "textures/trams/bogies/fgv3700_bogie.png",
-        "default", "Standard livery used in Valencia.");
+                "Metrovalencia livery", "livery used in the last years of service in Metrovalencia.");
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/fgv3700_yellow.png","textures/trams/bogies/fgv3700_bogie.png",
+        "FGV livery", "livery used since its introduction in 1988 until the creation of the Product name Metrovalencia .");
     }
+
+    public String getDefaultSkin(){return "metroim:FGV livery";}
+
     public String[][] getTankFilters() {
         return FuelHandler.DefaultTanks.ELECTRIC.value();
     }
@@ -80,27 +85,13 @@ public class Entity3700Motor extends TrainBase {
      */
     @Override
     public int getInventoryRows(){return 1;}
-    /**
-     * <h2>Type</h2>
-     * @return the type which will define it's features, GUI, a degree of storage (like crafting slots), and a number of other things.
-     */
+
     @Override
-    public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
-    /**
-     * <h2>Max Fuel</h2>
-     * @return the maxstorage of fuel the train can store.
-     * @see GenericRailTransport#getMaxFuel() for more info.
-     * @see FuelHandler for information on fuel consumption.
-     */
+    public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
+
     @Override
     public float getMaxFuel(){return 1;}
-    /**
-     * <h2>Rider offset</h2>
-     * @return defines the offsets of the riders in blocks, the first value is how far back, and the second is how high.
-     *     Negative values are towards the front, ground, or right. In that order.
-     *     Each set of floats represents a different rider.
-     *     Only the first 3 values of each set of floats are actually used.
-     */
+
     @Override
     public float[][] getRiderOffsets(){return new float[][]{{-1.84375f,0.9f, 0.25f}};}
 
@@ -139,14 +130,14 @@ public class Entity3700Motor extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{0.5f,-0.05f,0},{-2.25f,-0.05f,0}};}
+        return new float[][]{{0.925f,0f,0},{-2.35f,0f,0}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{ new FGV3700_Bogie(), new FGV3700_Gelenk()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{ new StandardBogie(), new FGV3700_Gelenk()};}
 
 
     @Override
-    public float[] bogieLengthFromCenter() {
-        return new float[]{0.5f,-2.25f};
+    public float[] rotationPoints() {
+        return new float[]{2.1f,-1.85f};
     }
 
     @Override
@@ -155,7 +146,7 @@ public class Entity3700Motor extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0f,0f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0f,0.2f,0f}}; }
 
     /**
      * <h2>rider sit or stand</h2>
@@ -174,36 +165,23 @@ public class Entity3700Motor extends TrainBase {
     @Override
     public boolean isReinforced(){return false;}
 
-    /**
-     * <h2>Fluid Tank Capacity</h2>
-     */
     @Override
-    public int[] getTankCapacity(){return new int[]{91610, 8000};}
+    public int[] getTankCapacity(){return new int[]{8000};}
+    @Override
+    public ItemStackSlot fuelSlot(){
+        return new ItemStackSlot(this, 400,114,32).setOverlay(Items.redstone);
+    }
 
-    /**
-     * <h2>fluid filter</h2>
-     * defines what fluids can and can't be stored in the tank.
-     * for instance if you have a wooden tanker car, you can deny fluids that are fire sources (like lava).
-     */
-
-
-    //todo: maybe make some util functions or something to simplify this stuff?
-    //seems kinda complicated for something that should be the difficulty of a config file.
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
         switch (slot){
-            case 400:{return stack!=null && stack.getItem() == Items.redstone;}
+            case 400:{return stack!=null && stack.getItem() ==Items.redstone;}
             default:{return true;}
         }
     }
-
-    /**
-     * <h2>fuel management</h2>
-     * defines how the transport manages burnHeat, both in consuming items, and in managing the burnHeat.
-     */
     @Override
-    public void manageFuel(){
-        fuelHandler.manageElectric(this);
+    public void manageFuel() {
+        this.fuelHandler.manageElectric(this);
     }
 
     /**

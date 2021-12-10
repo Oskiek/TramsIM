@@ -10,7 +10,8 @@ import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
 import ebf.tim.utility.FuelHandler;
-import ebf.tim.utility.RailUtility;
+import ebf.tim.utility.CommonUtil;
+import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -60,74 +61,43 @@ public class EntityDuewagPT8 extends TrainBase {
     @Override
     public void registerSkins(){
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/duewagPT8_frankfurt.png", "textures/trams/bogies/pt8bogie.png",
-                "company.frankfurt", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.frankfurt") + ".");
-        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/duewagPT8_silesia.png", "textures/trams/bogies/pt8bogie.png",
-                "company.silesia", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.silesia") + ".");
+                "company.frankfurt", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.frankfurt") + ".");
+        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/duewagPT8_silesia.png", "textures/trams/bogies/pt8bogie_szl.png",
+                "company.silesia", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.silesia") + ".");
     }
+
+    public String getDefaultSkin(){
+        return "tramsim:company.silesia";
+    }
+
     @Override
     public String[][] getTankFilters() {
-        return new String[0][];
+        return FuelHandler.DefaultTanks.ELECTRIC.value();
     }
     @Override
     public float transportTopSpeed(){return 80f;}
-    /**
-     * <h2>Bogie Offset</h2>
-     * @return the list of offsets for the bogies, 0 being the center. negative values are towards the front of the train.
-     * Must always go from front to back. First and last values must always be exact opposites.
-     */
     @Override
-    public List<Double> getRenderBogieOffsets(){return  Arrays.asList(0.25, -2.125);}
-    /**
-     * <h2>Inventory Size</h2>
-     * @return the size of the inventory not counting any fuel or crafting slots, those are defined by the type.
-     */
+    public List<Double> getRenderBogieOffsets(){return  Arrays.asList(2.125, -0.25);}
     @Override
     public int getInventoryRows(){return 1;}
-    /**
-     * <h2>Type</h2>
-     * @return the type which will define it's features, GUI, a degree of storage (like crafting slots), and a number of other things.
-     */
     @Override
-    public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
-    /**
-     * <h2>Max Fuel</h2>
-     * @return the maxstorage of fuel the train can store.
-     * @see GenericRailTransport#getMaxFuel() for more info.
-     * @see FuelHandler for information on fuel consumption.
-     */
+    public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
     @Override
     public float getMaxFuel(){return 1;}
-    /**
-     * <h2>Rider offset</h2>
-     * @return defines the offsets of the riders in blocks, the first value is how far back, and the second is how high.
-     *     Negative values are towards the front, ground, or right. In that order.
-     *     Each set of floats represents a different rider.
-     *     Only the first 3 values of each set of floats are actually used.
-     */
     @Override
-    public float[][] getRiderOffsets(){return new float[][]{{-1.75f,1f, 0.1f}, {0f,1f, -0.375f}};}
-
+    public float[][] getRiderOffsets(){return new float[][]{{-1.75f,1f, 0.1f}};}
     @Override
     public float[] getHitboxSize() {
         return new float[]{4.75f,1.75f,1.5f};
     }
-
-    /**
-     * <h2>Acceleration</h2>
-     * <h4>TRAINS ONLY.</h4>
-     * @return defines the acceleration.
-     */
     @Override
     public float transportMetricHorsePower(){return 75f;}
-
     @Override
     public String[] additionalItemText() {
         return null;
     }
-
     @Override
     public float weightKg(){return 11500f;}
-
     @Override
     public ItemStack[] getRecipie() {
         return new ItemStack[]{
@@ -136,38 +106,18 @@ public class EntityDuewagPT8 extends TrainBase {
                 null, null, null
         };
     }
-
-    /**
-     * <h2>Hitbox offsets</h2>
-     * @return defines the positions for the hitboxes in blocks. 0 being the center, negative values being towards the front. the first and last values define the positions of the couplers
-     */
-
-    /**
-     * <h2>Animation radius</h2>
-     * @return defines the radius in microblocks (1/16 of a block) for the piston rotations.
-     */
     @Override
     public float getPistonOffset(){return 0f;}
-    /**
-     * <h2>Smoke offset</h2>
-     * @return defines the array of positions in blocks for smoke.
-     * the first number in the position defines the X/Z axis, negative values are towards the front of the train.
-     * the second number defines the Y position, 0 is the rails, higher values are towards the sky.
-     * the third number defines left to right, negative values are towards the right.
-     * the forth number defines the grayscale color from 255 (white) to 0 (black)
-     * the 5th number is for density, there's no min/max but larger numbers will create more lag.
-     */
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{0.25f,0.f,0},{-2.125f,0.0f,0}};}
+        return new float[][]{{2.125f,-0.11f,0},{-0.25f,-0.11f,0}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{ new PT8_Bogie(), new PT8_Gelenk()};}
-
+    public ModelBase[] bogieModels(){  return new ModelBase[]{ new PT8_Gelenk(), new PT8_Bogie()};}
 
     @Override
-    public float[] bogieLengthFromCenter() {
-        return new float[]{0.25f, -2.125f};
+    public float[] rotationPoints() {
+        return new float[]{2.125f, -0.25f};
     }
 
     @Override
@@ -176,40 +126,23 @@ public class EntityDuewagPT8 extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0f,0f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0f,0.11f,0f}}; }
 
-    /**
-     * <h2>rider sit or stand</h2>
-     * @return true if the rider(s) should be sitting, false if the rider should be standing.
-     */
     @Override
     public boolean shouldRiderSit(){
         return true;
     }
 
-    /**
-     * <h2>reinforced transport</h2>
-     * this returns if this specific entity is reinforced (explosion proof and damage resistant).
-     * since this is a function it can be conditional as well, for instance if it has a specific skin.
-     */
     @Override
     public boolean isReinforced(){return false;}
-
-    /**
-     * <h2>Fluid Tank Capacity</h2>
-     */
     @Override
-    public int[] getTankCapacity(){return new int[]{91610, 8000};}
+    public int[] getTankCapacity(){return new int[]{8000};}
 
+    @Override
+    public ItemStackSlot fuelSlot(){
+        return new ItemStackSlot(this, 400,114,32).setOverlay(Items.redstone);
+    }
 
-    /**
-     * <h2>fluid filter</h2>
-     * defines what fluids can and can't be stored in the tank.
-     * for instance if you have a wooden tanker car, you can deny fluids that are fire sources (like lava).
-     */
-
-    //todo: maybe make some util functions or something to simplify this stuff?
-    //seems kinda complicated for something that should be the difficulty of a config file.
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
         switch (slot){
@@ -218,36 +151,21 @@ public class EntityDuewagPT8 extends TrainBase {
         }
     }
 
-    /**
-     * <h2>fuel management</h2>
-     * defines how the transport manages burnHeat, both in consuming items, and in managing the burnHeat.
-     */
     @Override
     public void manageFuel(){
-        fuelHandler.manageElectric(this);
+        this.fuelHandler.manageElectric(this);
     }
 
-    /**
-     * <h2>pre-assigned values</h2>
-     * These return values are defined from the top of the class.
-     * These should only need modification for advanced users, and even that's a stretch.
-     */
     public Item getItem(){
         return thisItem;
     }
 
-
     @Override
     public Bogie[] getBogieModels(){return null;}
-
-
 
     @Override
     public ModelBase[] getModel(){return new ModelBase[]{new DuewagPT8()};}
 
-    /**
-     * <h2>sets the resource location for sounds, like horn and the sound made for the engine running</h2>
-     */
     @SideOnly(Side.CLIENT)
     @Override
     public ResourceLocation getHorn(){return URIRegistry.SOUND_HORN.getResource("h080brigadelok.ogg");}

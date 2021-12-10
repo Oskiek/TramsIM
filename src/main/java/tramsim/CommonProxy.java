@@ -10,6 +10,7 @@ public class CommonProxy {
 	public Object getRenderEdge(){return null;}
 	public Object getRenderBusStop(){return null;}
 	public Object getRenderTicketMachine(){return null;}
+	public Object getRenderPole(){return null;}
 
 	public void registerRenderers() {
 

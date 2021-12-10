@@ -4,6 +4,7 @@ import ebf.tim.TrainsInMotion;
 import ebf.tim.api.RollingstockBase;
 import ebf.tim.api.SkinRegistry;
 import ebf.tim.items.ItemTransport;
+import ebf.tim.utility.CommonUtil;
 import fexcraft.tmt.slim.ModelBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -18,7 +19,7 @@ import tramsim.models.wagons.RussiaOne_SecondEnd;
 import java.util.List;
 import java.util.UUID;
 
-import static ebf.tim.utility.RailUtility.DefineStack;
+import static ebf.tim.utility.CommonUtil.DefineStack;
 
 public class EntityRussiaOne_Middle extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
@@ -49,7 +50,7 @@ public class EntityRussiaOne_Middle extends RollingstockBase {
      * <h2>Bogie Offset</h2>
      */
     @Override
-    public float[] bogieLengthFromCenter() {
+    public float[] rotationPoints() {
         return new float[]{2.1875f, -2.1875f};
     }
 
@@ -66,9 +67,12 @@ public class EntityRussiaOne_Middle extends RollingstockBase {
     @Override
     public void registerSkins(){
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/russia_one_middle.png", "textures/trams/bogies/russia_one_bogie.png",
-                "default", "Standard livery used in Russia.");
+                "company.uralvagonzavod", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.russia") + ".");
     }
 
+    public String getDefaultSkin(){
+        return "tramsim:company.uralvagonzavod";
+    }
 
     @Override
     public boolean isReinforced() {
@@ -83,11 +87,6 @@ public class EntityRussiaOne_Middle extends RollingstockBase {
     @Override
     public String[][] getTankFilters() {
         return (String[][])null;
-    }
-
-    @Override
-    public int getRFCapacity() {
-        return 0;
     }
 
     @Override

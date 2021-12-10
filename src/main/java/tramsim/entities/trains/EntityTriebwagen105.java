@@ -10,7 +10,8 @@ import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
 import ebf.tim.utility.FuelHandler;
-import ebf.tim.utility.RailUtility;
+import ebf.tim.utility.CommonUtil;
+import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -58,11 +59,16 @@ public class EntityTriebwagen105 extends TrainBase {
     @Override
     public void registerSkins(){
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/triebwagen105.png",
-        "company.elberfeld", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.wuppertal") + ".");
+        "company.elberfeld", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.wuppertal") + ".");
     }
+
+    public String getDefaultSkin(){
+        return "tramsim:company.elberfeld";
+    }
+
     @Override
     public String[][] getTankFilters() {
-        return new String[0][];
+        return FuelHandler.DefaultTanks.ELECTRIC.value();
     }
     @Override
     public float transportTopSpeed(){return 55f;}
@@ -84,7 +90,7 @@ public class EntityTriebwagen105 extends TrainBase {
      * @return the type which will define it's features, GUI, a degree of storage (like crafting slots), and a number of other things.
      */
     @Override
-    public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
+    public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
     /**
      * <h2>Max Fuel</h2>
      * @return the maxstorage of fuel the train can store.
@@ -165,7 +171,7 @@ public class EntityTriebwagen105 extends TrainBase {
     }
 
     @Override
-    public float[] bogieLengthFromCenter() {
+    public float[] rotationPoints() {
         return new float[]{0.75f, -0.75f};
     }
 
@@ -195,22 +201,14 @@ public class EntityTriebwagen105 extends TrainBase {
      */
     @Override
     public boolean isReinforced(){return false;}
-
-    /**
-     * <h2>Fluid Tank Capacity</h2>
-     */
     @Override
-    public int[] getTankCapacity(){return new int[]{9161, 800};}
+    public int[] getTankCapacity(){return new int[]{8000};}
 
+    @Override
+    public ItemStackSlot fuelSlot(){
+        return new ItemStackSlot(this, 400,114,32).setOverlay(Items.redstone);
+    }
 
-    /**
-     * <h2>fluid filter</h2>
-     * defines what fluids can and can't be stored in the tank.
-     * for instance if you have a wooden tanker car, you can deny fluids that are fire sources (like lava).
-     */
-
-    //todo: maybe make some util functions or something to simplify this stuff?
-    //seems kinda complicated for something that should be the difficulty of a config file.
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
         switch (slot){
@@ -219,13 +217,9 @@ public class EntityTriebwagen105 extends TrainBase {
         }
     }
 
-    /**
-     * <h2>fuel management</h2>
-     * defines how the transport manages burnHeat, both in consuming items, and in managing the burnHeat.
-     */
     @Override
     public void manageFuel(){
-        fuelHandler.manageElectric(this);
+        this.fuelHandler.manageElectric(this);
     }
 
 

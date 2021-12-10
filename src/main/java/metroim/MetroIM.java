@@ -39,25 +39,43 @@ public class MetroIM {
     }
     public static GenericRailTransport[] listElectricTrams() {
         return new GenericRailTransport[]{
-/*/Pre-release 1 blocked*/                new Entity4300Motor(null),
-                new Entity3700Motor(null),
+                                          new Entity4300Motor(null),
+                                          new Entity3700Motor(null),
 /*/Pre-release 1 blocked*/                new Entity3700Motor_v2(null),
 /*/Pre-release 1 blocked*/                new EntityBVG_G(null),
-                new Entity3600Motor(null),
-/*/Pre-release 1 blocked*/                 new EntityEuskotren200(null),
-/*/Pre-release 1 blocked*/                 new EntityRenfe440(null)
+/*/Pre-release 1 blocked*/                new Entity3600Motor(null),
+/*/Pre-release 1 blocked*/                new EntityB80DMotor(null),
+                /*/Pre-release 1 blocked*/                new EntityKVB2300Motor(null),
+                                          new Entity5000Motor(null),
+/*/Pre-release 1 blocked*/                new EntityB100SMotor(null),
+/*/Pre-release 1 blocked*/                new EntityBN_S1_S2Motor(null),
+                                          new EntityTMB3000Motor(null),
+/*/Pre-release 1 blocked*/                new Entity2000Motor(null),
+/*/Pre-release 1 blocked*/                new EntityViennaU(null),
+/*/Pre-release 1 blocked*/                new EntityMunichA(null),
+                /*/Pre-release 1 blocked*/                new EntityB80C(null),
         };
     }
     public static GenericRailTransport[] listWagonTrams() {
         return new GenericRailTransport[]{
-/*/Pre-release 1 blocked*/                new EntityFGV4300_Middle_Bogie(null),
-/*/Pre-release 1 blocked*/                new EntityFGV4300_Tail(null),
+                new EntityFGV4300_Middle_Bogie(null),
+                new EntityFGV4300_Tail(null),
                 new EntityFGV3700_Tail_v1(null),
-/*/Pre-release 1 blocked*/                new EntityFGV3700_Tail_v2(null),
-                new EntityFGV3600_Tail(null),
-                new EntityFGV3600_Middle(null),
-/*/Pre-release 1 blocked*/                 new EntityEuskotren200Middle(null)
-
+/*/Pre-release 1 blocked*/               new EntityFGV3700_Tail_v2(null),
+/*/Pre-release 1 blocked*/                new EntityFGV3600_Tail(null),
+/*/Pre-release 1 blocked*/                new EntityFGV3600_Middle(null),
+/*/Pre-release 1 blocked*/                new EntityB80DTail(null),
+                /*/Pre-release 1 blocked*/                new EntityKVB2300tail(null),
+                                          new Entity5000_Tail(null),
+/*/Pre-release 1 blocked*/                new EntityB100STail(null),
+/*/Pre-release 1 blocked*/                new EntityBN_S1_S2Tail(null),
+                                          new EntityTMB3000_Tail(null),
+                                          new EntityTMB3000_Middle(null),
+/*/Pre-release 1 blocked*/                new Entity2000_Tail(null),
+/*/Pre-release 1 blocked*/                new Entity3900motor(null),
+/*/Pre-release 1 blocked*/                new Entity3900middle(null),
+                /*/Pre-release 1 blocked*/                new EntityMunichA_tail(null),
+                /*/Pre-release 1 blocked*/                new EntityB80C_tail(null),
         };
     }
 
@@ -67,7 +85,7 @@ public class MetroIM {
 
 
         metroimtabvehicle = new TiMTab("Metro in Motion vehicles" , MODID ,"metroimTabVeh");
-        metroimtabblock = new TiMTab("Metro in Motion blocks", MODID, "metroimTabBlo");
+        //metroimtabblock = new TiMTab("Metro in Motion blocks", MODID, "metroimTabBlo");
 
         TiMGenericRegistry.registerTransports(MODID, listElectricTrams(), (Object)null);
         TiMGenericRegistry.registerTransports(MODID, listWagonTrams(), (Object)null);

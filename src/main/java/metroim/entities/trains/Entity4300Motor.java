@@ -5,20 +5,20 @@ import cpw.mods.fml.relauncher.SideOnly;
 import ebf.tim.TrainsInMotion;
 import ebf.tim.api.SkinRegistry;
 import ebf.tim.api.TrainBase;
-import ebf.tim.entities.GenericRailTransport;
 import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
 import ebf.tim.utility.FuelHandler;
+import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import metroim.MetroIM;
+import metroim.models.bogies.StandardBogie;
+import metroim.models.bogies.StandardBogie2;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import net.minecraftforge.fluids.FluidRegistry;
-import metroim.models.bogies.FGV4300_Bogie;
 import metroim.models.trains.Motor4300;
 
 import java.util.Arrays;
@@ -30,7 +30,7 @@ public class Entity4300Motor extends TrainBase {
 
 
 
-    public static final Item thisItem = new ItemTransport(new Entity4300Motor(null), MetroIM.MODID,MetroIM.metroimtabvehicle);
+    public static final Item thisItem = new ItemTransport(new Entity4300Motor(null), MetroIM.MODID, MetroIM.metroimtabvehicle);
 
 
     public Entity4300Motor(UUID owner, World world, double xPos, double yPos, double zPos) {
@@ -57,8 +57,10 @@ public class Entity4300Motor extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/4300_motorcar.png", "textures/trams/bogies/fgv4300_bogie.png",
-        "default", "Standard livery used in Valencia.");
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/4300_motorcar.png", "textures/trams/bogies/StandardBogie2.png",
+        "company.valencia", "Standard livery used in Valencia.");
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/4300_motorcar_ph.png", "textures/trams/bogies/StandardBogie2.png",
+                "Custom livery", "Use this one as a placeholder for your own livery :D");
     }
 
     public String[][] getTankFilters() {
@@ -72,7 +74,7 @@ public class Entity4300Motor extends TrainBase {
     @Override
     public int getInventoryRows(){return 1;}
     @Override
-    public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
+    public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
     @Override
     public float getMaxFuel(){return 1;}
     @Override
@@ -80,7 +82,7 @@ public class Entity4300Motor extends TrainBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.125f,1.75f,1.5f};
+        return new float[]{4.325f,1.75f,1.5f};
     }
 
     @Override
@@ -108,14 +110,14 @@ public class Entity4300Motor extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{0.75f,0.f,0},{-1.375f,0.0f,0}};}
+        return new float[][]{{1.05f,0.0f,0},{-1.275f,0.0f,0}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{new FGV4300_Bogie()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{new StandardBogie2()};}
 
 
     @Override
-    public float[] bogieLengthFromCenter() {
-        return new float[]{0.75f, -1.375f};
+    public float[] rotationPoints() {
+        return new float[]{1.75f, -1.75f};
     }
 
     @Override
@@ -124,7 +126,7 @@ public class Entity4300Motor extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0f,0.1f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{-0.2f,0.2f,0f}}; }
 
     /**
      * <h2>rider sit or stand</h2>
@@ -143,37 +145,25 @@ public class Entity4300Motor extends TrainBase {
     @Override
     public boolean isReinforced(){return false;}
 
-    /**
-     * <h2>Fluid Tank Capacity</h2>
-     */
     @Override
-    public int[] getTankCapacity(){return new int[]{91610, 8000};}
+    public int[] getTankCapacity(){return new int[]{8000};}
+    @Override
+    public ItemStackSlot fuelSlot(){
+        return new ItemStackSlot(this, 400,114,32).setOverlay(Items.redstone);
+    }
 
-
-    //todo: maybe make some util functions or something to simplify this stuff?
-    //seems kinda complicated for something that should be the difficulty of a config file.
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
         switch (slot){
-            case 400:{return stack!=null && stack.getItem() == Items.redstone;}
+            case 400:{return stack!=null && stack.getItem() ==Items.redstone;}
             default:{return true;}
         }
     }
-
-    /**
-     * <h2>fuel management</h2>
-     * defines how the transport manages burnHeat, both in consuming items, and in managing the burnHeat.
-     */
     @Override
-    public void manageFuel(){
-        fuelHandler.manageElectric(this);
+    public void manageFuel() {
+        this.fuelHandler.manageElectric(this);
     }
 
-    /**
-     * <h2>pre-assigned values</h2>
-     * These return values are defined from the top of the class.
-     * These should only need modification for advanced users, and even that's a stretch.
-     */
     public Item getItem(){
         return thisItem;
     }

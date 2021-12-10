@@ -9,7 +9,8 @@ import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
 import ebf.tim.utility.FuelHandler;
-import ebf.tim.utility.RailUtility;
+import ebf.tim.utility.CommonUtil;
+import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -61,7 +62,11 @@ public class EntityLohnerE1 extends TrainBase {
     @Override
     public void registerSkins(){
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/lohner_e1_front_darmstadt.png", "textures/trams/bogies/lohner_e1_bogie_darmstadt.png",
-                "company.tec", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.belgium") + ".");
+                "company.darmstadt", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.darmstadt") + ".");
+    }
+
+    public String getDefaultSkin(){
+        return "tramsim:company.darmstadt";
     }
 
     public String[][] getTankFilters() {
@@ -77,7 +82,7 @@ public class EntityLohnerE1 extends TrainBase {
     public int getInventoryRows(){return 1;}
 
     @Override
-    public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
+    public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
 
     @Override
     public float getMaxFuel(){return 1;}
@@ -115,13 +120,13 @@ public class EntityLohnerE1 extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{0.625f,-0.1f,0},{-2.25f,-0.1f,0}};}
+        return new float[][]{{0.625f,-0.1f,0},{-2.25f,-0.1625f,0}};}
     @Override
     public ModelBase[] bogieModels(){  return new ModelBase[]{new LohnerE1_Bogie(), new LohnerE1_Gelenk()};}
 
 
     @Override
-    public float[] bogieLengthFromCenter() {
+    public float[] rotationPoints() {
         return new float[]{0.625f, -2.25f};
     }
 
@@ -131,7 +136,7 @@ public class EntityLohnerE1 extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0f,-0.15f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0f,-0.0625f,0f}}; }
 
     @Override
     public boolean shouldRiderSit(){
@@ -144,6 +149,10 @@ public class EntityLohnerE1 extends TrainBase {
     @Override
     public int[] getTankCapacity(){return new int[]{8000};}
 
+    @Override
+    public ItemStackSlot fuelSlot(){
+        return new ItemStackSlot(this, 400,114,32).setOverlay(Items.redstone);
+    }
 
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
@@ -155,7 +164,7 @@ public class EntityLohnerE1 extends TrainBase {
 
     @Override
     public void manageFuel(){
-        fuelHandler.manageElectric(this);
+        this.fuelHandler.manageElectric(this);
     }
 
     public Item getItem(){

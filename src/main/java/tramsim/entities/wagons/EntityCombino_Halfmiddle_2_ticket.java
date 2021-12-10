@@ -18,7 +18,7 @@ import tramsim.models.wagons.Combino_Halfmiddle_2_ticket;
 import java.util.List;
 import java.util.UUID;
 
-import static ebf.tim.utility.RailUtility.DefineStack;
+import static ebf.tim.utility.CommonUtil.DefineStack;
 
 public class EntityCombino_Halfmiddle_2_ticket extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
@@ -49,7 +49,7 @@ public class EntityCombino_Halfmiddle_2_ticket extends RollingstockBase {
      * <h2>Bogie Offset</h2>
      */
     @Override
-    public float[] bogieLengthFromCenter() {
+    public float[] rotationPoints() {
         return new float[]{2.05f, -2.05f};
     }
 
@@ -83,11 +83,6 @@ public class EntityCombino_Halfmiddle_2_ticket extends RollingstockBase {
     @Override
     public String[][] getTankFilters() {
         return (String[][])null;
-    }
-
-    @Override
-    public int getRFCapacity() {
-        return 0;
     }
 
     @Override

@@ -6,26 +6,21 @@ item.TatraT3.name=Tatra T3
 item.DuewagPT8.name=Duewag PT8
 item.ModerusAlfa.name=Moderus Alfa
 item.BombardierCR4000.name=Bombardier CR4000
-item.FGV4300_Motor.name=Metrovalencia FGV 4300
-item.FGV3700_Motor.name=Metrovalencia FGV 3700 Gen. I
-item.FGV3700_Motor_v2.name=Metrovalencia FGV 3700 Gen. II
 item.BNLRV_A.name=BN LRV
 item.PCC.name=PCC
-item.BVG_G.name=BVG Class G
 item.TatraT3Short.name=Very Small Tatra T3
-item.FGV3600_Motor.name=Metrovalencia FGV 3600
 item.Combino_end.name=Siemens Combino
 item.KonstalN.name=Konstal N
 item.RussiaOne_end.name=Russia One
 item.Triebwagen105.name=Triebwagen 105
+item.TatraK2_End.name=Tatra K2
+item.LohnerE1.name=Lohner E1
+item.TatraT4.name=Tatra T4
+item.TatraK5.name=Tatra K5
+item.ModerusBeta_End.name=Moderus Beta
 
 item.DuewagPT8_MiddleSegment.name=Duewag PT8 (Middle)
-item.FGV4300_Middle_wbogies.name=Metrovalencia FGV 4300 (Middle)
-item.FGV3700_Tail.name=Metrovalencia FGV 3700 Gen. I (Tail)
-item.FGV3700_Tail_v2.name=Metrovalencia FGV 3700 Gen. II (Tail)
 item.BNLRV_B.name=BN LRV (Tail)
-item.FGV4300_Tail.name=Metrovalencia FGV 4300 (Tail)
-item.FGV3600_Tail.name=Metrovalencia FGV 3600 (Tail)
 item.Combino_Middle.name=Siemens Combino (Middle)
 item.Combino_Halfmiddle_1.name=Siemens Combino (Halfmiddle 1)
 item.Combino_Halfmiddle_2.name=Siemens Combino (Halfmiddle 2)
@@ -33,7 +28,12 @@ item.Combino_Halfmiddle_1_bidir.name=Siemens Combino (Halfmiddle 1, bi-direction
 item.Combino_Halfmiddle_2_ticket.name=Siemens Combino (Halfmiddle 2 with ticket booth)
 item.RussiaOne_middle.name=Russia One (Middle)
 item.RussiaOne_end_nopanto.name=Russia One (Tail)
-item.FGV3600_Middle.name=Metrovalencia FGV 3600 (Middle)
+item.TatraK2_Back.name=Tatra K2 (Tail)
+item.LohnerE1_Back.name=Lohner E1 (Tail)
+item.TatraK5_Back.name=Tatra K5 (Tail)
+item.Tatra_B4.name=Tatra B4
+item.ModerusBeta_Middle.name=Moderus Beta (Middle)
+
 
 //shelters
 tile.busstop_2_left_1.name=Shelter (left end)
@@ -42,10 +42,10 @@ tile.busstop_2_middle_1.name=Shelter (middle, glass with bench)
 tile.busstop_2_middle_2.name=Shelter (middle, glass)
 tile.busstop_2_middle_3.name=Shelter (middle, glass with timetable)
 tile.busstop_2_middle_4.name=Shelter (middle, pattern)
-tile.busstop_2_middle_5.name=Shelter (middle, pattern with timetable)
-tile.busstop_3_left_1.name=Shelter (left end)
-tile.busstop_3_right_1.name=Shelter (right end)
-tile.busstop_3_middle_1.name=Shelter (middle)
+tile.busstop_2_middle_5.name=Shelter (middle, pattern with bench)
+tile.busstop_3_left_1.name=Red Shelter (left end)
+tile.busstop_3_right_1.name=Red Shelter (right end)
+tile.busstop_3_middle_1.name=Red Shelter (middle)
 
 //ticket machines
 tile.ticketmachine_kzkgop.name=Ticket machine (KZKGOP)
@@ -54,7 +54,7 @@ tile.ticketmachine_brno.name=Ticket machine (IDSJMK)
 //countries
 menu.item.poland=Poland
 menu.item.czechia=Czechia
-menu.item.silesia=NotPoland
+menu.item.silesia=Silesia
 menu.item.germany=Germany
 menu.item.spain=Spain
 menu.item.usa=United States
@@ -96,6 +96,14 @@ in.riga=in Riga
 in.ostrava=in Ostrava
 in.liberec=in Liberec
 in.wuppertal=in Wuppertal
+in.russia=in Russia
+in.odessa=in Odessa
+in.darmstadt=in Darmstadt
+in.bucharest=in Bucharest
+in.zagreb=in Zagreb
+in.dresden=in Dresden
+in.lviv=in Lviv
+in.cairo=in Cairo
 
 //livery descriptions
 standardlivery=Standard livery used
@@ -109,7 +117,7 @@ shorttram=Short
 //company names DO NOT TRANSLATE UNLESS COMPANY NAMES ARE TRANSLATED IN YOUR LANGUAGE
 company.silesia=Tramwaje Śląskie
 company.silesiaOld=Tramwaje Śląskie (Old)
-comapny.krakow=MPK Kraków
+company.krakow=MPK Kraków
 company.poznan=MPK Poznań
 company.chicago=Chicago Transit Authority
 company.tec=TEC Charleroi
@@ -118,7 +126,8 @@ company.frankfurt=Stadtwerke Verkehrsgesellschaft Frankfurt am Main
 company.vbbr=Verkehrsbetriebe Brandenburg an der Havel
 company.elblag=Tramwaje Elbląskie
 company.olomouc=Dopravní podnik města Olomouce
-company.brno=Integrovaný Dopravní Systém Jihomoravského Kraje
+company.liberec=Dopravní podnik měst Liberce a Jablonce nad Nisou
+company.brno=Dopravní podnik města Brna
 company.ostrava=Dopravní podnik Ostrava
 company.praha=Dopravní podnik hlavního města Prahy
 company.most=Dopravní podnik měst Mostu a Litvínova
@@ -126,3 +135,13 @@ company.odessa=КП «Одесміськелектротранс»
 company.riga=Rīgas Satiksme
 company.halle=Hallesche Verkehrs-AG
 company.elberfeld=Wuppertaler Schwebebahn
+company.uralvagonzavod=Uralvagonzavod
+company.darmstadt=HEAG mobilo
+company.bucharest=Societatea de Transport București
+company.zagreb=Zagrebački električni tramvaj
+company.dresden=Dresdner Verkehrsbetriebe AG
+company.lviv=ЛКП «Львівелектротранс»
+company.cairo 1=هيئة النقل العام بالقاهرة
+company.cairo 2=هيئة النقل العام بالقاهرة
+company.unknown=???
+

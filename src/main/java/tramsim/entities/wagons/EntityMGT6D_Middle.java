@@ -4,6 +4,7 @@ import ebf.tim.TrainsInMotion;
 import ebf.tim.api.RollingstockBase;
 import ebf.tim.api.SkinRegistry;
 import ebf.tim.items.ItemTransport;
+import ebf.tim.utility.CommonUtil;
 import fexcraft.tmt.slim.ModelBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -11,15 +12,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import tramsim.TramsIM;
-import tramsim.models.bogies.BNLRV_Bogie;
-import tramsim.models.bogies.MGT6D_Bogie;
-import tramsim.models.wagons.BNLRV_B;
+import tramsim.models.bogies.MGT6D_Bogie2;
 import tramsim.models.wagons.MGT6D_Middle;
 
 import java.util.List;
 import java.util.UUID;
 
-import static ebf.tim.utility.RailUtility.DefineStack;
+import static ebf.tim.utility.CommonUtil.DefineStack;
 
 public class EntityMGT6D_Middle extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
@@ -43,14 +42,14 @@ public class EntityMGT6D_Middle extends RollingstockBase {
         return new float[][]{{1f,0f,0},{-1f,0f,0f}};}
 
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{new MGT6D_Bogie()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{new MGT6D_Bogie2()};}
 
     /**
      * <h2>Bogie Offset</h2>
      */
     @Override
-    public float[] bogieLengthFromCenter() {
-        return new float[]{1f, -1f};
+    public float[] rotationPoints() {
+        return new float[]{1.75f, -1.75f};
     }
 
     @Override
@@ -65,11 +64,13 @@ public class EntityMGT6D_Middle extends RollingstockBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/mgt6d_middle.png", "textures/trams/bogies/mgt6d_bogie.png",
-                "default", "Standard livery used in Germany.");
+        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/mgt6d_middle_bogestra.png", "textures/trams/bogies/mgt6d_bogie.png",
+                "company.bogestra", CommonUtil.translate("description.mgt6d.bogestra"));
     }
 
-
+    public String getDefaultSkin(){
+        return "tramsim:company.bogestra";
+    }
     @Override
     public boolean isReinforced() {
         return false;
@@ -83,11 +84,6 @@ public class EntityMGT6D_Middle extends RollingstockBase {
     @Override
     public String[][] getTankFilters() {
         return (String[][])null;
-    }
-
-    @Override
-    public int getRFCapacity() {
-        return 0;
     }
 
     @Override
@@ -121,7 +117,7 @@ public class EntityMGT6D_Middle extends RollingstockBase {
 
     @Override
     public String transportYear() {
-        return "1988+";
+        return "1996+";
     }
 
     @Override

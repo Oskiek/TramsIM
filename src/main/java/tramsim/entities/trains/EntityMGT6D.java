@@ -9,7 +9,9 @@ import ebf.tim.entities.GenericRailTransport;
 import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
+import ebf.tim.utility.CommonUtil;
 import ebf.tim.utility.FuelHandler;
+import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -49,7 +51,7 @@ public class EntityMGT6D extends TrainBase {
     @Override
     public String transportcountry(){return "Germany";}
     @Override
-    public String transportYear(){return "1988+";}
+    public String transportYear(){return "1992+";}
     @Override
     public String transportFuelType() {
         return "Electric";
@@ -61,12 +63,16 @@ public class EntityMGT6D extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/mgt6d.png", "textures/trams/bogies/mgt6d_bogie.png",
-        "company.vbbr", "Standard livery used in Germany.");
+        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/mgt6d_bogestra.png", "textures/trams/bogies/mgt6d_bogie.png",
+        "company.bogestra",  CommonUtil.translate("description.mgt6d.bogestra"));
+    }
+
+    public String getDefaultSkin(){
+        return "tramsim:company.bogestra";
     }
     @Override
     public String[][] getTankFilters() {
-        return new String[0][];
+        return FuelHandler.DefaultTanks.ELECTRIC.value();
     }
     @Override
     public float transportTopSpeed(){return 70f;}
@@ -88,7 +94,7 @@ public class EntityMGT6D extends TrainBase {
      * @return the type which will define it's features, GUI, a degree of storage (like crafting slots), and a number of other things.
      */
     @Override
-    public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
+    public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
     /**
      * <h2>Max Fuel</h2>
      * @return the maxstorage of fuel the train can store.
@@ -160,14 +166,14 @@ public class EntityMGT6D extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{0.375f,-0.1f,0},{-2f,-0.1f,0}};}
+        return new float[][]{{0.5f,0f,0},{-2f,0f,0}};}
     @Override
     public ModelBase[] bogieModels(){  return new ModelBase[]{new MGT6D_Bogie(), new NullBogiePlaceHolder()};}
 
 
     @Override
-    public float[] bogieLengthFromCenter() {
-        return new float[]{0.375f, -2f};
+    public float[] rotationPoints() {
+        return new float[]{1.575f, -1f};
     }
 
     @Override
@@ -195,20 +201,14 @@ public class EntityMGT6D extends TrainBase {
     @Override
     public boolean isReinforced(){return false;}
 
-    /**
-     * <h2>Fluid Tank Capacity</h2>
-     */
     @Override
-    public int[] getTankCapacity(){return new int[]{91610, 8000};}
+    public int[] getTankCapacity(){return new int[]{8000};}
 
-    /**
-     * <h2>fluid filter</h2>
-     * defines what fluids can and can't be stored in the tank.
-     * for instance if you have a wooden tanker car, you can deny fluids that are fire sources (like lava).
-     */
+    @Override
+    public ItemStackSlot fuelSlot(){
+        return new ItemStackSlot(this, 400,114,32).setOverlay(Items.redstone);
+    }
 
-    //todo: maybe make some util functions or something to simplify this stuff?
-    //seems kinda complicated for something that should be the difficulty of a config file.
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
         switch (slot){
@@ -217,20 +217,6 @@ public class EntityMGT6D extends TrainBase {
         }
     }
 
-    /**
-     * <h2>fuel management</h2>
-     * defines how the transport manages burnHeat, both in consuming items, and in managing the burnHeat.
-     */
-    @Override
-    public void manageFuel(){
-        fuelHandler.manageElectric(this);
-    }
-
-    /**
-     * <h2>pre-assigned values</h2>
-     * These return values are defined from the top of the class.
-     * These should only need modification for advanced users, and even that's a stretch.
-     */
     public Item getItem(){
         return thisItem;
     }

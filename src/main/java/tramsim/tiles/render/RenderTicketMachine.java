@@ -37,7 +37,7 @@ public class RenderTicketMachine extends TileEntitySpecialRenderer {
             GL11.glRotatef(meta * (-90), 0.0F, 0.0F, 1.0F);
             GL11.glPopMatrix();
     }
-   
+
     @Override
     public void renderTileEntityAt(TileEntity te, double x, double y, double z, float scale)
     {
@@ -64,6 +64,7 @@ public class RenderTicketMachine extends TileEntitySpecialRenderer {
      //This rotation part is very important! Without it, your model will render upside-down! And for some reason you DO need PushMatrix again!                      
             GL11.glPushMatrix();
             GL11.glRotatef(180F, 0.0F, 0.0F, 1.0F);
+            GL11.glScalef(0.8F,0.9F,0.8F);
             
                 int rotation = 0;
                 switch (te.getBlockMetadata() % 4) {

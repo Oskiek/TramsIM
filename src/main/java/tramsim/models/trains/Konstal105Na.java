@@ -1,11 +1,9 @@
 
 package tramsim.models.trains; //Path where the model is located
 
-import ebf.tim.models.StaticModelAnimator;
+import ebf.tim.render.StaticModelAnimator;
 import fexcraft.tmt.slim.ModelBase;
 import fexcraft.tmt.slim.ModelRendererTurbo;
-
-
 
 public class Konstal105Na extends ModelBase //Same as Filename
 {
@@ -261,8 +259,8 @@ public class Konstal105Na extends ModelBase //Same as Filename
 		bodyModel[237] = new ModelRendererTurbo(this, 41, 33, textureX, textureY); // Box 250
 		bodyModel[238] = new ModelRendererTurbo(this, 41, 33, textureX, textureY); // Box 251
 		bodyModel[239] = new ModelRendererTurbo(this, 89, 57, textureX, textureY); // Box 252
-		bodyModel[240] = new ModelRendererTurbo(this, 0, 0, textureX, textureY, StaticModelAnimator.tagLamp(0,5)); // LightPoint1
-		bodyModel[241] = new ModelRendererTurbo(this, 0, 0, textureX, textureY, StaticModelAnimator.tagLamp(0,5)); // LightPoint2
+		bodyModel[240] = new ModelRendererTurbo(this, 0, 0, textureX, textureY); // LightPoint1
+		bodyModel[241] = new ModelRendererTurbo(this, 0, 0, textureX, textureY); // LightPoint2
 
 		bodyModel[0].addShapeBox(0F, 0F, 0F, 33, 1, 20, 0F,0F, 0F, -0.35F, 0F, 0F, -0.35F, 0F, 0F, -0.35F, 0F, 0F, -0.35F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F); // Box 0
 		bodyModel[0].setRotationPoint(-16F, 6F, -10F);
@@ -988,10 +986,10 @@ public class Konstal105Na extends ModelBase //Same as Filename
 		bodyModel[239].setRotationPoint(-24.5F, -23F, -1F);
 
 		bodyModel[240].addBox(0F, 0F, 0F, 0, 0, 0, 0F); // LightPoint1
-		bodyModel[240].setRotationPoint(-60.5F, -2F, 3F);
+		bodyModel[240].setRotationPoint(-61.5F, 0F, 3.5F);
 
 		bodyModel[241].addBox(0F, 0F, 0F, 0, 0, 0, 0F); // LightPoint2
-		bodyModel[241].setRotationPoint(-60.5F, -2F, -4F);
+		bodyModel[241].setRotationPoint(-61.5F, 0F, -3.5F);
 		this.flipAll();
 	}
 }

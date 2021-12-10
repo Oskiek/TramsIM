@@ -17,7 +17,7 @@ import metroim.models.wagons.Tail3700_v2;
 import java.util.List;
 import java.util.UUID;
 
-import static ebf.tim.utility.RailUtility.DefineStack;
+import static ebf.tim.utility.CommonUtil.DefineStack;
 
 public class EntityFGV3700_Tail_v2 extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
@@ -49,8 +49,8 @@ public class EntityFGV3700_Tail_v2 extends RollingstockBase {
      * <h2>Bogie Offset</h2>
      */
     @Override
-    public float[] bogieLengthFromCenter() {
-        return new float[]{0.5f, -2.25f};
+    public float[] rotationPoints() {
+        return new float[]{1.5f, -1.85f};
     }
 
     @Override
@@ -60,13 +60,13 @@ public class EntityFGV3700_Tail_v2 extends RollingstockBase {
 
     @Override
     public float[][] modelOffsets() {
-        return new float[][]{{0f,0.1f,0f}};
+        return new float[][]{{0f,0.2f,0f}};
     }
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/fgv3700_red_v2.png", "textures/trams/bogies/fgv3700_bogie.png",
-                "default", "Standard livery used in Valencia.");
+        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/fgv3700_yellow_v2.png", "textures/trams/bogies/fgv3700_bogie.png",
+                "FGV", "Standard livery used in Valencia.");
     }
 
 
@@ -83,11 +83,6 @@ public class EntityFGV3700_Tail_v2 extends RollingstockBase {
     @Override
     public String[][] getTankFilters() {
         return (String[][])null;
-    }
-
-    @Override
-    public int getRFCapacity() {
-        return 0;
     }
 
     @Override

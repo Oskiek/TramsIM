@@ -10,10 +10,10 @@ public class ClientProxy extends CommonProxy {
 
 
 		registerItemRenderers();
-		
+
 	}
 	public void registerItemRenderers()
 	{
-		
+
 	}
 }

@@ -4,6 +4,8 @@ item.FGV3700_Motor.name=Metrovalencia FGV 3700 Gen. I
 item.FGV3700_Motor_v2.name=Metrovalencia FGV 3700 Gen. II
 item.BVG_G.name=BVG Class G
 item.FGV3600_Motor.name=Metrovalencia FGV 3600
+item.TMB3000_Motor.name=TMB 3000
+item.Metro5000_Motor.name=Metro Madrid 5000
 
 item.FGV4300_Middle_wbogies.name=Metrovalencia FGV 4300 (Middle)
 item.FGV3700_Tail.name=Metrovalencia FGV 3700 Gen. I (Tail)
@@ -11,7 +13,20 @@ item.FGV3700_Tail_v2.name=Metrovalencia FGV 3700 Gen. II (Tail)
 item.FGV4300_Tail.name=Metrovalencia FGV 4300 (Tail)
 item.FGV3600_Tail.name=Metrovalencia FGV 3600 (Tail)
 item.FGV3600_Middle.name=Metrovalencia FGV 3600 (Middle)
+item.Euskotren200_Middle.name=Euskotren 200 (Middle)
+item.TMB3000_Middle.name=TMB 3000 (Middle)
+item.TMB3000_Tail.name=TMB 3000 (Tail)
+item.Metro5000_Tail.name=Metro Madrid 5000
 
 //tabs
 item.metroimTabVeh=Metro in Motion - Vehicles
 item.metroimTabBlo=Metro in Motion - Blocks
+
+//companies
+company.valencia=Metrovalencia
+company.valencia2=Metrovalencia
+company.madrid=Metro Madrid
+company.madrid2=Metro Madrid
+company.barcelona=Transports Metropolitans de Barcelona
+company.barcelona2=Transports Metropolitans de Barcelona
+

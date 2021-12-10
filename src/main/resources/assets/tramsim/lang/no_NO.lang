@@ -1,31 +1,25 @@
-﻿//trams
-item.Konstal105Na.name=Konstal 105Na
+﻿item.Konstal105Na.name=Konstal 105Na
 item.Konstal105Na#135R.name=Konstal 105Na #135R
 item.Konstal105NaMl.name=Konstal 105NaMl
 item.TatraT3.name=Tatra T3
 item.DuewagPT8.name=Duewag PT8
 item.ModerusAlfa.name=Moderus Alfa
 item.BombardierCR4000.name=Bombardier CR4000
-item.FGV4300_Motor.name=Metrovalencia FGV 4300
-item.FGV3700_Motor.name=Metrovalencia FGV 3700 Gen. I
-item.FGV3700_Motor_v2.name=Metrovalencia FGV 3700 Gen. II
 item.BNLRV_A.name=BN LRV
 item.PCC.name=PCC
-item.BVG_G.name=BVG Class G
 item.TatraT3Short.name=Veldig liten Tatra T3
-item.FGV3600_Motor.name=Metrovalencia FGV 3600
 item.Combino_end.name=Siemens Combino
 item.KonstalN.name=Konstal N
 item.RussiaOne_end.name=Russia One
 item.Triebwagen105.name=Triebwagen 105
+item.TatraK2_End.name=Tatra K2
+item.LohnerE1.name=Lohner E1
+item.TatraT4.name=Tatra T4
+item.TatraK5.name=Tatra K5
+item.ModerusBeta_End.name=Moderus Beta
 
 item.DuewagPT8_MiddleSegment.name=Duewag PT8 (Midt)
-item.FGV4300_Middle_wbogies.name=Metrovalencia FGV 4300 (Midt)
-item.FGV3700_Tail.name=Metrovalencia FGV 3700 Gen. I (Ende)
-item.FGV3700_Tail_v2.name=Metrovalencia FGV 3700 Gen. II (Ende)
 item.BNLRV_B.name=BN LRV (Ende)
-item.FGV4300_Tail.name=Metrovalencia FGV 4300 (Ende)
-item.FGV3600_Tail.name=Metrovalencia FGV 3600 (Ende)
 item.Combino_Middle.name=Siemens Combino (Midt)
 item.Combino_Halfmiddle_1.name=Siemens Combino (Halv-midt 1)
 item.Combino_Halfmiddle_2.name=Siemens Combino (Halv-midt 2)
@@ -33,9 +27,13 @@ item.Combino_Halfmiddle_1_bidir.name=Siemens Combino (Halv-midt 1, toveis)
 item.Combino_Halfmiddle_2_ticket.name=Siemens Combino (Halv-midt 2 Med bilettautomat)
 item.RussiaOne_middle.name=Russia One (Midt)
 item.RussiaOne_end_nopanto.name=Russia One (Ende)
-item.FGV3600_Middle.name=Metrovalencia FGV 3600 (Midt)
+item.TatraK2_Back.name=Tatra K2 (Ende)
+item.LohnerE1_Back.name=Lohner E1 (Ende)
+item.TatraK5_Back.name=Tatra K5 (Ende)
+item.Tatra_B4.name=Tatra B4
+item.ModerusBeta_Middle.name=Moderus Beta (Midt)
 
-//shelters
+
 tile.busstop_2_left_1.name=Trikkestopp (Venstre ende)
 tile.busstop_2_right_1.name=Trikkestopp (Høyre ende)
 tile.busstop_2_middle_1.name=Trikkestopp (midt, glass med benk)
@@ -43,15 +41,13 @@ tile.busstop_2_middle_2.name=Trikkestopp (midt, glass)
 tile.busstop_2_middle_3.name=Trikkestopp (midt, glass med rutetabell)
 tile.busstop_2_middle_4.name=Trikkestopp (midt, mønster)
 tile.busstop_2_middle_5.name=Trikkestopp (midt, mønster med benk)
-tile.busstop_3_left_1.name=Shelter (Venstre ende)
-tile.busstop_3_right_1.name=Shelter (Høyre ende)
-tile.busstop_3_middle_1.name=Shelter (Midt)
+tile.busstop_3_left_1.name=Trikkestopp 2 (Venstre ende)
+tile.busstop_3_right_1.name=Trikkestopp 2 (Høyre ende)
+tile.busstop_3_middle_1.name=Trikkestopp 2 (Midt)
 
-//ticket machines
 tile.ticketmachine_kzkgop.name=Bilettautomat (KZKGOP)
 tile.ticketmachine_brno.name=Bilettautomat (IDSJMK)
 
-//countries
 menu.item.poland=Polen
 menu.item.czechia=Tsjekkia
 menu.item.silesia=IkkePolen
@@ -60,11 +56,9 @@ menu.item.spain=Spania
 menu.item.usa=USA
 menu.item.russia=Russland
 
-//tabs
-item.tabVeh=Trams in Motion - Kjøretøy
-item.tabBlo=Trams in Motion - Blokker
+item.tramsimTabVeh=Trams in Motion - Kjøretøy
+item.tramsimTabBlo=Trams in Motion - Blokker
 
-//platforms
 tile.platform.name=Plattform
 tile.platform_pole.name=Plattform (med stang)
 tile.edge_plain.name=Plattformkant
@@ -78,11 +72,9 @@ tile.edge_british.name=Plattformkant (Britisk)
 tile.edge_lined.name=Plattformkant (Riller)
 tile.edge_yellowlined.name=Plattformkant (Gul stripe, Riller)
 
-
-//in regions
 in.silesia=i Silesia
-in.krakow=i Krakow
 in.poznan=i Poznan
+in.krakow=i Krakow
 in.belgium=i Belgia
 in.amsterdam=i Amsterdam
 in.frankfurt=i Frankfurt
@@ -97,20 +89,25 @@ in.riga=i Riga
 in.ostrava=i Ostrava
 in.liberec=i Liberec
 in.wuppertal=i Wuppertal
+in.russia=i Russland
+in.odessa=i Odessa
+in.darmstadt=i Darmstadt
+in.bucharest=i Bukarest
+in.zagreb=i Zagreb
+in.dresden=i Dresden
+in.lviv=i Lviv
+in.cairo=i Kairo
 
-//livery descriptions
 standardlivery=Standard maling brukt
 anniversary.description=Minecraft jubileums skin
 shorttram.description=Kort versjon av Tatra T3
 
-//special
 anniversary=Jubileum
 shorttram=Kort
 
-//company names DO NOT TRANSLATE UNLESS COMPANY NAMES ARE TRANSLATED IN YOUR LANGUAGE
 company.silesia=Tramwaje Śląskie
 company.silesiaOld=Tramwaje Śląskie (Gamle)
-comapny.krakow=MPK Kraków
+company.krakow=MPK Kraków
 company.poznan=MPK Poznań
 company.chicago=Chicago Transit Authority
 company.tec=TEC Charleroi
@@ -119,7 +116,8 @@ company.frankfurt=Stadtwerke Verkehrsgesellschaft Frankfurt am Main
 company.vbbr=Verkehrsbetriebe Brandenburg an der Havel
 company.elblag=Tramwaje Elbląskie
 company.olomouc=Dopravní podnik města Olomouce
-company.brno=Integrovaný Dopravní Systém Jihomoravského Kraje
+company.liberec=Dopravní podnik měst Liberce a Jablonce nad Nisou
+company.brno=Dopravní podnik města Brna
 company.ostrava=Dopravní podnik Ostrava
 company.praha=Dopravní podnik hlavního města Prahy
 company.most=Dopravní podnik měst Mostu a Litvínova
@@ -127,3 +125,13 @@ company.odessa=КП «Одесміськелектротранс»
 company.riga=Rīgas Satiksme
 company.halle=Hallesche Verkehrs-AG
 company.elberfeld=Wuppertaler Schwebebahn
+company.uralvagonzavod=Uralvagonzavod
+company.darmstadt=HEAG mobilo
+company.bucharest=Societatea de Transport București
+company.zagreb=Zagrebački električni tramvaj
+company.dresden=Dresdner Verkehrsbetriebe AG
+company.lviv=ЛКП «Львівелектротранс»
+company.cairo 1=هيئة النقل العام بالقاهرة
+company.cairo 2=هيئة النقل العام بالقاهرة
+company.unknown=???
+

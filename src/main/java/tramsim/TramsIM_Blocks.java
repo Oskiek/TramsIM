@@ -13,7 +13,7 @@ import tramsim.blocks.stops.*;
 
 public class TramsIM_Blocks {
 	
-	public static Block TicketMachine_Kzkgop, TicketMachine_Brno, Platform, PlatformPole, EdgeBritish, EdgeChecker, EdgeLed, EdgeLedLined, EdgeLeftCorner, EdgeLined, EdgePlain, EdgeRightCorner, EdgeYellowLined, EdgeYellowThick;
+	public static Block TicketMachine_Kzkgop, TicketMachine_Brno,OrensePole, Platform, PlatformPole, EdgeBritish, EdgeChecker, EdgeLed, EdgeLedLined, EdgeLeftCorner, EdgeLined, EdgePlain, EdgeRightCorner, EdgeYellowLined, EdgeYellowThick;
 	public static List<Block>blockList=new ArrayList<Block>();
 
 	
@@ -21,6 +21,8 @@ public class TramsIM_Blocks {
 	{
 		blockList.add(TicketMachine_Kzkgop =new BlockTicketMachine_Kzkgop().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/iconTicketmachineKZKGOP"));
 		blockList.add(TicketMachine_Brno =new BlockTicketMachine_Brno().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/iconTicketmachineBrno"));
+
+		blockList.add(OrensePole =new BlockOrensePole().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/icon_orense_pole"));
 
 
 		blockList.add(Platform =new BlockPlatform().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/platforms/platform"));

@@ -10,7 +10,8 @@ import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
 import ebf.tim.utility.FuelHandler;
-import ebf.tim.utility.RailUtility;
+import ebf.tim.utility.CommonUtil;
+import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -60,7 +61,13 @@ public class EntityBNLRV_A extends TrainBase {
     @Override
     public void registerSkins(){
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/bnlrv_1.png", "textures/trams/bogies/bnlrv_bogie.png",
-                "company.tec", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.belgium") + ".");
+                "company.tec", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.belgium") + ".");
+        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/bnlrv_2.png", "textures/trams/bogies/bnlrv_bogie2.png",
+                "company.sncv", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.belgium") + ".");
+    }
+
+    public String getDefaultSkin(){
+        return "tramsim:company.tec";
     }
 
     public String[][] getTankFilters() {
@@ -76,7 +83,7 @@ public class EntityBNLRV_A extends TrainBase {
     public int getInventoryRows(){return 1;}
 
     @Override
-    public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
+    public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
 
     @Override
     public float getMaxFuel(){return 1;}
@@ -86,7 +93,7 @@ public class EntityBNLRV_A extends TrainBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{5.05f,1.75f,1.5f};
+        return new float[]{4.85f,1.75f,1.5f};
     }
 
     @Override
@@ -114,14 +121,14 @@ public class EntityBNLRV_A extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{0.5f,-0.1f,0},{-2.5f,-0.1f,0}};}
+        return new float[][]{{1f,-0.1f,0},{-2.5f,-0.1f,0}};}
     @Override
     public ModelBase[] bogieModels(){  return new ModelBase[]{new BNLRV_Bogie(), new BNLRV_Gelenk()};}
 
 
     @Override
-    public float[] bogieLengthFromCenter() {
-        return new float[]{0.5f, -2.5f};
+    public float[] rotationPoints() {
+        return new float[]{2.5f, -1.5f};
     }
 
     @Override
@@ -130,7 +137,7 @@ public class EntityBNLRV_A extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0f,0.3125f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0f,.0125f,0f}}; }
 
     @Override
     public boolean shouldRiderSit(){
@@ -144,6 +151,11 @@ public class EntityBNLRV_A extends TrainBase {
     public int[] getTankCapacity(){return new int[]{8000};}
 
     @Override
+    public ItemStackSlot fuelSlot(){
+        return new ItemStackSlot(this, 400,114,32).setOverlay(Items.redstone);
+    }
+
+    @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
         switch (slot){
             case 400:{return stack!=null && stack.getItem() == Items.redstone;}
@@ -153,7 +165,7 @@ public class EntityBNLRV_A extends TrainBase {
 
     @Override
     public void manageFuel(){
-        fuelHandler.manageElectric(this);
+        this.fuelHandler.manageElectric(this);
     }
 
     public Item getItem(){

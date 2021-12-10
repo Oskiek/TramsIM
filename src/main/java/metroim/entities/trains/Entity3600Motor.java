@@ -5,20 +5,19 @@ import cpw.mods.fml.relauncher.SideOnly;
 import ebf.tim.TrainsInMotion;
 import ebf.tim.api.SkinRegistry;
 import ebf.tim.api.TrainBase;
-import ebf.tim.entities.GenericRailTransport;
 import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
 import ebf.tim.utility.FuelHandler;
+import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import metroim.MetroIM;
+import metroim.models.bogies.StandardBogie;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import net.minecraftforge.fluids.FluidRegistry;
-import metroim.models.bogies.FGV3700_Bogie;
 import metroim.models.trains.Motor3600;
 
 import java.util.Arrays;
@@ -30,7 +29,7 @@ public class Entity3600Motor extends TrainBase {
 
 
 
-    public static final Item thisItem = new ItemTransport(new Entity3600Motor(null), MetroIM.MODID,MetroIM.metroimtabvehicle);
+    public static final Item thisItem = new ItemTransport(new Entity3600Motor(null), MetroIM.MODID, MetroIM.metroimtabvehicle);
 
 
     public Entity3600Motor(UUID owner, World world, double xPos, double yPos, double zPos) {
@@ -57,8 +56,8 @@ public class Entity3600Motor extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/fgv3600.png", "textures/trams/bogies/fgv3700_bogie.png",
-        "default", "Standard livery used in Valencia.");
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/fgv_3600.png", "textures/trams/bogies/tmb3000_bogie.png",
+        "company.valencia", "Standard livery used in Valencia.");
     }
 
     public String[][] getTankFilters() {
@@ -75,7 +74,7 @@ public class Entity3600Motor extends TrainBase {
     public int getInventoryRows(){return 1;}
 
     @Override
-    public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
+    public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
 
     @Override
     public float getMaxFuel(){return 1;}
@@ -113,14 +112,14 @@ public class Entity3600Motor extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{1.1875f,0.1f,0},{-1.0625f,0.1f,0}};}
+        return new float[][]{{1.35f,0.0f,0},{-1.35f,0.0f,0}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{ new FGV3700_Bogie()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{ new StandardBogie()};}
 
 
     @Override
-    public float[] bogieLengthFromCenter() {
-        return new float[]{1.1875f,-1.0625f};
+    public float[] rotationPoints() {
+        return new float[]{1.6f,-1.6f};
     }
 
     @Override
@@ -129,7 +128,7 @@ public class Entity3600Motor extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0f,0.0f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0f,0.15f,0f}}; }
 
     /**
      * <h2>rider sit or stand</h2>
@@ -152,33 +151,22 @@ public class Entity3600Motor extends TrainBase {
      * <h2>Fluid Tank Capacity</h2>
      */
     @Override
-    public int[] getTankCapacity(){return new int[]{91610, 8000};}
+    public int[] getTankCapacity(){return new int[]{8000};}
+    @Override
+    public ItemStackSlot fuelSlot(){
+        return new ItemStackSlot(this, 400,114,32).setOverlay(Items.redstone);
+    }
 
-
-    /**
-     * <h2>fluid filter</h2>
-     * defines what fluids can and can't be stored in the tank.
-     * for instance if you have a wooden tanker car, you can deny fluids that are fire sources (like lava).
-     */
-
-
-    //todo: maybe make some util functions or something to simplify this stuff?
-    //seems kinda complicated for something that should be the difficulty of a config file.
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
         switch (slot){
-            case 400:{return stack!=null && stack.getItem() == Items.redstone;}
+            case 400:{return stack!=null && stack.getItem() ==Items.redstone;}
             default:{return true;}
         }
     }
-
-    /**
-     * <h2>fuel management</h2>
-     * defines how the transport manages burnHeat, both in consuming items, and in managing the burnHeat.
-     */
     @Override
-    public void manageFuel(){
-        fuelHandler.manageElectric(this);
+    public void manageFuel() {
+        this.fuelHandler.manageElectric(this);
     }
 
     /**

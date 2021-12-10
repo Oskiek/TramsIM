@@ -4,6 +4,7 @@ import ebf.tim.TrainsInMotion;
 import ebf.tim.api.RollingstockBase;
 import ebf.tim.api.SkinRegistry;
 import ebf.tim.items.ItemTransport;
+import ebf.tim.utility.CommonUtil;
 import fexcraft.tmt.slim.ModelBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -18,7 +19,7 @@ import tramsim.models.wagons.DuewagPT8_Middle;
 import java.util.List;
 import java.util.UUID;
 
-import static ebf.tim.utility.RailUtility.DefineStack;
+import static ebf.tim.utility.CommonUtil.DefineStack;
 
 public class EntityDuewagPT8_Middle extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
@@ -49,7 +50,7 @@ public class EntityDuewagPT8_Middle extends RollingstockBase {
      * <h2>Bogie Offset</h2>
      */
     @Override
-    public float[] bogieLengthFromCenter(){return new float[]{1.65625f,-1.65625f};}
+    public float[] rotationPoints(){return new float[]{1.65625f,-1.65625f};}
 
     @Override
     public float getRenderScale() {
@@ -64,9 +65,13 @@ public class EntityDuewagPT8_Middle extends RollingstockBase {
     @Override
     public void registerSkins() {
         SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/duewagPT8_middle_frankfurt.png",
-                "Frankfurt", "Standard livery used in Frankfurt.");
+                "company.frankfurt", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.frankfurt") + ".");
         SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/duewagPT8_middle_silesia.png",
-                "Silesia", "Standard livery used in Silesia.");
+                "company.silesia", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.silesia") + ".");
+    }
+
+    public String getDefaultSkin(){
+        return "tramsim:company.silesia";
     }
 
     @Override
@@ -85,11 +90,6 @@ public class EntityDuewagPT8_Middle extends RollingstockBase {
     }
 
     @Override
-    public int getRFCapacity() {
-        return 0;
-    }
-
-    @Override
     public void manageFuel() {
 
     }
@@ -102,7 +102,7 @@ public class EntityDuewagPT8_Middle extends RollingstockBase {
     @Override
     public ItemStack[] getRecipie() {
         return new ItemStack[]{
-                DefineStack(Items.bed, 1), null, null,
+                null, null, null,
                 null, null, null,
                 null, null, null
         };
@@ -174,7 +174,7 @@ public class EntityDuewagPT8_Middle extends RollingstockBase {
      * <h2>Rider offsets</h2>
      */
     @Override
-    public float[][] getRiderOffsets(){return new float[][]{{0.125f,1f, 0.375f},{0.125f,1f, -0.375f}};}
+    public float[][] getRiderOffsets(){return new float[][]{{0.125f,1f, 0.375f}};}
 
     @Override
     public float[] getHitboxSize() {

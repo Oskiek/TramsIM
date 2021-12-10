@@ -89,12 +89,11 @@ public class RenderBusStop extends TileEntitySpecialRenderer {
         }
         GL11.glRotatef(rotation, 0.0F, 1.0F, 0.0F);
 
-        DebugUtil.println("About to render");
+        GL11.glScalef(1.0F, 1.25F, 1.0F);
 
         GL11.glTranslatef(0F, 0f, 1f);
         GL11.glRotatef(180, 1, 0, 0);
         if (tileEntity instanceof TileEntityBusStop_2_Left_1) {
-            DebugUtil.println("Rendering");
             TextureManager.bindTexture(texture);
             model201.render();
         }

@@ -6,18 +6,18 @@ import ebf.tim.api.SkinRegistry;
 import ebf.tim.items.ItemTransport;
 import fexcraft.tmt.slim.ModelBase;
 import metroim.MetroIM;
-import net.minecraft.init.Items;
+import metroim.models.bogies.StandardBogie;
+import metroim.models.bogies.StandardBogie2;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
-import metroim.models.bogies.FGV4300_Bogie;
 import metroim.models.wagons.Wagon4300;
 
 import java.util.List;
 import java.util.UUID;
 
-import static ebf.tim.utility.RailUtility.DefineStack;
+import static ebf.tim.utility.CommonUtil.DefineStack;
 
 public class EntityFGV4300_Middle_Bogie extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
@@ -38,19 +38,19 @@ public class EntityFGV4300_Middle_Bogie extends RollingstockBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{1.25f,0,0},{-1.25f,0,0}};
+        return new float[][]{{1.1f,0.0f,0},{-1.25f,0.0f,0}};
     }
 
     @Override
     public ModelBase[] bogieModels(){
-        return new ModelBase[]{new FGV4300_Bogie()};
+        return new ModelBase[]{new StandardBogie2()};
     }
 
     /**
      * <h2>Bogie Offset</h2>
      */
     @Override
-    public float[] bogieLengthFromCenter(){return new float[]{1.25f,-1.25f};}
+    public float[] rotationPoints(){return new float[]{2.15f,-2.15f};}
 
     @Override
     public float getRenderScale() {
@@ -59,13 +59,15 @@ public class EntityFGV4300_Middle_Bogie extends RollingstockBase {
 
     @Override
     public float[][] modelOffsets() {
-        return new float[][]{{0f,0.1f,0f}};
+        return new float[][]{{0f,0.2f,0f}};
     }
 
     @Override
     public void registerSkins() {
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/4300_middle.png", new String[]{"textures/trams/bogies/fgv4300_bogie.png"},
-                "default", "Standard livery used in Valencia.");
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/4300_middle.png", new String[]{"textures/trams/bogies/StandardBogie2.png"},
+                "company.valencia", "Standard livery used in Valencia.");
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/4300_middle_ph.png", new String[]{"textures/trams/bogies/StandardBogie2.png"},
+                "Custom company", "Use this as a placeholder to make your own livery :D");
     }
 
     @Override
@@ -84,11 +86,6 @@ public class EntityFGV4300_Middle_Bogie extends RollingstockBase {
     }
 
     @Override
-    public int getRFCapacity() {
-        return 0;
-    }
-
-    @Override
     public void manageFuel() {
 
     }
@@ -101,7 +98,7 @@ public class EntityFGV4300_Middle_Bogie extends RollingstockBase {
     @Override
     public ItemStack[] getRecipie() {
         return new ItemStack[]{
-                DefineStack(Items.bed, 1), null, null,
+                null, null, null,
                 null, null, null,
                 null, null, null
         };
@@ -177,7 +174,7 @@ public class EntityFGV4300_Middle_Bogie extends RollingstockBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.2f,2,1.5f};
+        return new float[]{4.3f,2,1.5f};
     }
 
     @Override

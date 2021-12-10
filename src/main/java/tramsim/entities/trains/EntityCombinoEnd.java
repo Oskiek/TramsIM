@@ -10,7 +10,8 @@ import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
 import ebf.tim.utility.FuelHandler;
-import ebf.tim.utility.RailUtility;
+import ebf.tim.utility.CommonUtil;
+import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -59,11 +60,11 @@ public class EntityCombinoEnd extends TrainBase {
     @Override
     public void registerSkins(){
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/combino_end.png", "textures/trams/bogies/combino_bogie.png",
-                "company.gvb", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.amsterdam") + ".");
+                "company.gvb", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.amsterdam") + ".");
     }
     @Override
     public String[][] getTankFilters() {
-        return new String[0][];
+        return FuelHandler.DefaultTanks.ELECTRIC.value();
     }
     @Override
     public float transportTopSpeed(){return 70f;}
@@ -75,7 +76,7 @@ public class EntityCombinoEnd extends TrainBase {
     public int getInventoryRows(){return 1;}
 
     @Override
-    public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
+    public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
 
     @Override
     public float getMaxFuel(){return 1;}
@@ -118,7 +119,7 @@ public class EntityCombinoEnd extends TrainBase {
 
 
     @Override
-    public float[] bogieLengthFromCenter() {
+    public float[] rotationPoints() {
         return new float[]{0.25f,-1.7125f};
     }
 
@@ -137,10 +138,13 @@ public class EntityCombinoEnd extends TrainBase {
 
     @Override
     public boolean isReinforced(){return false;}
+    @Override
+    public int[] getTankCapacity(){return new int[]{8000};}
 
     @Override
-    public int[] getTankCapacity(){return new int[]{91610, 8000};}
-
+    public ItemStackSlot fuelSlot(){
+        return new ItemStackSlot(this, 400,114,32).setOverlay(Items.redstone);
+    }
 
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
@@ -152,9 +156,8 @@ public class EntityCombinoEnd extends TrainBase {
 
     @Override
     public void manageFuel(){
-        fuelHandler.manageElectric(this);
+        this.fuelHandler.manageElectric(this);
     }
-
     public Item getItem(){
         return thisItem;
     }

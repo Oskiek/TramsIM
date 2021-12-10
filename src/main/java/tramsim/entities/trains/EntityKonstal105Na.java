@@ -11,7 +11,8 @@ import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
 import ebf.tim.utility.FuelHandler;
-import ebf.tim.utility.RailUtility;
+import ebf.tim.utility.CommonUtil;
+import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -68,27 +69,25 @@ public class EntityKonstal105Na extends TrainBase {
         if(now.getMonthValue()==12||now.getMonthValue()==1)
         {
             SkinRegistry.addSkin(this.getClass(), new skin(TramsIM.MODID, new String[]{"textures/trams/konstal105na_silesia.png", "textures/trams/decorations/105na_christmas_lights.png"},
-                    "company.silesia", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.silesia") + ".").setBogieTextures("textures/trams/bogies/105nabogie.png"));
+                    "company.silesia", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.silesia") + ".").setBogieTextures("textures/trams/bogies/105nabogie.png"));
 
             SkinRegistry.addSkin(this.getClass(), new skin(TramsIM.MODID, new String[]{"textures/trams/konstal105na_krakow.png", "textures/trams/decorations/105na_christmas_lights.png"},
-                    "company.krakow", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.krakow") + ".").setBogieTextures("textures/trams/bogies/105nabogie.png"));
+                    "company.krakow", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.krakow") + ".").setBogieTextures("textures/trams/bogies/105nabogie.png"));
         }
         else {
             SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/konstal105na_silesia.png", "textures/trams/bogies/105nabogie.png",
-                    "company.silesia", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.silesia") + ".");
+                    "company.silesia", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.silesia") + ".");
             SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/konstal105na_krakow.png", "textures/trams/bogies/105nabogie.png",
-                    "company.krakow", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.krakow") + ".");
+                    "company.krakow", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.krakow") + ".");
+            SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/konstal105na_elblag.png", "textures/trams/bogies/105nabogie.png",
+                    "company.silesia", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.silesia") + ".");
+
         }
 
     }
 
-    //@Override
-    //public String getDefaultSkin(){
-    //    return "company.silesia";
-    //}
-    @Override
-    public String[][] getTankFilters() {
-        return new String[0][];
+    public String getDefaultSkin(){
+        return "tramsim:company.silesia";
     }
 
     @Override
@@ -101,7 +100,7 @@ public class EntityKonstal105Na extends TrainBase {
     public int getInventoryRows(){return 1;}
 
     @Override
-    public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
+    public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
 
     @Override
     public float getMaxFuel(){return 1;}
@@ -139,13 +138,13 @@ public class EntityKonstal105Na extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{1.9f,-0.15f,0f,},{-1.9f,-0.15f,0f}};}
+        return new float[][]{{1.9f,-0.26f,0f,},{-1.9f,-0.26f,0f}};}
 
     @Override
     public ModelBase[] bogieModels() { return new ModelBase[]{new Konstal105NaBogie()};}
 
     @Override
-    public float[] bogieLengthFromCenter() {
+    public float[] rotationPoints() {
         return new float[]{1.9f, -1.9f};
     }
 
@@ -155,7 +154,7 @@ public class EntityKonstal105Na extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0,-0.1f,0}}; }
+    public float[][] modelOffsets() { return new float[][]{{0,0.0625f,0}}; }
 
     @Override
     public boolean shouldRiderSit(){
@@ -171,25 +170,27 @@ public class EntityKonstal105Na extends TrainBase {
     @Override
     public int[] getTankCapacity(){return new int[]{8000};}
 
+    @Override
+    public ItemStackSlot fuelSlot(){
+        return new ItemStackSlot(this, 400,114,32).setOverlay(Items.redstone);
+    }
 
 
-    //todo: maybe make some util functions or something to simplify this stuff?
-    //seems kinda complicated for something that should be the difficulty of a config file.
+    @Override
+    public String[][] getTankFilters() {
+        return FuelHandler.DefaultTanks.ELECTRIC.value();
+    }
+
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
         switch (slot){
-            case 400:{return stack!=null && stack.getItem() == Items.redstone;}
+            case 400:{return stack!=null && stack.getItem() ==Items.redstone;}
             default:{return true;}
         }
     }
-
-    /**
-     * <h2>fuel management</h2>
-     * defines how the transport manages burnHeat, both in consuming items, and in managing the burnHeat.
-     */
     @Override
-    public void manageFuel(){
-        fuelHandler.manageElectric(this);
+    public void manageFuel() {
+        this.fuelHandler.manageElectric(this);
     }
 
     /**

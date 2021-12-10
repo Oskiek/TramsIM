@@ -10,6 +10,7 @@ import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
 import ebf.tim.utility.FuelHandler;
+import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import metroim.MetroIM;
 import net.minecraft.init.Items;
@@ -17,7 +18,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import net.minecraftforge.fluids.FluidRegistry;
 import metroim.models.bogies.FGV3700_Bogie;
 import metroim.models.bogies.FGV3700_Gelenk;
 import metroim.models.trains.Motor3700_v2;
@@ -58,8 +58,8 @@ public class Entity3700Motor_v2 extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/fgv3700_red_v2.png", "textures/trams/bogies/fgv3700_bogie.png",
-        "default", "Standard livery used in Valencia.");
+        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/fgv3700_yellow_v2.png", "textures/trams/bogies/fgv3700_bogie.png",
+        "FGV", "Standard livery used in Valencia.");
     }
     public String[][] getTankFilters() {
         return FuelHandler.DefaultTanks.ELECTRIC.value();
@@ -85,7 +85,8 @@ public class Entity3700Motor_v2 extends TrainBase {
      * @return the type which will define it's features, GUI, a degree of storage (like crafting slots), and a number of other things.
      */
     @Override
-    public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
+    public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
+
     /**
      * <h2>Max Fuel</h2>
      * @return the maxstorage of fuel the train can store.
@@ -139,14 +140,14 @@ public class Entity3700Motor_v2 extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{0.5f,0.f,0},{-2.25f,0.0f,0}};}
+        return new float[][]{{0.925f,0.f,0},{-2.35f,0.0f,0}};}
     @Override
     public ModelBase[] bogieModels(){  return new ModelBase[]{ new FGV3700_Bogie(), new FGV3700_Gelenk()};}
 
 
     @Override
-    public float[] bogieLengthFromCenter() {
-        return new float[]{0.5f,-2.25f};
+    public float[] rotationPoints() {
+        return new float[]{-2.1f,-1.85f};
     }
 
     @Override
@@ -155,7 +156,7 @@ public class Entity3700Motor_v2 extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0f,0.1f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0f,0.2f,0f}}; }
 
     /**
      * <h2>rider sit or stand</h2>
@@ -174,30 +175,23 @@ public class Entity3700Motor_v2 extends TrainBase {
     @Override
     public boolean isReinforced(){return false;}
 
-    /**
-     * <h2>Fluid Tank Capacity</h2>
-     */
     @Override
-    public int[] getTankCapacity(){return new int[]{91610, 8000};}
+    public int[] getTankCapacity(){return new int[]{8000};}
+    @Override
+    public ItemStackSlot fuelSlot(){
+        return new ItemStackSlot(this, 400,114,32).setOverlay(Items.redstone);
+    }
 
-
-    //todo: maybe make some util functions or something to simplify this stuff?
-    //seems kinda complicated for something that should be the difficulty of a config file.
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
         switch (slot){
-            case 400:{return stack!=null && stack.getItem() == Items.redstone;}
+            case 400:{return stack!=null && stack.getItem() ==Items.redstone;}
             default:{return true;}
         }
     }
-
-    /**
-     * <h2>fuel management</h2>
-     * defines how the transport manages burnHeat, both in consuming items, and in managing the burnHeat.
-     */
     @Override
-    public void manageFuel(){
-        fuelHandler.manageElectric(this);
+    public void manageFuel() {
+        this.fuelHandler.manageElectric(this);
     }
 
     /**

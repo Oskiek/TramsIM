@@ -18,6 +18,7 @@ import net.minecraft.creativetab.CreativeTabs;
 //train imports
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
+import tramsim.blocks.BlockOrensePole;
 import tramsim.blocks.BlockTicketMachine_Brno;
 import tramsim.blocks.BlockTicketMachine_Kzkgop;
 import tramsim.blocks.stops.*;
@@ -61,7 +62,7 @@ public class TramsIM {
         GameRegistry.registerTileEntity(TileEntityTicketMachine_Kzkgop.class, "ticketmachine_kzkgop");
         GameRegistry.registerTileEntity(TileEntityTicketMachine_Brno.class, "ticketmachine_brno");
 
-        //GameRegistry.registerTileEntity(TileEntityBusStop_2_Left_1.class, "busstop_2_left_1");
+        GameRegistry.registerTileEntity(TileEntityBusStop_2_Left_1.class, "busstop_2_left_1");
         GameRegistry.registerTileEntity(TileEntityBusStop_2_Middle_1.class, "busstop_2_middle_1");
         GameRegistry.registerTileEntity(TileEntityBusStop_2_Middle_2.class, "busstop_2_middle_2");
         GameRegistry.registerTileEntity(TileEntityBusStop_2_Middle_3.class, "busstop_2_middle_3");
@@ -75,8 +76,7 @@ public class TramsIM {
         GameRegistry.registerTileEntity(TileEntityPlatform.class, "platform");
         GameRegistry.registerTileEntity(TileEntityPlatformPole.class, "platformPole");
 
-
-        /* Pre-release 2 blocked
+        /*
         GameRegistry.registerTileEntity(TileEntityEdgeBritish.class, "edge_british");
         GameRegistry.registerTileEntity(TileEntityEdgeChecker.class, "edge_checker");
         GameRegistry.registerTileEntity(TileEntityEdgeLed.class, "edge_led");
@@ -95,19 +95,28 @@ public class TramsIM {
 //                new EntityKonstalN(null),
                 new EntityKonstal105NaMl(null),
                 new EntityKonstal105Na135R(null),
+                new EntitySD_100_motor(null),
                 new EntityTatraT3(null),
                 //       new EntityBombardierCR4000(null),
                 new EntityDuewagPT8 (null),
                 new EntityModerusAlfa (null),
-//                new EntityPCC( null),
-//                new EntityTriebwagen105(null),
+                new EntityPCC( null),
+                new EntityTriebwagen105(null),
                 new EntityBNLRV_A(null),
+                new EntityKawasakiLRV(null),
                 new EntityTatraT3Short(null),
 //                new EntityCombinoEnd(null),
                 new EntityRussiaOne(null),
-//                new EntityMGT6D(null),
-//                new EntityTatraK2_End(null),
-//                new EntityLohnerE1(null)
+                new EntityMGT6D(null),
+                new EntityTatraK2_End(null),
+                new EntityLohnerE1(null),
+                new EntityModerusBeta_End(null),
+                new EntityTatraK5(null),
+                new EntityTatraT4(null),
+                new EntityST12(null),
+                new EntityM8C(null),
+                new EntityCitadis_front(null),
+//2.2 blocked                new EntityM8S(null)
         };
     }
     public static GenericRailTransport[] listWagonTrams() {
@@ -120,11 +129,24 @@ public class TramsIM {
 //                new EntityCombino_Middle(null),
 //                new EntityCombino_Halfmiddle_2_ticket(null),
 //                new EntityCombino_Halfmiddle_1_bidir(null),
+                new EntityCitadis_suspended_middle(null),
+                new EntityCitadis_suspended_middle_panto(null),
+                new EntityCitadis_middle(null),
+                new EntitySD_100_tail(null),
                 new EntityRussiaOne_Middle(null),
                 new EntityRussiaOne_NoPanto(null),
-//                new EntityMGT6D_Middle(null),
-//                new EntityTatraK2_Back(null),
-//                new EntityLohnerE1_Back(null)
+                new EntityMGT6D_Middle(null),
+                new EntityTatraK2_Back(null),
+                new EntityLohnerE1_Back(null),
+                new EntityModerusBeta_Middle(null),
+                new EntityTatraK5_Back(null),
+                new EntityTatraB4(null),
+                new EntityST12_Back(null),
+                new EntityST12_Middle(null),
+                new EntityM8C_Middle(null),
+                new EntityM8C_Tail(null),
+//2.2 blocked                new EntityM8S_Middle(null),
+//2.2 blocked                new EntityM8S_Tail(null)
 
         };
     }
@@ -137,10 +159,10 @@ public class TramsIM {
         tramsimtabblock = new TiMTab("Trams in Motion blocks", MODID, "tramsimTabBlo");
 
         //blocks added
-        //blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BlockTicketMachine_Kzkgop().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:ticketmachine_kzkgop"), null, "ticketmachine_kzkgop.name", null, proxy.getRenderBusStop()));
-        //blockList.add(TiMGenericRegistry.registerBlock(TrainsInMotion.proxy.isClient(),new BlockTicketMachine_Brno().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:ticketmachine_brno"), null, "ticketmachine_brno.name", null, proxy.getRenderBusStop()));
-        blockList.add(TiMGenericRegistry.registerBlock(new BlockTicketMachine_Kzkgop().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/iconTicketmachineKZKGOP"), null, "ticketmachine_kzkgop.name", null, proxy.getRenderTicketMachine()));
-        blockList.add(TiMGenericRegistry.registerBlock(new BlockTicketMachine_Brno().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/iconTicketmachineBrno"), null, "ticketmachine_brno.name", null, proxy.getRenderTicketMachine()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BlockTicketMachine_Kzkgop().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/iconTicketmachineKZKGOP"), null, "ticketmachine_kzkgop", null, proxy.getRenderTicketMachine()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BlockTicketMachine_Brno().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/iconTicketmachineBrno"), null, "ticketmachine_brno", null, proxy.getRenderTicketMachine()));
+
+        blockList.add(TiMGenericRegistry.registerBlock(new BlockOrensePole().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/icon_orense_pole"), null, "stop_pole_Orense", null, proxy.getRenderPole()));
 
         blockList.add(TiMGenericRegistry.registerBlock(new BusStop_2_Left_1().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/l_end"), null, "busstop_2_left_1", null, proxy.getRenderBusStop()));
         blockList.add(TiMGenericRegistry.registerBlock(new BusStop_2_Middle_1().setCreativeTab(TramsIM.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/m-glass-bench"), null, "busstop_2_middle_1", null, proxy.getRenderBusStop()));
@@ -150,9 +172,9 @@ public class TramsIM {
         blockList.add(TiMGenericRegistry.registerBlock(new BusStop_2_Middle_5().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/m-pat-timetable"), null, "busstop_2_middle_5", null, proxy.getRenderBusStop()));
         blockList.add(TiMGenericRegistry.registerBlock(new BusStop_2_Right_1().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var2/r_end"), null, "busstop_2_right_1", null, proxy.getRenderBusStop()));
 
-        blockList.add(TiMGenericRegistry.registerBlock(new BusStop_3_Left_1().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var3/"), null, "busstop_3_left_1", null, proxy.getRenderBusStop()));
-        blockList.add(TiMGenericRegistry.registerBlock(new BusStop_3_Middle_1().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var3/"), null, "busstop_3_middle_1", null, proxy.getRenderBusStop()));
-        blockList.add(TiMGenericRegistry.registerBlock(new BusStop_3_Right_1().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var3/"), null, "busstop_3_right_1", null, proxy.getRenderBusStop()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BusStop_3_Left_1().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var3/left"), null, "busstop_3_left_1", null, proxy.getRenderBusStop()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BusStop_3_Middle_1().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var3/middle"), null, "busstop_3_middle_1", null, proxy.getRenderBusStop()));
+        blockList.add(TiMGenericRegistry.registerBlock(new BusStop_3_Right_1().setCreativeTab(this.tramsimtabblock).setBlockTextureName("tramsim:icon/shelter/var3/right"), null, "busstop_3_right_1", null, proxy.getRenderBusStop()));
 
 
         /*
@@ -167,10 +189,11 @@ public class TramsIM {
         TiMGenericRegistry.registerTransports(MODID, listElectricTrams(), (Object)null);
         TiMGenericRegistry.registerTransports(MODID, listWagonTrams(), (Object)null);
         if (event.getSide().isClient()) {
-            MinecraftForge.EVENT_BUS.register(ClientProxy.eventManager);
+            MinecraftForge.EVENT_BUS.register(eventManager);
             FMLCommonHandler.instance().bus().register(ClientProxy.eventManager);
         }
 
     }
+    public static EventManager eventManager = new EventManager();
 
 }

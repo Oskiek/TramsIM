@@ -4,6 +4,7 @@ import ebf.tim.TrainsInMotion;
 import ebf.tim.api.RollingstockBase;
 import ebf.tim.api.SkinRegistry;
 import ebf.tim.items.ItemTransport;
+import ebf.tim.utility.CommonUtil;
 import fexcraft.tmt.slim.ModelBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -19,7 +20,7 @@ import tramsim.models.wagons.BNLRV_B;
 import java.util.List;
 import java.util.UUID;
 
-import static ebf.tim.utility.RailUtility.DefineStack;
+import static ebf.tim.utility.CommonUtil.DefineStack;
 
 public class EntityBNLRV_B extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
@@ -40,7 +41,7 @@ public class EntityBNLRV_B extends RollingstockBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{0.5f,0f,0}};}
+        return new float[][]{{1f,-0.1f,0}};}
 
     @Override
     public ModelBase[] bogieModels(){  return new ModelBase[]{new BNLRV_Bogie()};}
@@ -50,8 +51,8 @@ public class EntityBNLRV_B extends RollingstockBase {
      * <h2>Bogie Offset</h2>
      */
     @Override
-    public float[] bogieLengthFromCenter() {
-        return new float[]{0.5f, -2.5f};
+    public float[] rotationPoints() {
+        return new float[]{2.5f, -1.5f};
     }
 
     @Override
@@ -61,15 +62,20 @@ public class EntityBNLRV_B extends RollingstockBase {
 
     @Override
     public float[][] modelOffsets() {
-        return new float[][]{{0f,0.3125f,0f}};
+        return new float[][]{{0f,-0.0125f,0f}};
     }
 
     @Override
     public void registerSkins(){
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/bnlrv_1.png", "textures/trams/bogies/bnlrv_bogie.png",
-                "default", "Standard livery used in Belgium.");
+                "company.tec", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.belgium") + ".");
+        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/bnlrv_2.png", "textures/trams/bogies/bnlrv_bogie2.png",
+                "company.sncv", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.belgium") + ".");
     }
 
+    public String getDefaultSkin(){
+        return "tramsim:company.tec";
+    }
 
     @Override
     public boolean isReinforced() {
@@ -84,11 +90,6 @@ public class EntityBNLRV_B extends RollingstockBase {
     @Override
     public String[][] getTankFilters() {
         return (String[][])null;
-    }
-
-    @Override
-    public int getRFCapacity() {
-        return 0;
     }
 
     @Override
@@ -180,7 +181,7 @@ public class EntityBNLRV_B extends RollingstockBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{5.05f,1.75f,1.5f};
+        return new float[]{4.95f,1.75f,1.5f};
     }
 
     @Override

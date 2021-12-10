@@ -40,12 +40,21 @@ public class ClientProxy extends CommonProxy {
 	{return renderTicketMachine;}
 
 
+	public static RenderPole renderPole = new RenderPole();
+	@Override
+	public Object getRenderPole()
+	{return renderPole;}
+
+
 	@Override
 	public void registerRenderers(){
 		RenderTicketMachine.textureName="ticketmachine_kzkgop.png";
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTicketMachine_Kzkgop.class, new RenderTicketMachine());
 		RenderTicketMachine.textureName="ticketmachine_brno.png";
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTicketMachine_Brno.class, new RenderTicketMachine());
+
+		RenderPole.textureName="orense_pole.png";
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityOrensePole.class, new RenderPole());
 
 		RenderBusStop.demandedTexture="busstop_2.png";
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBusStop_2_Left_1.class, new RenderBusStop());

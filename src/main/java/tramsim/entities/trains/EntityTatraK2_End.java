@@ -9,7 +9,8 @@ import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
 import ebf.tim.utility.FuelHandler;
-import ebf.tim.utility.RailUtility;
+import ebf.tim.utility.CommonUtil;
+import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -61,7 +62,7 @@ public class EntityTatraK2_End extends TrainBase {
     @Override
     public void registerSkins(){
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/k2_brno.png", "textures/trams/bogies/k2_bogie.png",
-                "company.brno", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.brno") + ".");
+                "company.brno", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.brno") + ".");
     }
 
     public String[][] getTankFilters() {
@@ -77,7 +78,7 @@ public class EntityTatraK2_End extends TrainBase {
     public int getInventoryRows(){return 1;}
 
     @Override
-    public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
+    public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
 
     @Override
     public float getMaxFuel(){return 1;}
@@ -115,13 +116,13 @@ public class EntityTatraK2_End extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{0.75f,0.05f,0},{-2.8f,0.15f,0}};}
+        return new float[][]{{0.75f,-0.05f,0},{-2.8f,0f,0}};}
     @Override
     public ModelBase[] bogieModels(){  return new ModelBase[]{new ModelKT4_Bogie(), new K2_Bogie()};}
 
 
     @Override
-    public float[] bogieLengthFromCenter() {
+    public float[] rotationPoints() {
         return new float[]{0.75f, -2.8f};
     }
 
@@ -131,7 +132,7 @@ public class EntityTatraK2_End extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0f,-0.15f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0f,0f,0f}}; }
 
     @Override
     public boolean shouldRiderSit(){
@@ -144,6 +145,10 @@ public class EntityTatraK2_End extends TrainBase {
     @Override
     public int[] getTankCapacity(){return new int[]{8000};}
 
+    @Override
+    public ItemStackSlot fuelSlot(){
+        return new ItemStackSlot(this, 400,114,32).setOverlay(Items.redstone);
+    }
 
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
@@ -155,7 +160,7 @@ public class EntityTatraK2_End extends TrainBase {
 
     @Override
     public void manageFuel(){
-        fuelHandler.manageElectric(this);
+        this.fuelHandler.manageElectric(this);
     }
 
     public Item getItem(){

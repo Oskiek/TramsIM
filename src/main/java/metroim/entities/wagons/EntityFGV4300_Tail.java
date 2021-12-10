@@ -6,18 +6,18 @@ import ebf.tim.api.SkinRegistry;
 import ebf.tim.items.ItemTransport;
 import fexcraft.tmt.slim.ModelBase;
 import metroim.MetroIM;
+import metroim.models.bogies.StandardBogie;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
-import metroim.models.bogies.FGV4300_Bogie;
 import metroim.models.wagons.Tail4300;
 
 import java.util.List;
 import java.util.UUID;
 
-import static ebf.tim.utility.RailUtility.DefineStack;
+import static ebf.tim.utility.CommonUtil.DefineStack;
 
 public class EntityFGV4300_Tail extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
@@ -38,18 +38,18 @@ public class EntityFGV4300_Tail extends RollingstockBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{0.75f,0.f,0},{-1.375f,0.0f,0}};}
+        return new float[][]{{0.75f,0.0625f,0},{-1.375f,0.0625f,0}};}
 
     @Override
     public ModelBase[] bogieModels(){
-        return new ModelBase[]{new FGV4300_Bogie()};
+        return new ModelBase[]{new StandardBogie()};
     }
 
     /**
      * <h2>Bogie Offset</h2>
      */
     @Override
-    public float[] bogieLengthFromCenter() {
+    public float[] rotationPoints() {
         return new float[]{0.75f, -1.375f};
     }
 
@@ -60,13 +60,13 @@ public class EntityFGV4300_Tail extends RollingstockBase {
 
     @Override
     public float[][] modelOffsets() {
-        return new float[][]{{0f,0.1f,0f}};
+        return new float[][]{{0f,0.125f,0.0625f}};
     }
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/4300_motorcar.png", "textures/trams/bogies/fgv4300_bogie.png",
-                "default", "Standard livery used in Valencia.");
+        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/4300_motorcar.png", "textures/trams/bogies/tmb3000_bogie.png",
+                "company.valencia", "Standard livery used in Valencia.");
     }
 
 
@@ -83,11 +83,6 @@ public class EntityFGV4300_Tail extends RollingstockBase {
     @Override
     public String[][] getTankFilters() {
         return (String[][])null;
-    }
-
-    @Override
-    public int getRFCapacity() {
-        return 0;
     }
 
     @Override

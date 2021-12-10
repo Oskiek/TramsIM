@@ -1,0 +1,16 @@
+[
+{
+  "modid": "spanish_pack",
+  "name": "Spanish Pack",
+  "description": "TiM addon adding Spanish content!",
+  "version": "Pre-release 1",
+  "mcversion": "1.7.10",
+  "url": "www.tramsim.eu/index.html",
+  "updateUrl": "",
+  "authorList": ["Oskiek","Krankerbusfahrer"],
+  "credits": "",
+  "logoFile": "logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

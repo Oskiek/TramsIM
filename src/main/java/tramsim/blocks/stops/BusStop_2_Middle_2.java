@@ -14,7 +14,7 @@ public class BusStop_2_Middle_2 extends BlockContainer {
 	public BusStop_2_Middle_2(){
 		super(Material.iron);
 		setBlockName("busstop_2_middle_2");
-        this.setBlockBounds(0F, 0.0F, 0F, 1F, 2F, 1F);
+        this.setBlockBounds(0F, 0.0F, 0F, 1F, 2.5F, 1F);
 	}
 
 	 

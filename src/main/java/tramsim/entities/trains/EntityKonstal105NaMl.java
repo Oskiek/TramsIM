@@ -10,7 +10,8 @@ import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
 import ebf.tim.utility.FuelHandler;
-import ebf.tim.utility.RailUtility;
+import ebf.tim.utility.CommonUtil;
+import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -59,13 +60,18 @@ public class EntityKonstal105NaMl extends TrainBase {
     @Override
     public void registerSkins(){
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/konstal105naml_silesia.png", new String[]{"textures/trams/bogies/105nabogie.png"},
-        "company.silesia", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.silesia") + ".");
+        "company.silesia", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.silesia") + ".");
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/konstal105naml_elblag.png", new String[]{"textures/trams/bogies/105nabogie.png"},
-        "company.elblag", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.elblag") + ".");
+        "company.elblag", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.elblag") + ".");
     }
+
+    public String getDefaultSkin(){
+        return "tramsim:company.silesia";
+    }
+
     @Override
     public String[][] getTankFilters() {
-        return new String[0][];
+        return FuelHandler.DefaultTanks.ELECTRIC.value();
     }
     @Override
     public float transportTopSpeed(){return 72f;}
@@ -87,7 +93,7 @@ public class EntityKonstal105NaMl extends TrainBase {
      * @return the type which will define it's features, GUI, a degree of storage (like crafting slots), and a number of other things.
      */
     @Override
-    public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
+    public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
     /**
      * <h2>Max Fuel</h2>
      * @return the maxstorage of fuel the train can store.
@@ -159,7 +165,7 @@ public class EntityKonstal105NaMl extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{1.9f,-0.15f,0f,0},{-1.9f,-0.15f,0}};}
+        return new float[][]{{1.9f,-0.26f,0f,0},{-1.9f,-0.26f,0}};}
 
     @Override
     public ModelBase[] bogieModels(){
@@ -167,7 +173,7 @@ public class EntityKonstal105NaMl extends TrainBase {
     }
     //
     @Override
-    public float[] bogieLengthFromCenter() {
+    public float[] rotationPoints() {
         return new float[]{1.9f, -1.9f};
     }
 
@@ -177,7 +183,7 @@ public class EntityKonstal105NaMl extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0,-0.1f,0}}; }
+    public float[][] modelOffsets() { return new float[][]{{0,0.0625f,0}}; }
 
     /**
      * <h2>rider sit or stand</h2>
@@ -196,22 +202,14 @@ public class EntityKonstal105NaMl extends TrainBase {
     @Override
     public boolean isReinforced(){return false;}
 
-    /**
-     * <h2>Fluid Tank Capacity</h2>
-     */
     @Override
     public int[] getTankCapacity(){return new int[]{8000};}
 
+    @Override
+    public ItemStackSlot fuelSlot(){
+        return new ItemStackSlot(this, 400,114,32).setOverlay(Items.redstone);
+    }
 
-
-    /**
-     * <h2>fluid filter</h2>
-     * defines what fluids can and can't be stored in the tank.
-     * for instance if you have a wooden tanker car, you can deny fluids that are fire sources (like lava).
-     */
-
-    //todo: maybe make some util functions or something to simplify this stuff?
-    //seems kinda complicated for something that should be the difficulty of a config file.
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
         switch (slot){
@@ -220,13 +218,9 @@ public class EntityKonstal105NaMl extends TrainBase {
         }
     }
 
-    /**
-     * <h2>fuel management</h2>
-     * defines how the transport manages burnHeat, both in consuming items, and in managing the burnHeat.
-     */
     @Override
     public void manageFuel(){
-        fuelHandler.manageElectric(this);
+        this.fuelHandler.manageElectric(this);
     }
 
     /**

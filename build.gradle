@@ -2,15 +2,9 @@ import java.text.SimpleDateFormat;
 
 buildscript {
     repositories {
-        mavenCentral()
-        maven {
-            name = "forge"
-            url = "http://files.minecraftforge.net/maven"
-        }
-        maven {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
+        maven { url = 'https://sizableshrimp.me/maven' }
+        jcenter()
+        maven { url = "https://maven.minecraftforge.net" }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
@@ -18,7 +12,7 @@ buildscript {
 }
 
 apply plugin: 'forge'
-apply plugin: 'idea'
+
 
 ext.configFile = file "build.properties"
 configFile.withReader {
@@ -37,11 +31,12 @@ version = buildTime() + config.modVersion.toString()
 group= "src.train" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "TramsIM_MetroIM"
 
+sourceCompatibility = targetCompatibility = "1.7"
+compileJava { sourceCompatibility = targetCompatibility = "1.7" }
+
 minecraft {
-    version = "1.7.10-10.13.4.1614-1.7.10"
+    version = "1.7.10-10.13.4.1558-1.7.10"
     runDir = "run"
-    replaceIn "Info.java"
-    replace "@VERSION1@", config.modVersion.toString()
 }
 
 repositories {
@@ -52,30 +47,26 @@ repositories {
 }
 
 dependencies {
-    repositories {
-        ivy {
-            name "BuildCraft"
-            artifactPattern "http://www.mod-buildcraft.com/releases/BuildCraft/[revision]/[module]-[revision](-[classifier]).[ext]"
-        }
-    }
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"
     //compile "some.group:artifact:version"
-	
-    compile name: "buildcraft", version: "7.1.16", classifier: "dev"
-    //compile "codechicken:CodeChickenCore:1.7.10-1.0.7.46:dev"
+      
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
+    compile "codechicken:CodeChickenLib:1.7.10-1.1.3.138:dev"
+    compile "codechicken:CodeChickenCore:1.7.10-1.0.7.46:dev"
+    compile "codechicken:NotEnoughItems:1.7.10-1.0.5.120:dev"
+	compile fileTree(dir: 'libs', include: ['*.jar'])
 
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
 }
 
-processResources
-{
+processResources {
     // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
@@ -92,12 +83,4 @@ processResources
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
-}
-
-idea
-{
-	module
-	{
-		inheritOutputDirs = true
-	}
 }

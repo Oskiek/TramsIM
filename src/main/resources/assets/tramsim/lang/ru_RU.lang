@@ -1,4 +1,3 @@
-//trams
 item.Konstal105Na.name=Konstal 105Na
 item.Konstal105Na#135R.name=Konstal 105Na #135R
 item.Konstal105NaMl.name=Konstal 105NaMl
@@ -6,26 +5,21 @@ item.TatraT3.name=Tatra T3
 item.DuewagPT8.name=Duewag PT8
 item.ModerusAlfa.name=Moderus Alfa
 item.BombardierCR4000.name=Bombardier CR4000
-item.FGV4300_Motor.name=Metrovalencia FGV 4300
-item.FGV3700_Motor.name=Metrovalencia FGV 3700 поколение I
-item.FGV3700_Motor_v2.name=Metrovalencia FGV 3700 поколение II
 item.BNLRV_A.name=BN LRV
 item.PCC.name=PCC
-item.BVG_G.name=BVG Class G
 item.TatraT3Short.name=Очень маленький Tatra T3
-item.FGV3600_Motor.name=Metrovalencia FGV 3600
 item.Combino_end.name=Siemens Combino
 item.KonstalN.name=Konstal N
 item.RussiaOne_end.name=Россия Один
 item.Triebwagen105.name=Triebwagen 105
+item.TatraK2_End.name=Tatra K2
+item.LohnerE1.name=Lohner E1
+item.TatraT4.name=Tatra T4
+item.TatraK5.name=Tatra K5
+item.ModerusBeta_End.name=Moderus Beta
 
 item.DuewagPT8_MiddleSegment.name=Duewag PT8 (Середина)
-item.FGV4300_Middle_wbogies.name=Metrovalencia FGV 4300 (Середина)
-item.FGV3700_Tail.name=Metrovalencia FGV 3700 Gen. I (Хвост)
-item.FGV3700_Tail_v2.name=Metrovalencia FGV 3700 Gen. II (Хвост)
 item.BNLRV_B.name=BN LRV (Хвост)
-item.FGV4300_Tail.name=Metrovalencia FGV 4300 (Хвост)
-item.FGV3600_Tail.name=Metrovalencia FGV 3600 (Хвост)
 item.Combino_Middle.name=Siemens Combino (Середина)
 item.Combino_Halfmiddle_1.name=Siemens Combino (половина среднего вагона 1)
 item.Combino_Halfmiddle_2.name=Siemens Combino (половина среднего вагона 2)
@@ -33,9 +27,13 @@ item.Combino_Halfmiddle_1_bidir.name=Siemens Combino (половина сред�
 item.Combino_Halfmiddle_2_ticket.name=Siemens Combino (половина среднего вагона 2 с билетным стендом)
 item.RussiaOne_middle.name=Россия Один (Середина)
 item.RussiaOne_end_nopanto.name=Россия Один (Хвост)
-item.FGV3600_Middle.name=Metrovalencia FGV 3600 (Середина)
+item.TatraK2_Back.name=Tatra K2 (Хвост)
+item.LohnerE1_Back.name=Lohner E1 (Хвост)
+item.TatraK5_Back.name=Tatra K5 (Хвост)
+item.Tatra_B4.name=Tatra B4
+item.ModerusBeta_Middle.name=Moderus Beta (Середина)
 
-//shelters
+
 tile.busstop_2_left_1.name=Остановка (левый край)
 tile.busstop_2_right_1.name=Остановка (правый край)
 tile.busstop_2_middle_1.name=Остановка (середина, стекло и скамейка)
@@ -43,15 +41,13 @@ tile.busstop_2_middle_2.name=Остановка (середина, стекло)
 tile.busstop_2_middle_3.name=Остановка (середина, стекло и расписание)
 tile.busstop_2_middle_4.name=Остановка (середина, схема)
 tile.busstop_2_middle_5.name=Остановка (середина, схема и скамейка)
-tile.busstop_3_left_1.name=Остановка (левый край)
-tile.busstop_3_right_1.name=Остановка (правый край)
-tile.busstop_3_middle_1.name=Остановка (середина)
+tile.busstop_3_left_1.name=Остановка 2 (левый край)
+tile.busstop_3_right_1.name=Остановка 2 (правый край)
+tile.busstop_3_middle_1.name=Остановка 2 (середина)
 
-//ticket machines
 tile.ticketmachine_kzkgop.name=Биллетный автомат (KZKGOP)
 tile.ticketmachine_brno.name=Биллетный автомат (IDSJMK)
 
-//countries
 menu.item.poland=Польша
 menu.item.czechia=Чехия
 menu.item.silesia=Не Польша
@@ -60,11 +56,9 @@ menu.item.spain=Испания
 menu.item.usa=Америка
 menu.item.russia=Россия
 
-//tabs
-item.tabVeh=Trams in Motion - Транспортные средства
-item.tabBlo=Trams in Motion - Блоки
+item.tramsimTabVeh=Trams in Motion - Транспортные средства
+item.tramsimTabBlo=Trams in Motion - Блоки
 
-//platforms
 tile.platform.name=Платформа
 tile.platform_pole.name=Платформа (с столбом)
 tile.edge_plain.name=Край платформы
@@ -78,8 +72,6 @@ tile.edge_british.name=Край платформы (Британский сти�
 tile.edge_lined.name=Край платформы с линией
 tile.edge_yellowlined.name=Край платформы (желтая линия)
 
-
-//in regions
 in.silesia=в Силезии
 in.poznan=в Познани
 in.krakow=в Kракове
@@ -97,20 +89,25 @@ in.riga=в Риге
 in.ostrava=в Остраве
 in.liberec=в Либерец
 in.wuppertal=в Вуппертале
+in.russia=в России
+in.odessa=в Одессе
+in.darmstadt=в Дармштадте
+in.bucharest=в Бухаресте
+in.zagreb=в Загребе
+in.dresden=в Дрездене
+in.lviv=во Львове
+in.cairo=в Каире
 
-//livery descriptions
 standardlivery=Используется стандартный облик
 anniversary.description=Юбилейный скин Minecraft
 shorttram.description=Короткая версия of Tatra T3...
 
-//special
 anniversary=Юбилей
 shorttram=Короткий
 
-//company names DO NOT TRANSLATE UNLESS COMPANY NAMES ARE TRANSLATED IN YOUR LANGUAGE
 company.silesia=Tramwaje Śląskie
 company.silesiaOld=Tramwaje Śląskie (Старые)
-comapny.krakow=MPK Kraków
+company.krakow=MPK Kraków
 company.poznan=MPK Poznań
 company.chicago=Chicago Transit Authority
 company.tec=TEC Charleroi
@@ -119,7 +116,8 @@ company.frankfurt=Stadtwerke Verkehrsgesellschaft Frankfurt am Main
 company.vbbr=Verkehrsbetriebe Brandenburg an der Havel
 company.elblag=Tramwaje Elbląskie
 company.olomouc=Dopravní podnik města Olomouce
-company.brno=Integrovaný Dopravní Systém Jihomoravského Kraje
+company.liberec=Dopravní podnik měst Liberce a Jablonce nad Nisou
+company.brno=Dopravní podnik města Brna
 company.ostrava=Dopravní podnik Ostrava
 company.praha=Транспортное предприятие Праги
 company.most=Dopravní podnik měst Mostu a Litvínova
@@ -127,3 +125,13 @@ company.odessa=КП «Одесміськелектротранс»
 company.riga=Rīgas Satiksme
 company.halle=Hallesche Verkehrs-AG
 company.elberfeld=Wuppertaler Schwebebahn
+company.uralvagonzavod=Uralvagonzavod
+company.darmstadt=HEAG mobilo
+company.bucharest=Societatea de Transport București
+company.zagreb=Zagrebački električni tramvaj
+company.dresden=Dresdner Verkehrsbetriebe AG
+company.lviv=ЛКП «Львівелектротранс»
+company.cairo 1=هيئة النقل العام بالقاهرة
+company.cairo 2=هيئة النقل العام بالقاهرة
+company.unknown=???
+

@@ -306,7 +306,7 @@ public class TatraK2 extends ModelBase //Same as Filename
         bodyModel[21].addShapeBox(-1F, 0F, 0F, 1, 3, 2, 0F,0F, 0F, 0.1F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -2.1F, 0F, 0F, 0.1F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -2.1F); // Box 33
         bodyModel[21].setRotationPoint(-22F, 2F, 6F);
 
-        bodyModel[22].addShapeBox(0F, 0F, 0F, 1, 3, 1, 0F,0F, 0F, 0F, 0F, 0F, 0.1F, 0F, 0F, -2.1F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0.1F, 0F, 0F, -2.1F, 0F, 0F, 0F); // Box 34
+        bodyModel[22].addShapeBox(0F, 0F, 0F, 1, 3, 2, 0F,0F, 0F, 0F, 0F, 0F, 0.1F, 0F, 0F, -2.1F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0.1F, 0F, 0F, -2.1F, 0F, 0F, 0F); // Box 34
         bodyModel[22].setRotationPoint(-33F, 2F, 5F);
 
         bodyModel[23].addShapeBox(-11F, 0F, 0F, 11, 2, 2, 0F,0F, 0F, 0F, 0F, 0F, 0F, -1F, 0F, 0F, -1F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -1F, 0F, 0F, -1F, 0F, 0F); // Box 35
@@ -719,28 +719,28 @@ public class TatraK2 extends ModelBase //Same as Filename
         bodyModel[157].setRotationPoint(-22F, -19F, -1.5F);
 
         bodyModel[158].addShapeBox(0F, 0F, 0F, 1, 1, 1, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 244
-        bodyModel[158].setRotationPoint(-42F, -2F, 3F);
+        bodyModel[158].setRotationPoint(-41.5F, -2F, 4F);
 
         bodyModel[159].addShapeBox(0F, 0F, 0F, 1, 1, 1, 0F,0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 245
-        bodyModel[159].setRotationPoint(-42F, -2F, 2F);
+        bodyModel[159].setRotationPoint(-41.5F, -2F, 3F);
 
         bodyModel[160].addShapeBox(0F, 0F, 0F, 1, 1, 1, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 246
-        bodyModel[160].setRotationPoint(-42F, -1F, 2F);
+        bodyModel[160].setRotationPoint(-41.5F, -1F, 3F);
 
         bodyModel[161].addShapeBox(0F, 0F, 0F, 1, 1, 1, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F); // Box 247
-        bodyModel[161].setRotationPoint(-42F, -1F, 3F);
+        bodyModel[161].setRotationPoint(-41.5F, -1F, 4F);
 
         bodyModel[162].addShapeBox(0F, 0F, 0F, 1, 1, 1, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 248
-        bodyModel[162].setRotationPoint(-42F, -2F, -3F);
+        bodyModel[162].setRotationPoint(-41.5F, -2F, -4F);
 
         bodyModel[163].addShapeBox(0F, 0F, 0F, 1, 1, 1, 0F,0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 249
-        bodyModel[163].setRotationPoint(-42F, -2F, -4F);
+        bodyModel[163].setRotationPoint(-41.5F, -2F, -5F);
 
         bodyModel[164].addShapeBox(0F, 0F, 0F, 1, 1, 1, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F); // Box 250
-        bodyModel[164].setRotationPoint(-42F, -1F, -3F);
+        bodyModel[164].setRotationPoint(-41.5F, -1F, -4F);
 
         bodyModel[165].addShapeBox(0F, 0F, 0F, 1, 1, 1, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 251
-        bodyModel[165].setRotationPoint(-42F, -1F, -4F);
+        bodyModel[165].setRotationPoint(-41.5F, -1F, -5F);
 
         bodyModel[166].addBox(0F, 0F, 0F, 1, 2, 1, 0F); // Box 252
         bodyModel[166].setRotationPoint(-10F, -10F, 10F);
@@ -873,19 +873,19 @@ public class TatraK2 extends ModelBase //Same as Filename
 
         bodyModel[209].addShapeBox(0F, 0F, 0F, 4, 18, 1, 0F,0F, 0F, 0F, -1F, 0F, 0F, -1F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, 0F, -1F, 0F, 0F, -1F, 0F, -0.5F, 0F, 0F, -0.5F); // Box 198
         bodyModel[209].setRotationPoint(-27.5F, -13F, 7.75F);
-        bodyModel[209].rotateAngleY = 0.16144296F;
+        bodyModel[209].rotateAngleY = 0.17453293F;
 
         bodyModel[210].addShapeBox(0F, 0F, 0F, 4, 18, 1, 0F,0F, 0F, 0F, -1F, 0F, 0F, -1F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, 0F, -1F, 0F, 0F, -1F, 0F, -0.5F, 0F, 0F, -0.5F); // Box 199
         bodyModel[210].setRotationPoint(-30.5F, -13F, 7.25F);
-        bodyModel[210].rotateAngleY = 0.16144296F;
+        bodyModel[210].rotateAngleY = 0.17453293F;
 
         bodyModel[211].addShapeBox(0F, 0F, 0F, 3, 18, 1, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F); // Box 200
         bodyModel[211].setRotationPoint(-33.5F, -13F, 6.75F);
-        bodyModel[211].rotateAngleY = 0.16144296F;
+        bodyModel[211].rotateAngleY = 0.17453293F;
 
         bodyModel[212].addShapeBox(0F, 0F, 0F, 3, 18, 1, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F); // Box 201
         bodyModel[212].setRotationPoint(-24.5F, -13F, 8.25F);
-        bodyModel[212].rotateAngleY = 0.16144296F;
+        bodyModel[212].rotateAngleY = 0.17453293F;
 
         bodyModel[213].addShapeBox(0F, 0F, 2F, 1, 2, 1, 0F,0F, 0F, -1F, 0F, 0F, -0.67F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -1F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 220
         bodyModel[213].setRotationPoint(-39F, -16F, -8F);

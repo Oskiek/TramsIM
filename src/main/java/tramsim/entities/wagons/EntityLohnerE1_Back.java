@@ -19,7 +19,7 @@ import tramsim.models.wagons.LohnerE1_Back;
 import java.util.List;
 import java.util.UUID;
 
-import static ebf.tim.utility.RailUtility.DefineStack;
+import static ebf.tim.utility.CommonUtil.DefineStack;
 
 public class EntityLohnerE1_Back extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
@@ -40,7 +40,7 @@ public class EntityLohnerE1_Back extends RollingstockBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{-1f,0f,0}};}
+        return new float[][]{{-1f,-0.11f,0}};}
 
     @Override
     public ModelBase[] bogieModels(){  return new ModelBase[]{new LohnerE1_Bogie()};}
@@ -50,7 +50,7 @@ public class EntityLohnerE1_Back extends RollingstockBase {
      * <h2>Bogie Offset</h2>
      */
     @Override
-    public float[] bogieLengthFromCenter() {
+    public float[] rotationPoints() {
         return new float[]{1f, -1.75f};
     }
 
@@ -61,15 +61,18 @@ public class EntityLohnerE1_Back extends RollingstockBase {
 
     @Override
     public float[][] modelOffsets() {
-        return new float[][]{{0f,-0.15f,0f}};
+        return new float[][]{{0f,-0.0625f,0f}};
     }
 
     @Override
     public void registerSkins(){
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/lohner_e1_back_damrstadt.png", "textures/trams/bogies/lohner_e1_bogie_darmstadt.png",
-                "default", "Standard livery used in Darmstadt.");
+                "company.darmstadt", "Standard livery used in Darmstadt.");
     }
 
+    public String getDefaultSkin(){
+        return "tramsim:company.darmstadt";
+    }
 
     @Override
     public boolean isReinforced() {
@@ -84,11 +87,6 @@ public class EntityLohnerE1_Back extends RollingstockBase {
     @Override
     public String[][] getTankFilters() {
         return (String[][])null;
-    }
-
-    @Override
-    public int getRFCapacity() {
-        return 0;
     }
 
     @Override

@@ -13,7 +13,7 @@ public class BusStop_3_Middle_1 extends BlockContainer {
 	public BusStop_3_Middle_1(){
 		super(Material.iron);
 		setBlockName("busstop_3_middle_1");
-        this.setBlockBounds(0F, 0.0F, 0F, 1F, 2F, 1F);
+        this.setBlockBounds(0F, 0.0F, 0F, 1F, 2.5F, 1F);
 	}
 
 	 

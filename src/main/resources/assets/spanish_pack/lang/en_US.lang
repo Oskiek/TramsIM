@@ -1,0 +1,33 @@
+//trams
+item.Renfe446.name=Renfe 446
+item.Renfe450.motor.name=Renfe 450 (Motor)
+item.Renfe269.name=Renfe 269
+item.Renfe440.name=Renfe 440 (Motor)
+item.Renfe592.motor.name=Renfe 592 (Motor)
+item.Euskotren200.name=Euskotren 200
+
+item.Renfe446_Middle.name=Renfe 446 (Middle)
+item.Renfe450.middle.name=Renfe 450 (Middle)
+item.Renfe450.tail.name=Renfe 450 (Tail)
+item.Renfe592.tail.name=Renfe 592 (Tail)
+item.Euskotren.200.tail.name=Euskotren 200 (Tail)
+item.Euskotren.200.middle.name=Euskotren 200 (Middle)
+
+tile.Catenary_single_A.name=Single Catenary (A)
+
+//tabs
+item.spack_TabVeh=Spanish Pack - Vehicles
+item.spack_TabBlo=Spanish Pack - Blocks
+
+//companies
+company.spain=Renfe
+company.madrid=Metro Madrid
+company.renfeCercanias=Cercanias
+company.renfeTaxi=Taxi
+company.renfe=Renfe
+company.renfeOld=Renfe Old
+
+standardlivery=Standard livery used
+oldlivery=Old livery used
+
+in.spain=in Spain

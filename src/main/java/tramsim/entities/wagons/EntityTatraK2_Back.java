@@ -4,6 +4,7 @@ import ebf.tim.TrainsInMotion;
 import ebf.tim.api.RollingstockBase;
 import ebf.tim.api.SkinRegistry;
 import ebf.tim.items.ItemTransport;
+import ebf.tim.utility.CommonUtil;
 import fexcraft.tmt.slim.ModelBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -19,7 +20,7 @@ import tramsim.models.wagons.TatraK2_End;
 import java.util.List;
 import java.util.UUID;
 
-import static ebf.tim.utility.RailUtility.DefineStack;
+import static ebf.tim.utility.CommonUtil.DefineStack;
 
 public class EntityTatraK2_Back extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
@@ -40,7 +41,7 @@ public class EntityTatraK2_Back extends RollingstockBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{-0.8f,0f,0}};}
+        return new float[][]{{-1f,-0.11f,0}};}
 
     @Override
     public ModelBase[] bogieModels(){  return new ModelBase[]{new ModelKT4_Bogie()};}
@@ -50,8 +51,8 @@ public class EntityTatraK2_Back extends RollingstockBase {
      * <h2>Bogie Offset</h2>
      */
     @Override
-    public float[] bogieLengthFromCenter() {
-        return new float[]{2.8f,-0.8f};
+    public float[] rotationPoints() {
+        return new float[]{1f,-2.8f};
     }
 
     @Override
@@ -61,15 +62,18 @@ public class EntityTatraK2_Back extends RollingstockBase {
 
     @Override
     public float[][] modelOffsets() {
-        return new float[][]{{0f,-0.15f,0f}};
+        return new float[][]{{0f,0.11f,0f}};
     }
 
     @Override
     public void registerSkins(){
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/k2_brno.png", "textures/trams/bogies/kt4_bogie.png",
-                "default", "Standard livery used in Czechia.");
+                "company.brno", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.brno") + ".");
     }
 
+    public String getDefaultSkin(){
+        return "tramsim:company.brno";
+    }
 
     @Override
     public boolean isReinforced() {
@@ -84,11 +88,6 @@ public class EntityTatraK2_Back extends RollingstockBase {
     @Override
     public String[][] getTankFilters() {
         return (String[][])null;
-    }
-
-    @Override
-    public int getRFCapacity() {
-        return 0;
     }
 
     @Override

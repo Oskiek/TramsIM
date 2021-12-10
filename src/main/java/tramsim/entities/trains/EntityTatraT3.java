@@ -10,7 +10,8 @@ import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
 import ebf.tim.utility.FuelHandler;
-import ebf.tim.utility.RailUtility;
+import ebf.tim.utility.CommonUtil;
+import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -61,32 +62,35 @@ public class EntityTatraT3 extends TrainBase {
     @Override
     public void registerSkins(){
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/tatrat3_brno.png", "textures/trams/bogies/kt4_bogie.png",
-                "company.brno", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.brno") + ".");
+                "company.brno", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.brno") + ".");
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/tatrat3_olomouc.png", "textures/trams/bogies/kt4_bogie.png",
-                "company.olomouc", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.olomouc") + ".");
+                "company.olomouc", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.olomouc") + ".");
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/tatrat3_praha.png", "textures/trams/bogies/kt4_bogie.png",
-                "company.praha", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.praha") + ".");
+                "company.praha", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.praha") + ".");
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/tatrat3_ostrava.png", "textures/trams/bogies/kt4_bogie.png",
-                "company.ostrava", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.ostrava") + ".");
+                "company.ostrava", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.ostrava") + ".");
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/tatrat3_most.png", "textures/trams/bogies/kt4_bogie.png",
-                "company.most", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.most") + ".");
+                "company.most", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.most") + ".");
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/tatrat3_halle.png", "textures/trams/bogies/kt4_bogie.png",
-                "company.halle", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.halle") + ".");
+                "company.halle", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.halle") + ".");
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/tatrat3_odessa.png", "textures/trams/bogies/kt4_bogie.png",
-                "company.odessa", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.odessa") + ".");
+                "company.odessa", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.odessa") + ".");
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/tatrat3_liberec.png", "textures/trams/bogies/kt4_bogie.png",
-                "company.liberec", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.liberec") + ".");
+                "company.liberec", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.liberec") + ".");
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/tatrat3_riga.png", "textures/trams/bogies/kt4_bogie.png",
-                "company.riga", RailUtility.translate("standardlivery") + " " + RailUtility.translate("in.riga") + ".");
+                "company.riga", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.riga") + ".");
         SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/tatra_t3_anniv.png", "textures/trams/bogies/kt4_bogie.png",
-                "anniversary", RailUtility.translate("anniversary.description"));
+                "anniversary", CommonUtil.translate("anniversary.description"));
     }
 
+    public String getDefaultSkin(){
+        return "tramsim:company.brno";
+    }
 
 
     @Override
     public String[][] getTankFilters() {
-        return new String[0][];
+        return FuelHandler.DefaultTanks.ELECTRIC.value();
     }
 
     @Override
@@ -99,7 +103,7 @@ public class EntityTatraT3 extends TrainBase {
     public int getInventoryRows(){return 1;}
 
     @Override
-    public TrainsInMotion.transportTypes getType(){return TrainsInMotion.transportTypes.ELECTRIC;}
+    public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
     @Override
     public float getMaxFuel(){return 1;}
     @Override
@@ -137,13 +141,13 @@ public class EntityTatraT3 extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{1.65f,0.075f,0f,},{-1.65f,0.075f,0f}};}
+        return new float[][]{{1.65f,-0.035f,0f,},{-1.65f,-0.035f,0f}};}
 
     @Override
     public ModelBase[] bogieModels() { return new ModelBase[]{new ModelKT4_Bogie()};}
 
     @Override
-    public float[] bogieLengthFromCenter() {
+    public float[] rotationPoints() {
         return new float[]{1.65f, -1.65f};
     }
 
@@ -153,7 +157,7 @@ public class EntityTatraT3 extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0,-0.15f,0}}; }
+    public float[][] modelOffsets() { return new float[][]{{0,0f,0}}; }
 
     @Override
     public boolean shouldRiderSit(){
@@ -167,7 +171,10 @@ public class EntityTatraT3 extends TrainBase {
     @Override
     public int[] getTankCapacity(){return new int[]{8000};}
 
-
+    @Override
+    public ItemStackSlot fuelSlot(){
+        return new ItemStackSlot(this, 400,114,32).setOverlay(Items.redstone);
+    }
 
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack){
@@ -179,7 +186,7 @@ public class EntityTatraT3 extends TrainBase {
 
     @Override
     public void manageFuel(){
-        fuelHandler.manageElectric(this);
+        this.fuelHandler.manageElectric(this);
     }
 
     public Item getItem(){
