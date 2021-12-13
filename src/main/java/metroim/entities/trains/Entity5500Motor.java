@@ -14,6 +14,7 @@ import fexcraft.tmt.slim.ModelBase;
 import metroim.MetroIM;
 import metroim.models.bogies.StandardBogie;
 import metroim.models.trains.Motor5000;
+import metroim.models.trains.Motor5500;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -25,26 +26,26 @@ import java.util.List;
 import java.util.UUID;
 
 
-public class Entity5000Motor extends TrainBase {
+public class Entity5500Motor extends TrainBase {
 
 
 
-    public static final Item thisItem = new ItemTransport(new Entity5000Motor(null), MetroIM.MODID,MetroIM.metroimtabvehicle);
+    public static final Item thisItem = new ItemTransport(new Entity5500Motor(null), MetroIM.MODID,MetroIM.metroimtabvehicle);
 
 
-    public Entity5000Motor(UUID owner, World world, double xPos, double yPos, double zPos) {
+    public Entity5500Motor(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
     }
-    public Entity5000Motor(World world){
+    public Entity5500Motor(World world){
         super(world);
     }
 
     @Override
-    public String transportName(){return "Metro5000_Motor";}
+    public String transportName(){return "Metro5500_Motor";}
     @Override
     public String transportcountry(){return "Spain";}
     @Override
-    public String transportYear(){return "2006+";}
+    public String transportYear(){return "1990";}
     @Override
     public String transportFuelType() {
         return "Electric";
@@ -56,10 +57,10 @@ public class Entity5000Motor extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/madrid_metro_5000.png", "textures/trams/bogies/5000_bogie.png",
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/madrid_metro_5500_new.png", "textures/trams/bogies/5000_bogie.png",
         "company.madrid", "Standard livery used in Madrid.");
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/madrid_metro_5000_2.png", "textures/trams/bogies/5000_bogie.png",
-        "company.madrid2", "Standard livery used in Madrid.");
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/madrid_metro_5500_old.png", "textures/trams/bogies/5000_bogie.png",
+        "company.madrid2", "Old livery used in Madrid.");
     }
 
     public String getDefaultSkin(){return "metroim:company.madrid";}
@@ -176,7 +177,7 @@ public class Entity5000Motor extends TrainBase {
 
 
     @Override
-    public ModelBase[] getModel(){return new ModelBase[]{new Motor5000()};}
+    public ModelBase[] getModel(){return new ModelBase[]{new Motor5500()};}
 
     /**
      * <h2>sets the resource location for sounds, like horn and the sound made for the engine running</h2>

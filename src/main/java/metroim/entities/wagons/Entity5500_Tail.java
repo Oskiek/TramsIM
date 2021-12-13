@@ -8,6 +8,7 @@ import fexcraft.tmt.slim.ModelBase;
 import metroim.MetroIM;
 import metroim.models.bogies.StandardBogie;
 import metroim.models.wagons.Tail5000;
+import metroim.models.wagons.Tail5500;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -19,16 +20,16 @@ import java.util.UUID;
 
 import static ebf.tim.utility.CommonUtil.DefineStack;
 
-public class Entity5000_Tail extends RollingstockBase {
+public class Entity5500_Tail extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
             "\u00A77" + StatCollector.translateToLocal("menu.item.weight") +": 2 " + StatCollector.translateToLocal("menu.item.tons"),
             "\u00A77" + StatCollector.translateToLocal("menu.item.seats") +": 4 " + StatCollector.translateToLocal("menu.item.players")};
-    public static final Item thisItem = new ItemTransport(new Entity5000_Tail(null), MetroIM.MODID, MetroIM.metroimtabvehicle);
+    public static final Item thisItem = new ItemTransport(new Entity5500_Tail(null), MetroIM.MODID, MetroIM.metroimtabvehicle);
 
-    public Entity5000_Tail(UUID owner, World world, double xPos, double yPos, double zPos) {
+    public Entity5500_Tail(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
     }
-    public Entity5000_Tail(World world){
+    public Entity5500_Tail(World world){
         super(world);
     }
 
@@ -65,10 +66,10 @@ public class Entity5000_Tail extends RollingstockBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/madrid_metro_5000.png", "textures/trams/bogies/5000_bogie.png",
+        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/madrid_metro_5500_new.png", "textures/trams/bogies/5000_bogie.png",
                 "company.madrid", "Standard livery used in Madrid.");
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/madrid_metro_5000_2.png", "textures/trams/bogies/5000_bogie.png",
-                "company.madrid2", "Standard livery used in Madrid.");
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/madrid_metro_5500_old.png", "textures/trams/bogies/5000_bogie.png",
+                "company.madrid2", "old livery used in Madrid.");
     }
 
     public String getDefaultSkin(){return "metroim:company.madrid";}
@@ -109,7 +110,7 @@ public class Entity5000_Tail extends RollingstockBase {
 
     @Override
     public String transportName() {
-        return "Metro5000_Tail";
+        return "Metro5500_Tail";
     }
 
     @Override
@@ -119,7 +120,7 @@ public class Entity5000_Tail extends RollingstockBase {
 
     @Override
     public String transportYear() {
-        return "1975";
+        return "1990";
     }
 
     @Override
@@ -173,7 +174,7 @@ public class Entity5000_Tail extends RollingstockBase {
      * <h2>Rider offsets</h2>
      */
     @Override
-    public float[][] getRiderOffsets(){return new float[][]{{0.8125f,0.9f, 0.40625f}};}
+    public float[][] getRiderOffsets(){return new float[][]{{0.5125f,0.75f, 0.20625f}};}
 
     @Override
     public float[] getHitboxSize() {
@@ -186,7 +187,7 @@ public class Entity5000_Tail extends RollingstockBase {
     }
 
     @Override
-    public ModelBase[] getModel(){return new ModelBase[]{new Tail5000()};}
+    public ModelBase[] getModel(){return new ModelBase[]{new Tail5500()};}
 
     /**
      * <h2>pre-asigned values</h2>
