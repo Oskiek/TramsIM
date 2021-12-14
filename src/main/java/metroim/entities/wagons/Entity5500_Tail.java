@@ -178,7 +178,7 @@ public class Entity5500_Tail extends RollingstockBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.75f,1.75f,1.5f};
+        return new float[]{4.85f,1.75f,1.5f};
     }
 
     @Override

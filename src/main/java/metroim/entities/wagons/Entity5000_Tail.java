@@ -69,6 +69,8 @@ public class Entity5000_Tail extends RollingstockBase {
                 "company.madrid", "Standard livery used in Madrid.");
         SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/madrid_metro_5000_2.png", "textures/trams/bogies/5000_bogie.png",
                 "company.madrid2", "Standard livery used in Madrid.");
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/madrid_metro_5000_3.png", "textures/trams/bogies/5000_bogie.png",
+                "company.madrid3", "Old livery used in Madrid.");
     }
 
     public String getDefaultSkin(){return "metroim:company.madrid";}
@@ -177,7 +179,7 @@ public class Entity5000_Tail extends RollingstockBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.75f,1.75f,1.5f};
+        return new float[]{4.85f,1.75f,1.5f};
     }
 
     @Override

@@ -225,10 +225,10 @@ public class Tail5000 extends ModelBase //Same as Filename
         bodyModel[20].setRotationPoint(39F, -13F, -9.5F);
 
         bodyModel[21].addShapeBox(0F, 0F, 0F, 1, 1, 2, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Import Box330
-        bodyModel[21].setRotationPoint(-34.4F, 3F, 7.5F);
+        bodyModel[21].setRotationPoint(-34.5F, 2.75F, 7.5F);
 
         bodyModel[22].addShapeBox(0F, 0F, 0F, 1, 1, 2, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Import Box331
-        bodyModel[22].setRotationPoint(-34.4F, 3F, -9.5F);
+        bodyModel[22].setRotationPoint(-34.5F, 2.75F, -9.5F);
 
         bodyModel[23].addBox(0F, 0F, 0F, 12, 5, 8, 0F); // Import Box338
         bodyModel[23].setRotationPoint(-2F, 5F, 0.5F);
