@@ -1,52 +1,52 @@
-package spanish_pack.entities.trains;
+package spanish_pack.entities.wagons;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ebf.tim.TrainsInMotion;
 import ebf.tim.api.SkinRegistry;
 import ebf.tim.api.TrainBase;
+import ebf.tim.entities.GenericRailTransport;
 import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
-import ebf.tim.utility.CommonUtil;
 import ebf.tim.utility.FuelHandler;
 import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
-import spanish_pack.Spanish_pack;
-import spanish_pack.models.bogies.Renfe_446_Bogie;
-import spanish_pack.models.bogies.StandardBogie;
-import spanish_pack.models.trains.Renfe446;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import spanish_pack.Spanish_pack;
+import spanish_pack.models.wagons.Feve3300_tail;
+import spanish_pack.models.wagons.talgo_middle_standard;
+import tramsim.models.bogies.NullBogiePlaceHolder;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
 
-public class EntityRenfe446 extends TrainBase {
+public class Entitytalgomiddlestandard extends TrainBase {
 
 
 
-    public static final Item thisItem = new ItemTransport(new EntityRenfe446(null), Spanish_pack.MODID, Spanish_pack.spanish_pack);
+    public static final Item thisItem = new ItemTransport(new Entitytalgomiddlestandard(null), Spanish_pack.MODID, Spanish_pack.spanish_pack);
 
 
-    public EntityRenfe446(UUID owner, World world, double xPos, double yPos, double zPos) {
+    public Entitytalgomiddlestandard(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
     }
-    public EntityRenfe446(World world){
+    public Entitytalgomiddlestandard(World world){
         super(world);
     }
 
     @Override
-    public String transportName(){return "Renfe446";}
+    public String transportName(){return "talgo IV middle standard";}
     @Override
     public String transportcountry(){return "Spain";}
     @Override
-    public String transportYear(){return "1988-1993";}
+    public String transportYear(){return "1988";}
     @Override
     public String transportFuelType() {
         return "Electric";
@@ -58,18 +58,9 @@ public class EntityRenfe446 extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/446_white.png", "textures/trams/bogies/446_bogie.png",
-                "company.renfe", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
-        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/446_red.png", "textures/trams/bogies/446_bogie.png",
-                "company.renfeOld", CommonUtil.translate("oldlivery") + " " + CommonUtil.translate("in.spain") + ".");
-        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/446_orange.png", "textures/trams/bogies/446_bogie.png",
-                "company.rodalies de catalunya", CommonUtil.translate("Rodalies livery") + " " + CommonUtil.translate("in.spain") + ".");
-        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/446_purple.png", "textures/trams/bogies/446_bogie.png",
-                "company.renfeStripe", CommonUtil.translate("Old livery with stripe") + " " + CommonUtil.translate("in.spain") + ".");
-    }
+        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/talgo_middle_car_seats.png", "textures/trams/bogies/446_bogie.png",
+                "Feve Blue livery", "Standard livery used in Asturias, Spain.");
 
-    public String getDefaultSkin(){
-        return "spanish_pack:company.renfeOld";
     }
 
     public String[][] getTankFilters() {
@@ -78,27 +69,53 @@ public class EntityRenfe446 extends TrainBase {
 
     @Override
     public float transportTopSpeed(){return 100f;}
-
+    /**
+     * <h2>Bogie Offset</h2>
+     * @return the list of offsets for the bogies, 0 being the center. negative values are towards the front of the train.
+     * Must always go from front to back. First and last values must always be exact opposites.
+     */
     @Override
-    public List<Double> getRenderBogieOffsets(){return  Arrays.asList(1.3125, -1.875);}
-
+    public List<Double> getRenderBogieOffsets(){return  Arrays.asList(1.5, -2.25);}
+    /**
+     * <h2>Inventory Size</h2>
+     * @return the size of the inventory not counting any fuel or crafting slots, those are defined by the type.
+     */
     @Override
     public int getInventoryRows(){return 1;}
-
+    /**
+     * <h2>Type</h2>
+     * @return the type which will define it's features, GUI, a degree of storage (like crafting slots), and a number of other things.
+     */
     @Override
     public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
-
+    /**
+     * <h2>Max Fuel</h2>
+     * @return the maxstorage of fuel the train can store.
+     * @see GenericRailTransport#getMaxFuel() for more info.
+     * @see FuelHandler for information on fuel consumption.
+     */
     @Override
     public float getMaxFuel(){return 1;}
-
+    /**
+     * <h2>Rider offset</h2>
+     * @return defines the offsets of the riders in blocks, the first value is how far back, and the second is how high.
+     *     Negative values are towards the front, ground, or right. In that order.
+     *     Each set of floats represents a different rider.
+     *     Only the first 3 values of each set of floats are actually used.
+     */
     @Override
-    public float[][] getRiderOffsets(){return new float[][]{{-2f,1f, 0.0625f}};}
+    public float[][] getRiderOffsets(){return new float[][]{{0.4125f,0.5f, 0.34375f}};}
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{5.125f,1.75f,1.5f};
+        return new float[]{4.5f,1.75f,1.5f};
     }
 
+    /**
+     * <h2>Acceleration</h2>
+     * <h4>TRAINS ONLY.</h4>
+     * @return defines the acceleration.
+     */
     @Override
     public float transportMetricHorsePower(){return 75f;}
 
@@ -119,19 +136,19 @@ public class EntityRenfe446 extends TrainBase {
         };
     }
 
-    @Override
+      @Override
     public float getPistonOffset(){return 0f;}
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{1.3125f,0.0f,0},{-1.875f,0.0f,0}};}
+        return new float[][]{{2.0f,-0f,0f},{-2.0f,-0f,0f}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{ new Renfe_446_Bogie()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{ new NullBogiePlaceHolder()};}
 
 
     @Override
     public float[] rotationPoints() {
-        return new float[]{1.875f,-1.875f};
+        return new float[]{1.75f,-1.75f};
     }
 
     @Override
@@ -140,7 +157,7 @@ public class EntityRenfe446 extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0f,0.075f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0.0f,0.0f,0f}}; }
 
     /**
      * <h2>rider sit or stand</h2>
@@ -159,9 +176,7 @@ public class EntityRenfe446 extends TrainBase {
     @Override
     public boolean isReinforced(){return false;}
 
-    /**
-     * <h2>Fluid Tank Capacity</h2>
-     */
+
     @Override
     public int[] getTankCapacity(){return new int[]{8000};}
     @Override
@@ -181,6 +196,7 @@ public class EntityRenfe446 extends TrainBase {
         this.fuelHandler.manageElectric(this);
     }
 
+
     /**
      * <h2>pre-assigned values</h2>
      * These return values are defined from the top of the class.
@@ -197,7 +213,7 @@ public class EntityRenfe446 extends TrainBase {
 
 
     @Override
-    public ModelBase[] getModel(){return new ModelBase[]{new Renfe446()};}
+    public ModelBase[] getModel(){return new ModelBase[]{new talgo_middle_standard()};}
 
     /**
      * <h2>sets the resource location for sounds, like horn and the sound made for the engine running</h2>

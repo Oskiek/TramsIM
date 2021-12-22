@@ -6,31 +6,31 @@ import ebf.tim.api.SkinRegistry;
 import ebf.tim.items.ItemTransport;
 import ebf.tim.utility.CommonUtil;
 import fexcraft.tmt.slim.ModelBase;
-import spanish_pack.Spanish_pack;
-import spanish_pack.models.bogies.Renfe_446_Bogie;
-import spanish_pack.models.bogies.StandardBogie;
-import spanish_pack.models.wagons.Renfe446_Middle;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
+import spanish_pack.Spanish_pack;
+import spanish_pack.models.bogies.Renfe_446_Bogie;
+import spanish_pack.models.wagons.Renfe465_Middle;
+import spanish_pack.models.wagons.Renfe465_Middle2;
 
 import java.util.List;
 import java.util.UUID;
 
 import static ebf.tim.utility.CommonUtil.DefineStack;
 
-public class EntityRenfe446_Middle extends RollingstockBase {
+public class EntityCivia_Middle2 extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
             "\u00A77" + StatCollector.translateToLocal("menu.item.weight") +": 2 " + StatCollector.translateToLocal("menu.item.tons"),
             "\u00A77" + StatCollector.translateToLocal("menu.item.seats") +": 4 " + StatCollector.translateToLocal("menu.item.players")};
-    public static final Item thisItem = new ItemTransport(new EntityRenfe446_Middle(null), Spanish_pack.MODID, Spanish_pack.spanish_pack);
+    public static final Item thisItem = new ItemTransport(new EntityCivia_Middle2(null), Spanish_pack.MODID, Spanish_pack.spanish_pack);
 
-    public EntityRenfe446_Middle(UUID owner, World world, double xPos, double yPos, double zPos) {
+    public EntityCivia_Middle2(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
     }
-    public EntityRenfe446_Middle(World world){
+    public EntityCivia_Middle2(World world){
         super(world);
     }
 
@@ -41,7 +41,7 @@ public class EntityRenfe446_Middle extends RollingstockBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{1.625f,0.0f,0},{-1.5625f,0.0f,0}};}
+        return new float[][]{{1.825f,0.0f,0}};}
 
     @Override
     public ModelBase[] bogieModels(){
@@ -63,22 +63,23 @@ public class EntityRenfe446_Middle extends RollingstockBase {
 
     @Override
     public float[][] modelOffsets() {
-        return new float[][]{{-0.3f,0.075f,0f}};
+        return new float[][]{{0f,0.1f,0f}};
     }
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/446_white.png", "textures/trams/bogies/446_bogie.png",
-                "company.renfe", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
-        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/446_red.png", "textures/trams/bogies/446_bogie.png",
-                "company.renfeOld", CommonUtil.translate("oldlivery") + " " + CommonUtil.translate("in.spain") + ".");
-        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/446_orange.png", "textures/trams/bogies/446_bogie.png",
-                "company.rodalies de catalunya", CommonUtil.translate("Rodalies livery") + " " + CommonUtil.translate("in.spain") + ".");
-        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/446_purple.png", "textures/trams/bogies/446_bogie.png",
-                "company.renfeStripe", CommonUtil.translate("Old livery with stripe") + " " + CommonUtil.translate("in.spain") + ".");
+        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/Civia_coupler.png", "textures/trams/bogies/446_bogie.png",
+                "company.renfe new", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
+        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/Civia_w_Haube.png", "textures/trams/bogies/446_bogie.png",
+                "renfe new", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
+        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/Civia_Original.png", "textures/trams/bogies/446_bogie.png",
+                "R.E.N.F.E.", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
+        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/Civia_Rodalies.png", "textures/trams/bogies/446_bogie.png",
+                "Rodalies", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in Catalonia") + ".");
+
     }
     public String getDefaultSkin(){
-        return "spanish_pack:company.renfeOld";
+        return "spanish_pack:company.renfe new";
     }
 
     @Override
@@ -117,7 +118,7 @@ public class EntityRenfe446_Middle extends RollingstockBase {
 
     @Override
     public String transportName() {
-        return "Renfe446_Middle";
+        return "Renfe465_Middle2";
     }
 
     @Override
@@ -127,7 +128,7 @@ public class EntityRenfe446_Middle extends RollingstockBase {
 
     @Override
     public String transportYear() {
-        return "2006+";
+        return "2003+";
     }
 
     @Override
@@ -185,7 +186,7 @@ public class EntityRenfe446_Middle extends RollingstockBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.625f,1.75f,1.5f};
+        return new float[]{3.75f,1.75f,1.5f};
     }
 
     @Override
@@ -194,7 +195,7 @@ public class EntityRenfe446_Middle extends RollingstockBase {
     }
 
     @Override
-    public ModelBase[] getModel(){return new ModelBase[]{new Renfe446_Middle()};}
+    public ModelBase[] getModel(){return new ModelBase[]{new Renfe465_Middle2()};}
 
     /**
      * <h2>pre-asigned values</h2>

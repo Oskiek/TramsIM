@@ -69,9 +69,13 @@ public class Spanish_pack {
                                           new EntityEuskotren300tail(null),
                 /*/Pre-release 1 blocked*/      new EntityRenfeCivia(null),
                 /*/Pre-release 1 blocked*/      new EntityCivia_Middle(null),
+                /*/Pre-release 1 blocked*/      new EntityCivia_Middle2(null),
                 /*/Pre-release 1 blocked*/      new EntityCivia_tail(null),
                 /*/Pre-release 1 blocked*/      new EntityRenfeCivia_w_Panto(null),
-                /*/Pre-release 1 blocked*/      new Entityfeve3300tail(null)
+                /*/Pre-release 1 blocked*/      new Entityfeve3300tail(null),
+                /*/Pre-release 1 blocked*/      new Entitytalgomiddlestandard(null),
+                /*/Pre-release 1 blocked*/      new Entitytalgoendcar1(null),
+                /*/Pre-release 1 blocked*/      new Entitytalgoendcar2(null)
         };
     }
 
