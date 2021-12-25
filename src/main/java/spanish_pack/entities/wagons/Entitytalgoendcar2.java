@@ -108,7 +108,7 @@ public class Entitytalgoendcar2 extends TrainBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.5f,1.75f,1.5f};
+        return new float[]{4.6f,1.75f,1.5f};
     }
 
     /**
@@ -148,7 +148,7 @@ public class Entitytalgoendcar2 extends TrainBase {
 
     @Override
     public float[] rotationPoints() {
-        return new float[]{1.75f,-1.75f};
+        return new float[]{1.7f,-2f};
     }
 
     @Override
@@ -157,7 +157,7 @@ public class Entitytalgoendcar2 extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0.0f,0.0f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0.15f,0.05f,0f}}; }
 
     /**
      * <h2>rider sit or stand</h2>

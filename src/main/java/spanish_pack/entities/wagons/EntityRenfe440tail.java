@@ -18,6 +18,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import spanish_pack.Spanish_pack;
+import spanish_pack.models.bogies.Renfe_440R_bogie;
 import spanish_pack.models.bogies.Renfe_446_Bogie;
 import spanish_pack.models.trains.Renfe440;
 import spanish_pack.models.wagons.Renfe440_tail;
@@ -144,7 +145,7 @@ public class EntityRenfe440tail extends TrainBase {
     public float[][] bogieModelOffsets() {
         return new float[][]{{1.8f,0f,0},{-2.1f,0f,0}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{ new Renfe_446_Bogie()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{ new Renfe_440R_bogie()};}
 
 
     @Override

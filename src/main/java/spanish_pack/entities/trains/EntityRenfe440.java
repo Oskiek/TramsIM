@@ -13,6 +13,7 @@ import ebf.tim.utility.FuelHandler;
 import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import spanish_pack.Spanish_pack;
+import spanish_pack.models.bogies.Renfe_440R_bogie;
 import spanish_pack.models.bogies.Renfe_446_Bogie;
 import spanish_pack.models.bogies.StandardBogie;
 import spanish_pack.models.trains.Renfe440;
@@ -146,7 +147,7 @@ public class EntityRenfe440 extends TrainBase {
     public float[][] bogieModelOffsets() {
         return new float[][]{{1.8f,0f,0f},{-2.1f,0f,0f}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{ new Renfe_446_Bogie()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{ new Renfe_440R_bogie()};}
 
 
     @Override

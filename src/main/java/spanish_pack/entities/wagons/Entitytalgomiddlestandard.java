@@ -104,11 +104,11 @@ public class Entitytalgomiddlestandard extends TrainBase {
      *     Only the first 3 values of each set of floats are actually used.
      */
     @Override
-    public float[][] getRiderOffsets(){return new float[][]{{0.4125f,0.5f, 0.34375f}};}
+    public float[][] getRiderOffsets(){return new float[][]{{0.4125f,0.7f, 0.34375f}};}
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.5f,1.75f,1.5f};
+        return new float[]{4.2f,1.75f,1.5f};
     }
 
     /**
@@ -148,7 +148,7 @@ public class Entitytalgomiddlestandard extends TrainBase {
 
     @Override
     public float[] rotationPoints() {
-        return new float[]{1.75f,-1.75f};
+        return new float[]{2f,-2f};
     }
 
     @Override
@@ -157,7 +157,7 @@ public class Entitytalgomiddlestandard extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0.0f,0.0f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0f,0.05f,0f}}; }
 
     /**
      * <h2>rider sit or stand</h2>
