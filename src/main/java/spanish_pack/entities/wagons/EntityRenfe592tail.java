@@ -20,6 +20,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import tramsim.models.bogies.NullBogiePlaceHolder;
 
 import java.util.Arrays;
 import java.util.List;
@@ -57,12 +58,9 @@ public class EntityRenfe592tail extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/renfe592_cercanias.png", "textures/trams/bogies/tmb3000_bogie.png",
+        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/renfe592_white.png", "textures/trams/bogies/tmb3000_bogie.png",
                 "company.renfe commuter", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
-        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/renfe592_regional.png", "textures/trams/bogies/tmb3000_bogie.png",
-                "company.renfe regional", CommonUtil.translate("oldlivery") + " " + CommonUtil.translate("in.spain") + ".");
-        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/renfe592_blue.png", "textures/trams/bogies/tmb3000_bogie.png",
-                "company.RENFE", CommonUtil.translate("oldlivery") + " " + CommonUtil.translate("in.spain") + ".");
+
     }
     public String getDefaultSkin(){
         return "spanish_pack:company.renfe commuter";
@@ -88,11 +86,11 @@ public class EntityRenfe592tail extends TrainBase {
     public float getMaxFuel(){return 1;}
 
     @Override
-    public float[][] getRiderOffsets(){return new float[][]{{-0.15f,1f, -0.325f}};}
+    public float[][] getRiderOffsets(){return new float[][]{{-0.15f,0.8f, 0.425f}};}
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{5.125f,1.75f,1.5f};
+        return new float[]{5.25f,1.75f,1.5f};
     }
 
     @Override
@@ -122,7 +120,7 @@ public class EntityRenfe592tail extends TrainBase {
     public float[][] bogieModelOffsets() {
         return new float[][]{{1.7725f,0.07f,0},{-1.875f,0.07f,0}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{ new StandardBogie()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{ new NullBogiePlaceHolder()};}
 
 
     @Override
