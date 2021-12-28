@@ -1,17 +1,35 @@
 //trams
-item.Renfe446.name=Renfe 446
+item.Renfe446.name=Renfe 446 (Motor)
 item.Renfe450.motor.name=Renfe 450 (Motor)
 item.Renfe269.name=Renfe 269
-item.Renfe440.name=Renfe 440 (Motor)
+item.Renfe440_motor.name=Renfe 440 (Motor)
 item.Renfe592.motor.name=Renfe 592 (Motor)
-item.Euskotren200.name=Euskotren 200
+item.Euskotren200.name=Euskotren 200 (Motor)
+item.Euskotren300.name=Euskotren 300 (Motor)
+item.feve3300_motor.name=Feve 3300 (Motor)
+item.Renfe440R_motor.name=Renfe 440R (Motor)
+item.Renfe465_motor.name=Renfe 465 (Motor)
+item.Renfe465_with_Panto.name=Renfe 465 (Motor with pantograph)
+
 
 item.Renfe446_Middle.name=Renfe 446 (Middle)
 item.Renfe450.middle.name=Renfe 450 (Middle)
 item.Renfe450.tail.name=Renfe 450 (Tail)
 item.Renfe592.tail.name=Renfe 592 (Tail)
+item.Renfe592_middle.name=Renfe 592 (Middle)
 item.Euskotren.200.tail.name=Euskotren 200 (Tail)
 item.Euskotren.200.middle.name=Euskotren 200 (Middle)
+item.Renfe465_Middle.name=Renfe 465 (Middle)
+item.Renfe465_Middle2.name=Renfe 465 (Middle with pantograph)
+item.Renfe465_tail.name=Renfe 465 (Tail)
+item.Euskotren_300_tail.name=Euskotren 300 (Tail)
+item.feve3300_tail.name=Feve 3300 (Tail)
+item.Renfe440R_middle.name=Renfe 440R (Middle)
+item.Renfe440R_tail.name=Renfe 440R (Tail)
+item.Renfe440_tail.name=Renfe 440 (Tail)
+item.talgo_IV_Endcar_1.name=Talgo IV Endcar (1 Axle)
+item.talgo_IV_Endcar_2.name=Talgo IV Endcar (2 Axle)
+item.talgo_IV_middle_standard.name=Talgo IV (Middle Standard)
 
 tile.Catenary_single_A.name=Single Catenary (A)
 

@@ -42,7 +42,7 @@ public class Entitytalgoendcar1 extends TrainBase {
     }
 
     @Override
-    public String transportName(){return "talgo IV Endcar 1";}
+    public String transportName(){return "talgo_IV_Endcar_1";}
     @Override
     public String transportcountry(){return "Spain";}
     @Override

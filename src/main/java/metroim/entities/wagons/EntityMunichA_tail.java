@@ -110,7 +110,7 @@ public class EntityMunichA_tail extends RollingstockBase {
 
     @Override
     public String transportName() {
-        return "Munich A Tail";
+        return "Munich_A_Tail";
     }
 
     @Override

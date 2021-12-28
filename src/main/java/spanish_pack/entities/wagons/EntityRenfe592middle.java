@@ -1,4 +1,4 @@
-package metroim.entities.trains;
+package spanish_pack.entities.wagons;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -8,47 +8,48 @@ import ebf.tim.api.TrainBase;
 import ebf.tim.items.ItemTransport;
 import ebf.tim.models.Bogie;
 import ebf.tim.registry.URIRegistry;
+import ebf.tim.utility.CommonUtil;
 import ebf.tim.utility.FuelHandler;
 import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
-import metroim.MetroIM;
-import metroim.models.bogies.StandardBogie;
-import metroim.models.trains.munich_A;
-import metroim.models.trains.vienna_U;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import spanish_pack.Spanish_pack;
+import spanish_pack.models.wagons.Renfe592middle;
+import spanish_pack.models.wagons.Renfe592tail;
+import tramsim.models.bogies.NullBogiePlaceHolder;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
 
-public class EntityMunichA extends TrainBase {
+public class EntityRenfe592middle extends TrainBase {
 
 
 
-    public static final Item thisItem = new ItemTransport(new EntityMunichA(null), MetroIM.MODID, MetroIM.metroimtabvehicle);
+    public static final Item thisItem = new ItemTransport(new EntityRenfe592middle(null), Spanish_pack.MODID, Spanish_pack.spanish_pack);
 
 
-    public EntityMunichA(UUID owner, World world, double xPos, double yPos, double zPos) {
+    public EntityRenfe592middle(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
     }
-    public EntityMunichA(World world){
+    public EntityRenfe592middle(World world){
         super(world);
     }
 
     @Override
-    public String transportName(){return "Munich_Type_A";}
+    public String transportName(){return "Renfe592_middle";}
     @Override
-    public String transportcountry(){return "Germany";}
+    public String transportcountry(){return "Spain";}
     @Override
-    public String transportYear(){return "1972-1980";}
+    public String transportYear(){return "1988-1993";}
     @Override
     public String transportFuelType() {
-        return "Electric";
+        return "Diesel";
     }
     @Override
     public boolean isFictional(){return false;}
@@ -57,23 +58,25 @@ public class EntityMunichA extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/typ_a_white.png","textures/trams/bogies/tmb3000_bogie.png",
-                "MVG Munich", "Original livery used in Munich.");
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/typ_a_blue.png","textures/trams/bogies/tmb3000_bogie.png",
-                "MVG Munich 2", "new livery used in Munich.");
+        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/renfe592_white.png", "textures/trams/bogies/tmb3000_bogie.png",
+                "company.renfe commuter", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
+        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/renfe592_red.png", "textures/trams/bogies/tmb3000_bogie.png",
+                "company.renfe commuter old", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
 
     }
+    public String getDefaultSkin(){
+        return "spanish_pack:company.renfe commuter";
+    }
 
-    public String getDefaultSkin(){return "metroim:MVG Munich";}
     public String[][] getTankFilters() {
         return FuelHandler.DefaultTanks.ELECTRIC.value();
     }
 
     @Override
-    public float transportTopSpeed(){return 80f;}
+    public float transportTopSpeed(){return 100f;}
 
     @Override
-    public List<Double> getRenderBogieOffsets(){return  Arrays.asList(1.3125, -1.25);}
+    public List<Double> getRenderBogieOffsets(){return  Arrays.asList(1.3125, -1.875);}
 
     @Override
     public int getInventoryRows(){return 1;}
@@ -85,11 +88,11 @@ public class EntityMunichA extends TrainBase {
     public float getMaxFuel(){return 1;}
 
     @Override
-    public float[][] getRiderOffsets(){return new float[][]{{-1.84375f,0.9f, 0.25f}};}
+    public float[][] getRiderOffsets(){return new float[][]{{-0.15f,0.8f, 0.425f}};}
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.325f,1.75f,1.5f};
+        return new float[]{5.25f,1.75f,1.5f};
     }
 
     @Override
@@ -117,14 +120,14 @@ public class EntityMunichA extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{1.3125f,0f,0},{-1.4f,0f,0}};}
+        return new float[][]{{1.7725f,0.07f,0},{-1.875f,0.07f,0}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{ new StandardBogie()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{ new NullBogiePlaceHolder()};}
 
 
     @Override
     public float[] rotationPoints() {
-        return new float[]{1.3125f,-1.25f};
+        return new float[]{1.8125f,-1.875f};
     }
 
     @Override
@@ -133,16 +136,28 @@ public class EntityMunichA extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{-0.12f,0.05f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0f,0.17f,0f}}; }
 
+    /**
+     * <h2>rider sit or stand</h2>
+     * @return true if the rider(s) should be sitting, false if the rider should be standing.
+     */
     @Override
     public boolean shouldRiderSit(){
         return true;
     }
 
+    /**
+     * <h2>reinforced transport</h2>
+     * this returns if this specific entity is reinforced (explosion proof and damage resistant).
+     * since this is a function it can be conditional as well, for instance if it has a specific skin.
+     */
     @Override
     public boolean isReinforced(){return false;}
 
+    /**
+     * <h2>Fluid Tank Capacity</h2>
+     */
     @Override
     public int[] getTankCapacity(){return new int[]{8000};}
     @Override
@@ -162,16 +177,27 @@ public class EntityMunichA extends TrainBase {
         this.fuelHandler.manageElectric(this);
     }
 
+    /**
+     * <h2>pre-assigned values</h2>
+     * These return values are defined from the top of the class.
+     * These should only need modification for advanced users, and even that's a stretch.
+     */
     public Item getItem(){
         return thisItem;
     }
 
+
     @Override
     public Bogie[] getBogieModels(){return null;}
 
-    @Override
-    public ModelBase[] getModel(){return new ModelBase[]{new munich_A()};}
 
+
+    @Override
+    public ModelBase[] getModel(){return new ModelBase[]{new Renfe592middle()};}
+
+    /**
+     * <h2>sets the resource location for sounds, like horn and the sound made for the engine running</h2>
+     */
     @SideOnly(Side.CLIENT)
     @Override
     public ResourceLocation getHorn(){return URIRegistry.SOUND_HORN.getResource("h080brigadelok.ogg");}

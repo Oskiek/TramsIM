@@ -41,7 +41,7 @@ public class EntityB80C extends TrainBase {
     }
 
     @Override
-    public String transportName(){return "B80C engine";}
+    public String transportName(){return "B80C_engine";}
     @Override
     public String transportcountry(){return "Germany";}
     @Override

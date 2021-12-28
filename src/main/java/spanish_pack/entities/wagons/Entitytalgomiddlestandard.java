@@ -42,7 +42,7 @@ public class Entitytalgomiddlestandard extends TrainBase {
     }
 
     @Override
-    public String transportName(){return "talgo IV middle standard";}
+    public String transportName(){return "talgo_IV_middle_standard";}
     @Override
     public String transportcountry(){return "Spain";}
     @Override

@@ -43,7 +43,7 @@ public class EntityRenfeCivia extends TrainBase {
     }
 
     @Override
-    public String transportName(){return "Renfe465";}
+    public String transportName(){return "Renfe465_motor";}
     @Override
     public String transportcountry(){return "Spain";}
     @Override

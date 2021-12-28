@@ -42,7 +42,7 @@ public class EntityRenfeCivia_w_Panto extends TrainBase {
     }
 
     @Override
-    public String transportName(){return "Renfe465 with Panto";}
+    public String transportName(){return "Renfe465_with_Panto";}
     @Override
     public String transportcountry(){return "Spain";}
     @Override

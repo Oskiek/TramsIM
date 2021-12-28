@@ -42,14 +42,14 @@ public class EntityRenfe592motor extends TrainBase {
     }
 
     @Override
-    public String transportName(){return "Renfe592";}
+    public String transportName(){return "Renfe 592";}
     @Override
     public String transportcountry(){return "Spain";}
     @Override
     public String transportYear(){return "1988-1993";}
     @Override
     public String transportFuelType() {
-        return "Electric";
+        return "Diesel";
     }
     @Override
     public boolean isFictional(){return false;}
@@ -60,6 +60,8 @@ public class EntityRenfe592motor extends TrainBase {
     public void registerSkins(){
         SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/renfe592_white.png", "textures/trams/bogies/tmb3000_bogie.png",
                 "company.renfe commuter", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
+        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/renfe592_red.png", "textures/trams/bogies/tmb3000_bogie.png",
+                "company.renfe commuter old", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
 
     }
     public String getDefaultSkin(){
@@ -86,7 +88,7 @@ public class EntityRenfe592motor extends TrainBase {
     public float getMaxFuel(){return 1;}
 
     @Override
-    public float[][] getRiderOffsets(){return new float[][]{{-2.1f,1f,-0.325f}};}
+    public float[][] getRiderOffsets(){return new float[][]{{-2.25f,1f,0.325f}};}
 
     @Override
     public float[] getHitboxSize() {
@@ -125,7 +127,7 @@ public class EntityRenfe592motor extends TrainBase {
 
     @Override
     public float[] rotationPoints() {
-        return new float[]{1.3125f,-1.875f};
+        return new float[]{1.8125f,-1.875f};
     }
 
     @Override

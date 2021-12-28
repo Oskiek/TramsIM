@@ -61,6 +61,7 @@ public class Spanish_pack {
                                          new EntityEuskotren200Middle(null),
                                          new EntityRenfe446_Middle(null),
 /*/Pre-release 1 blocked*/                new EntityRenfe592tail(null),
+                /*/Pre-release 1 blocked*/                new EntityRenfe592middle(null),
 /*/Pre-release 1 blocked*/                new EntityRenfe450middle(null),
 /*/Pre-release 1 blocked*/                new EntityRenfe450tail(null),
 /*/Pre-release 1 blocked*/                new EntityRenfe440tail(null),
