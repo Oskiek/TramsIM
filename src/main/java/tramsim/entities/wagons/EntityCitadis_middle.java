@@ -111,7 +111,7 @@ public class EntityCitadis_middle extends RollingstockBase {
 
     @Override
     public String transportName() {
-        return "Citadis middle";
+        return "Citadis_middle";
     }
 
     @Override

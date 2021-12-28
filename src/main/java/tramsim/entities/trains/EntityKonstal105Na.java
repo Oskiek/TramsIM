@@ -49,7 +49,7 @@ public class EntityKonstal105Na extends TrainBase {
     }
 
     @Override
-    public String transportName(){return "Konstal 105Na";}
+    public String transportName(){return "Konstal105Na";}
     @Override
     public String transportcountry(){return "Poland";}
     @Override

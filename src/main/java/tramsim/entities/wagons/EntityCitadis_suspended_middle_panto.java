@@ -110,7 +110,7 @@ public class EntityCitadis_suspended_middle_panto extends RollingstockBase {
 
     @Override
     public String transportName() {
-        return "Citadis suspended middle panto";
+        return "Citadis_suspended_middle_panto";
     }
 
     @Override

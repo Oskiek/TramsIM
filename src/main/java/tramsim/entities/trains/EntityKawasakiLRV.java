@@ -44,7 +44,7 @@ public class EntityKawasakiLRV extends TrainBase {
     }
 
     @Override
-    public String transportName(){return "Kawasaki LRV";}
+    public String transportName(){return "KawasakiLRV";}
     @Override
     public String transportcountry(){return "USA";}
     @Override

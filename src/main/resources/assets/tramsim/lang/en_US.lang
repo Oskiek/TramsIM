@@ -18,6 +18,13 @@ item.LohnerE1.name=Lohner E1
 item.TatraT4.name=Tatra T4
 item.TatraK5.name=Tatra K5
 item.ModerusBeta_End.name=Moderus Beta
+item.SD_100.name=SD 100
+item.KawasakiLRV.name=Kawasaki LRV
+item.MGT6D.name=MGT6D
+item.ST12.name=ST12
+item.M8C.name=M8C
+item.Citadis.name=Alstom Citadis
+
 
 item.DuewagPT8_MiddleSegment.name=Duewag PT8 (Middle)
 item.BNLRV_B.name=BN LRV (Tail)
@@ -33,6 +40,15 @@ item.LohnerE1_Back.name=Lohner E1 (Tail)
 item.TatraK5_Back.name=Tatra K5 (Tail)
 item.Tatra_B4.name=Tatra B4
 item.ModerusBeta_Middle.name=Moderus Beta (Middle)
+item.SD_100_tail.name=SD 100 (Tail)
+item.MGT6D_Middle.name=MGT6D (Middle)
+item.ST12_Back.name=ST12 (Tail)
+item.ST12_Middle.name=ST12 (Middle)
+item.M8C_Middle.name=M8C (Middle)
+item.M8C_Tail.name=M8C (Tail)
+item.Citadis_middle.name=Alstom Citadis (Middle)
+item.Citadis_suspended_middle.name=Alstom Citadis (Suspended middle)
+item.Citadis_suspended_middle_panto.name=Alstom Citadis (Suspended middle with pantograph)
 
 
 //shelters
