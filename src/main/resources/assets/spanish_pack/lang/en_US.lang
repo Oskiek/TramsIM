@@ -32,6 +32,9 @@ item.talgo_IV_Endcar_2.name=Talgo IV Endcar (2 Axle)
 item.talgo_IV_middle_standard.name=Talgo IV (Middle Standard)
 
 tile.Catenary_single_A.name=Single Catenary (A)
+tile.Catenary_single_B.name=Single Catenary (B)
+tile.Catenary_double_C.name=Double Catenary (C)
+
 
 //tabs
 item.spack_TabVeh=Spanish Pack - Vehicles
