@@ -41,7 +41,7 @@ public class EntityEuskotren200 extends TrainBase {
     }
 
     @Override
-    public String transportName(){return "Euskotren200";}
+    public String transportName(){return "Euskotren_200";}
     @Override
     public String transportcountry(){return "Spain";}
     @Override

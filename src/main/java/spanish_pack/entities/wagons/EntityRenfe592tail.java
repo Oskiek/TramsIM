@@ -42,7 +42,7 @@ public class EntityRenfe592tail extends TrainBase {
     }
 
     @Override
-    public String transportName(){return "Renfe592tail";}
+    public String transportName(){return "Renfe592_tail";}
     @Override
     public String transportcountry(){return "Spain";}
     @Override

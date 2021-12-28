@@ -23,12 +23,13 @@ item.FGV3700_Tail_v2.name=Metrovalencia FGV 3700 Gen. II (Tail)
 item.FGV4300_Tail.name=Metrovalencia FGV 4300 (Tail)
 item.FGV3600_Tail.name=Metrovalencia FGV 3600 (Tail)
 item.FGV3600_Middle.name=Metrovalencia FGV 3600 (Middle)
-item.Euskotren200_Middle.name=Euskotren 200 (Middle)
 item.TMB3000_Middle.name=TMB 3000 (Middle)
 item.TMB3000_Tail.name=TMB 3000 (Tail)
 item.Metro5000_Tail.name=Metro Madrid 5000
 item.Munich_A_Tail.name=MVG Baureihe A (Tail)
 item.Metro2000_Tail.name=Metro Madrid 2000 (Tail)
+item.B80C_tail.name=B80C B segment
+KVB_2300_tail.name=B80D B segment
 
 //tabs
 item.metroimTabVeh=Metro in Motion - Vehicles
