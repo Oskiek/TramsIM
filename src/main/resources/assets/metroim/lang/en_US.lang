@@ -16,6 +16,7 @@ item.KVB_2300_Motor.name=KVB 2300 A Segment
 item.BN_S1_S2.name=BN S1/S2 A segment
 item.Munich_Type_A.name=MVG Baureihe A (Motor)
 item.Vienna_Typ_U.name=Wiener Linien Baureihe U (Motor)
+item.FGV3900_Motor.name=FGV 3900 (Motor)
 
 item.FGV4300_Middle_wbogies.name=Metrovalencia FGV 4300 (Middle)
 item.FGV3700_Tail.name=Metrovalencia FGV 3700 Gen. I (Tail)
@@ -29,7 +30,11 @@ item.Metro5000_Tail.name=Metro Madrid 5000
 item.Munich_A_Tail.name=MVG Baureihe A (Tail)
 item.Metro2000_Tail.name=Metro Madrid 2000 (Tail)
 item.B80C_tail.name=B80C B segment
-KVB_2300_tail.name=B80D B segment
+item.KVB_2300_tail.name=B80D B segment
+item.BN_S1_S2_Tail.name=BN S1/S2 B segment
+item.3900_Middle.name=FGV 3900 (Middle)
+
+
 
 //tabs
 item.metroimTabVeh=Metro in Motion - Vehicles
