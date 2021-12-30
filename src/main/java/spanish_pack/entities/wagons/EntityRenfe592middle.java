@@ -62,7 +62,8 @@ public class EntityRenfe592middle extends TrainBase {
                 "company.renfe commuter", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
         SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/renfe592_red.png", "textures/trams/bogies/tmb3000_bogie.png",
                 "company.renfe commuter old", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
-
+        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/renfe592_gray.png", "textures/trams/bogies/tmb3000_bogie.png",
+                "company.renfe media distancia old", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
     }
     public String getDefaultSkin(){
         return "spanish_pack:company.renfe commuter";

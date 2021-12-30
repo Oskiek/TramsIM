@@ -67,7 +67,9 @@ public class EntitySD_100_tail extends TrainBase {
         SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/SD_100_custom.png", "textures/trams/bogies/SD100_articulation_custom.png",
                 "Your transit agency", "this is a placeholder for an livery of your own creation");
     }
-
+    public String getDefaultSkin(){
+        return "tramsim:MTS San diego";
+    }
     public String[][] getTankFilters() {
         return FuelHandler.DefaultTanks.ELECTRIC.value();
     }

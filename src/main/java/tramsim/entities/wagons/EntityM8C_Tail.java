@@ -75,7 +75,9 @@ public class EntityM8C_Tail extends RollingstockBase {
         SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/m8c_kassel_old.png","textures/trams/bogies/m8c_bogie_kassel_old.png",
                 "KVG Kassel", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("old livery that was used in Kassel") + ".");
     }
-
+    public String getDefaultSkin(){
+        return "tramsim:company.ruhrbahn";
+    }
     @Override
     public boolean isReinforced() {
         return false;

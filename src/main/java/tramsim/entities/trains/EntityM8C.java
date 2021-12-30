@@ -49,7 +49,7 @@ public class EntityM8C extends TrainBase {
     @Override
     public String transportcountry(){return "Germany";}
     @Override
-    public String transportYear(){return "1972+";}
+    public String transportYear(){return "1984+";}
     @Override
     public String transportFuelType() {
         return "Electric";
@@ -73,6 +73,10 @@ public class EntityM8C extends TrainBase {
                 "EVAG Essen", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("Old livery used in Essen") + ".");
         SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/m8c_kassel_old.png","textures/trams/bogies/m8c_bogie_kassel_old.png",
                 "KVG Kassel", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("old livery that was used in Kassel") + ".");
+    }
+
+    public String getDefaultSkin(){
+        return "tramsim:Ruhrbahn";
     }
     @Override
     public String[][] getTankFilters() {
