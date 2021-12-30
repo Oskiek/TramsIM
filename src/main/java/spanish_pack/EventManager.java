@@ -11,10 +11,10 @@ public class EventManager {
     public void entityJoinWorldEvent(EntityJoinWorldEvent event) {
         if(event.world == null || !event.world.isRemote || !(event.entity instanceof EntityPlayer)) return;
             ((EntityPlayer) event.entity).addChatMessage(new ChatComponentText(" "));
-            ((EntityPlayer) event.entity).addChatMessage(new ChatComponentText("You are currently playing a first pre-release of Spanish pack"));
+            ((EntityPlayer) event.entity).addChatMessage(new ChatComponentText("You are currently playing the first pre-release of Spanish pack"));
             ((EntityPlayer) event.entity).addChatMessage(new ChatComponentText("Keep in mind that everything in this pack is subject to change, and might be buggy"));
             ((EntityPlayer) event.entity).addChatMessage(new ChatComponentText("Link to our Discord: https://discord.gg/QQ5GRac"));
-            ((EntityPlayer) event.entity).addChatMessage(new ChatComponentText("Have fun playing!  -MetroIM team"));
+            ((EntityPlayer) event.entity).addChatMessage(new ChatComponentText("Have fun playing!  -Spanish pack team"));
             ((EntityPlayer) event.entity).addChatMessage(new ChatComponentText(" "));
 
     }
