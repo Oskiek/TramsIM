@@ -46,7 +46,7 @@ public class Entity3700Motor_v2 extends TrainBase {
     @Override
     public String transportcountry(){return "Spain";}
     @Override
-    public String transportYear(){return "1990-2006";}
+    public String transportYear(){return "1990";}
     @Override
     public String transportFuelType() {
         return "Electric";

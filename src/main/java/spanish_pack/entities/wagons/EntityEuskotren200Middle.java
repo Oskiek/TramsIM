@@ -109,7 +109,7 @@ public class EntityEuskotren200Middle extends RollingstockBase {
 
     @Override
     public String transportName() {
-        return "Euskotren_200_Middle";
+        return "Euskotren_200_middle";
     }
 
     @Override

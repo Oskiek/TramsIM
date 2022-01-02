@@ -43,9 +43,9 @@ public class EntityViennaU extends TrainBase {
     @Override
     public String transportName(){return "Vienna_Typ_U";}
     @Override
-    public String transportcountry(){return "Spain";}
+    public String transportcountry(){return "Austria";}
     @Override
-    public String transportYear(){return "1987-1990";}
+    public String transportYear(){return "1972-1982";}
     @Override
     public String transportFuelType() {
         return "Electric";
