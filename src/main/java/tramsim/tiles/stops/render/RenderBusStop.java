@@ -98,41 +98,41 @@ public class RenderBusStop extends TileEntitySpecialRenderer {
             model201.render();
         }
         else if (tileEntity instanceof TileEntityBusStop_2_Middle_1) {
-            fexcraft.tmt.slim.TextureManager.bindTexture(texture);
+            TextureManager.bindTexture(texture);
             model211.render();
         }
         else if (tileEntity instanceof TileEntityBusStop_2_Middle_2) {
-            fexcraft.tmt.slim.TextureManager.bindTexture(texture);
+            TextureManager.bindTexture(texture);
             model212.render();
         }
         else if (tileEntity instanceof TileEntityBusStop_2_Middle_3) {
-            fexcraft.tmt.slim.TextureManager.bindTexture(texture);
+            TextureManager.bindTexture(texture);
             model213.render();
         }
         else if (tileEntity instanceof TileEntityBusStop_2_Middle_4) {
-            fexcraft.tmt.slim.TextureManager.bindTexture(texture);
+            TextureManager.bindTexture(texture);
             model214.render();
         }
         else if (tileEntity instanceof TileEntityBusStop_2_Middle_5) {
-            fexcraft.tmt.slim.TextureManager.bindTexture(texture);
+            TextureManager.bindTexture(texture);
             model215.render();
         }
         else if (tileEntity instanceof TileEntityBusStop_2_Right_1) {
-            fexcraft.tmt.slim.TextureManager.bindTexture(texture);
+            TextureManager.bindTexture(texture);
             model221.render();
         }
         else if (tileEntity instanceof  TileEntityBusStop_3_Left_1) {
-            fexcraft.tmt.slim.TextureManager.bindTexture(texture);
+            TextureManager.bindTexture(texture);
             model301.render();
         }
         else if (tileEntity instanceof  TileEntityBusStop_3_Middle_1) {
-            fexcraft.tmt.slim.TextureManager.bindTexture(texture);
+            TextureManager.bindTexture(texture);
             model311.render();
         }
         else if (tileEntity instanceof  TileEntityBusStop_3_Right_1) {
-            fexcraft.tmt.slim.TextureManager.bindTexture(texture);
+            TextureManager.bindTexture(texture);
             model321.render();
-        }
+        }//fexcraft.tmt.slim.
         GL11.glPopMatrix();
     }
 

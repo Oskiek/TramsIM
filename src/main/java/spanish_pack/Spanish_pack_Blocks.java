@@ -17,9 +17,9 @@ public class Spanish_pack_Blocks {
 
 	public static void registerBlocks()
 	{
-		blockList.add(Catenary_single_A =new Block_catenary_Single_A().setCreativeTab(Spanish_pack.spanish_pack_block).setBlockTextureName("tramsim:icon/Catenary_single_A"));
-		blockList.add(Catenary_single_B =new Block_catenary_Single_B().setCreativeTab(Spanish_pack.spanish_pack_block).setBlockTextureName("tramsim:icon/Catenary_single_B"));
-		blockList.add(Catenary_double_C =new Block_catenary_double_C().setCreativeTab(Spanish_pack.spanish_pack_block).setBlockTextureName("tramsim:icon/Catenary_double_C"));
+		blockList.add(Catenary_single_A =new Block_catenary_Single_A().setCreativeTab(Spanish_pack.spanish_pack_block).setBlockTextureName("spanish_pack:icon/Catenary_single_A"));
+		blockList.add(Catenary_single_B =new Block_catenary_Single_B().setCreativeTab(Spanish_pack.spanish_pack_block).setBlockTextureName("spanish_pack:icon/Catenary_single_B"));
+		blockList.add(Catenary_double_C =new Block_catenary_double_C().setCreativeTab(Spanish_pack.spanish_pack_block).setBlockTextureName("spanish_pack:icon/Catenary_double_C"));
 
 		for(Block block:blockList)
 		{

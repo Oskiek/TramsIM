@@ -25,7 +25,7 @@ import static spanish_pack.Spanish_pack_Blocks.blockList;
 public class Spanish_pack {
 
     public static final String MODID = "spanish_pack";
-    public static final String MOD_VERSION="0.1 prerelease";
+    public static final String MOD_VERSION="Pre-release 1.0";
 
     @SidedProxy(clientSide="spanish_pack.ClientProxy", serverSide = "spanish_pack.CommonProxy")
     public static CommonProxy proxy;
@@ -38,6 +38,7 @@ public class Spanish_pack {
     @Mod.EventHandler
     public void preInit(FMLInitializationEvent event) {
 
+        Spanish_pack_Blocks.registerBlocks();
         proxy.registerRenderers();
         GameRegistry.registerTileEntity(TileEntityCatenary_single_A.class, "Catenary_single_A");
 
@@ -88,9 +89,9 @@ public class Spanish_pack {
         spanish_pack = new TiMTab("Spanish pack vehicles" , MODID ,"spack_TabVeh");
         spanish_pack_block = new TiMTab("Spanish pack blocks", MODID, "spack_TabBlo");
 
-        blockList.add(TiMGenericRegistry.registerBlock(new Block_catenary_Single_A().setCreativeTab(Spanish_pack.spanish_pack_block).setBlockTextureName("spanish_pack:icon/Catenary_single_A_icon"), null, "Catenary_single_A", null, proxy.getRenderCatenary()));
-        blockList.add(TiMGenericRegistry.registerBlock(new Block_catenary_Single_B().setCreativeTab(Spanish_pack.spanish_pack_block).setBlockTextureName("spanish_pack:icon/Catenary_single_B_icon"), null, "Catenary_single_B", null, proxy.getRenderCatenary()));
-        blockList.add(TiMGenericRegistry.registerBlock(new Block_catenary_double_C().setCreativeTab(Spanish_pack.spanish_pack_block).setBlockTextureName("spanish_pack:icon/Catenary_double_C_icon"), null, "Catenary_double_C", null, proxy.getRenderCatenary()));
+        //blockList.add(TiMGenericRegistry.registerBlock(new Block_catenary_Single_A().setCreativeTab(Spanish_pack.spanish_pack_block).setBlockTextureName("spanish_pack:icon/Catenary_single_A_icon"), null, "Catenary_single_A", null, proxy.getRenderCatenary()));
+        //blockList.add(TiMGenericRegistry.registerBlock(new Block_catenary_Single_B().setCreativeTab(Spanish_pack.spanish_pack_block).setBlockTextureName("spanish_pack:icon/Catenary_single_B_icon"), null, "Catenary_single_B", null, proxy.getRenderCatenary()));
+        //blockList.add(TiMGenericRegistry.registerBlock(new Block_catenary_double_C().setCreativeTab(Spanish_pack.spanish_pack_block).setBlockTextureName("spanish_pack:icon/Catenary_double_C_icon"), null, "Catenary_double_C", null, proxy.getRenderCatenary()));
         TiMGenericRegistry.registerTransports(MODID, listElectricTrams(), (Object)null);
         TiMGenericRegistry.registerTransports(MODID, listWagonTrams(), (Object)null);
         if (event.getSide().isClient()) {
