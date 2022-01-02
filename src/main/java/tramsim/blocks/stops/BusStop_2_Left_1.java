@@ -16,14 +16,12 @@ public class BusStop_2_Left_1 extends BlockContainer {
 	public BusStop_2_Left_1(){
 		super(Material.iron);
 		setBlockName("busstop_2_left_1");
-
 		 this.setBlockBounds(0F, 0.0F, 0F, 1F, 2.5F, 1F);
 	}
 
 	 
     public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLivingBase par5EntityLivingBase, ItemStack par6ItemStack)
     {
-
         int l = MathHelper.floor_double((double)(par5EntityLivingBase.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
 
         if (l == 0)

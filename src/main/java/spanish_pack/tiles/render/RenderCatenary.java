@@ -1,5 +1,6 @@
 package spanish_pack.tiles.render;
 
+import fexcraft.tmt.slim.TextureManager;
 import org.lwjgl.opengl.GL11;
 
 import spanish_pack.models.blocks.*;
@@ -79,16 +80,16 @@ public class RenderCatenary extends TileEntitySpecialRenderer {
         GL11.glTranslatef(0F, 0.75f, 0f);
         GL11.glRotatef(180, 1, 0, 0);
         if (tileEntity instanceof TileEntityCatenary_single_A) {
-            fexcraft.tmt.slim.TextureManager.bindTexture(texture);
+            TextureManager.bindTexture(texture);
             catenarySingleA.render();
         }
         if (tileEntity instanceof TileEntityCatenary_single_B) {
-            fexcraft.tmt.slim.TextureManager.bindTexture(texture);
+            TextureManager.bindTexture(texture);
             catenarySingleB.render();
         }
         if (tileEntity instanceof TileEntityCatenary_double_C) {
-                fexcraft.tmt.slim.TextureManager.bindTexture(texture);
-                catenarydoubleC.render();
+            TextureManager.bindTexture(texture);
+            catenarydoubleC.render();
         }
         GL11.glPopMatrix();
     }

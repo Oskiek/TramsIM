@@ -20,7 +20,7 @@ import net.minecraftforge.common.MinecraftForge;
 public class MetroIM {
 
     public static final String MODID = "metroim";
-    public static final String MOD_VERSION="0.1 prerelease";
+    public static final String MOD_VERSION="Pre-release 2.0";
 
     @SidedProxy(clientSide="metroim.ClientProxy", serverSide = "metroim.CommonProxy")
     public static CommonProxy proxy;
