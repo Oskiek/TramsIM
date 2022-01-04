@@ -3,27 +3,27 @@ item.Konstal105Na.name=Konstal 105Na
 item.Konstal105Na#135R.name=Konstal 105Na #135R
 item.Konstal105NaMl.name=Konstal 105NaMl
 item.TatraT3.name=Tatra T3
-item.DuewagPT8.name=Duewag PT8
+item.DuewagPT8.name=Duewag PT8 (Motor)
 item.ModerusAlfa.name=Moderus Alfa
-item.BombardierCR4000.name=Bombardier CR4000
-item.BNLRV_A.name=BN LRV
+item.BombardierCR4000.name=Bombardier CR4000 (Motor)
+item.BNLRV_A.name=BN LRV (Motor)
 item.PCC.name=PCC
 item.TatraT3Short.name=Very Small Tatra T3
 item.Combino_end.name=Siemens Combino
 item.KonstalN.name=Konstal N
-item.RussiaOne_end.name=Russia One
+item.RussiaOne_end.name=Russia One (Motor)
 item.Triebwagen105.name=Triebwagen 105
-item.TatraK2_End.name=Tatra K2
-item.LohnerE1.name=Lohner E1
+item.TatraK2_End.name=Tatra K2 (Motor)
+item.LohnerE1.name=Lohner E1 (Motor)
 item.TatraT4.name=Tatra T4
-item.TatraK5.name=Tatra K5
-item.ModerusBeta_End.name=Moderus Beta
-item.SD_100.name=SD 100
+item.TatraK5.name=Tatra K5 (Motor)
+item.ModerusBeta_End.name=Moderus Beta (Motor)
+item.SD_100.name=SD 100 (Motor)
 item.KawasakiLRV.name=Kawasaki LRV
-item.MGT6D.name=MGT6D
-item.ST12.name=ST12
-item.M8C.name=M8C
-item.Citadis.name=Alstom Citadis
+item.MGT6D.name=MGT6D (Motor)
+item.ST12.name=ST12 (Motor)
+item.M8C.name=M8C (Motor)
+item.Citadis.name=Alstom Citadis (Head)
 
 
 item.DuewagPT8_MiddleSegment.name=Duewag PT8 (Middle)
@@ -47,25 +47,42 @@ item.ST12_Middle.name=ST12 (Middle)
 item.M8C_Middle.name=M8C (Middle)
 item.M8C_Tail.name=M8C (Tail)
 item.Citadis_middle.name=Alstom Citadis (Middle)
-item.Citadis_suspended_middle.name=Alstom Citadis (Suspended middle)
-item.Citadis_suspended_middle_panto.name=Alstom Citadis (Suspended middle with pantograph)
+item.Citadis_suspended_middle.name=Alstom Citadis (Middle suspended)
+item.Citadis_suspended_middle_panto.name=Alstom Citadis (Middle suspended with pantograph)
 
 
 //shelters
-tile.busstop_2_left_1.name=Shelter (left end)
-tile.busstop_2_right_1.name=Shelter (right end)
-tile.busstop_2_middle_1.name=Shelter (middle, glass with bench)
-tile.busstop_2_middle_2.name=Shelter (middle, glass)
-tile.busstop_2_middle_3.name=Shelter (middle, glass with timetable)
-tile.busstop_2_middle_4.name=Shelter (middle, pattern)
-tile.busstop_2_middle_5.name=Shelter (middle, pattern with bench)
-tile.busstop_3_left_1.name=Red Shelter (left end)
-tile.busstop_3_right_1.name=Red Shelter (right end)
-tile.busstop_3_middle_1.name=Red Shelter (middle)
+tile.busstop_2_left_1.name=Shelter (Left end)
+tile.busstop_2_right_1.name=Shelter (Right end)
+tile.busstop_2_middle_1.name=Shelter (Middle, glass with bench)
+tile.busstop_2_middle_2.name=Shelter (Middle, glass)
+tile.busstop_2_middle_3.name=Shelter (Middle, glass with timetable)
+tile.busstop_2_middle_4.name=Shelter (Middle, pattern)
+tile.busstop_2_middle_5.name=Shelter (Middle, pattern with bench)
+tile.busstop_3_left_1.name=Red Shelter (Left end)
+tile.busstop_3_right_1.name=Red Shelter (Right end)
+tile.busstop_3_middle_1.name=Red Shelter (Middle)
 
 //ticket machines
-tile.ticketmachine_kzkgop.name=Ticket machine (KZKGOP)
-tile.ticketmachine_brno.name=Ticket machine (IDSJMK)
+tile.ticketmachine_kzkgop.name=Ticket Machine (KZKGOP)
+tile.ticketmachine_brno.name=Ticket Machine (IDSJMK)
+
+//platforms
+tile.platform.name=Platform
+tile.platform_pole.name=Platform (With pole)
+tile.edge_plain.name=Platform Edge (Plain)
+tile.edge_led.name=Platform Edge (LED)
+tile.edge_checkerboard.name=Platform Edge (Checkerboard)
+tile.edge_ledlined.name=Platform Edge (LED, lines)
+tile.edge_leftcorner.name=Platform Edge (Right corner)
+tile.edge_yellowthick.name=Platform Edge (Yellow strip)
+tile.edge_rightcorner.name=Platform Edge (Left corner)
+tile.edge_british.name=Platform Edge (British)
+tile.edge_lined.name=Platform Edge (Lined)
+tile.edge_yellowlined.name=Platform Edge (Yellow strip, lined)
+
+//poles
+tile.stop_pole_Orense.name=Stop Pole (Orense)
 
 //countries
 menu.item.poland=Poland
@@ -79,20 +96,6 @@ menu.item.russia=Russia
 //tabs
 item.tramsimTabVeh=Trams in Motion - Vehicles
 item.tramsimTabBlo=Trams in Motion - Blocks
-
-//platforms
-tile.platform.name=Platform
-tile.platform_pole.name=Platform (with pole)
-tile.edge_plain.name=Platform Edge
-tile.edge_led.name=Platform Edge (wih LED stripe)
-tile.edge_checkerboard.name=Platform Edge (checkerboard)
-tile.edge_ledlined.name=Platform Edge (led, lines)
-tile.edge_leftcorner.name=Platform Edge (right corner)
-tile.edge_yellowthick.name=Platform Edge (yellow strip)
-tile.edge_rightcorner.name=Platform Edge (left corner)
-tile.edge_british.name=Platform Edge (british)
-tile.edge_lined.name=Platform Edge (lined)
-tile.edge_yellowlined.name=Platform Edge (yellow strip, lined)
 
 //in regions
 in.silesia=in Silesia

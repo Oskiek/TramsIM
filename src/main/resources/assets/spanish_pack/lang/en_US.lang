@@ -1,4 +1,4 @@
-//trams
+//trains
 item.Renfe446.name=Renfe 446 (Motor)
 item.Renfe_450_Motor.name=Renfe 450 (Motor)
 item.Renfe269.name=Renfe 269
@@ -31,6 +31,8 @@ item.talgo_IV_Endcar_1.name=Talgo IV Endcar (1 Axle)
 item.talgo_IV_Endcar_2.name=Talgo IV Endcar (2 Axle)
 item.talgo_IV_middle_standard.name=Talgo IV (Middle Standard)
 
+
+//catenary
 tile.Catenary_single_A.name=Single Catenary (A)
 tile.Catenary_single_B.name=Single Catenary (B)
 tile.Catenary_double_C.name=Double Catenary (C)
@@ -46,9 +48,10 @@ company.madrid=Metro Madrid
 company.renfeCercanias=Cercanias
 company.renfeTaxi=Taxi
 company.renfe=Renfe
-company.renfeOld=Renfe Old
+company.renfeOld=Renfe (Old)
 
 standardlivery=Standard livery used
 oldlivery=Old livery used
 
 in.spain=in Spain
+

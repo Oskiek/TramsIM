@@ -1,4 +1,4 @@
-//trams
+//trains
 item.FGV4300_Motor.name=Metrovalencia FGV 4300 (Motor)
 item.FGV3700_Motor.name=Metrovalencia FGV 3700 Gen. I (Motor)
 item.FGV3700_Motor_v2.name=Metrovalencia FGV 3700 Gen. II (Motor)
@@ -7,16 +7,17 @@ item.FGV3600_Motor.name=Metrovalencia FGV 3600 (Motor)
 item.TMB3000_Motor.name=TMB 3000 (Motor)
 item.Metro5000_Motor.name=Metro Madrid 5000 (Motor)
 item.Metro2000_Motor.name=Metro Madrid 2000 (Motor)
-item.FGV3900_Motor.name=FGV 3900 (Motor)
 item.Metro5500_Motor.name=Metro Madrid 5500 (Motor)
-item.B80C_engine.name=B80C A segment
-item.B80D_Motor.name=B80D A segment
-item.B100S_Motor.name=B100S A segment
-item.KVB_2300_Motor.name=KVB 2300 A Segment
-item.BN_S1_S2.name=BN S1/S2 A segment
-item.Munich_Type_A.name=MVG Baureihe A (Motor)
-item.Vienna_Typ_U.name=Wiener Linien Baureihe U (Motor)
 item.FGV3900_Motor.name=FGV 3900 (Motor)
+item.B80C_engine.name=B80C (A segment)
+item.B80D_Motor.name=B80D (A segment)
+item.B100S_Motor.name=B100S (A segment)
+item.KVB_2300_Motor.name=KVB 2300 (A segment)
+item.BN_S1_S2.name=BN S1/S2 (A segment)
+item.Munich_Type_A.name=MVG Baureihe A (Motor)
+item.Vienna_Typ_U.name=Vienna U-Bahn type U (Motor)
+item.FGV3900_Motor.name=FGV 3900 (Motor)
+
 
 item.FGV4300_Middle_wbogies.name=Metrovalencia FGV 4300 (Middle)
 item.FGV3700_Tail.name=Metrovalencia FGV 3700 Gen. I (Tail)
@@ -26,15 +27,14 @@ item.FGV3600_Tail.name=Metrovalencia FGV 3600 (Tail)
 item.FGV3600_Middle.name=Metrovalencia FGV 3600 (Middle)
 item.TMB3000_Middle.name=TMB 3000 (Middle)
 item.TMB3000_Tail.name=TMB 3000 (Tail)
-item.Metro5000_Tail.name=Metro Madrid 5000
 item.Munich_A_Tail.name=MVG Baureihe A (Tail)
+item.Metro5000_Tail.name=Metro Madrid 5000 (Tail)
 item.Metro2000_Tail.name=Metro Madrid 2000 (Tail)
 item.Metro5500_Tail.name=Metro Madrid 5500 (Tail)
-item.B80C_tail.name=B80C B segment
-item.KVB_2300_tail.name=KVB B segment
-item.BN_S1_S2_Tail.name=BN S1/S2 B segment
+item.B80C_tail.name=B80C (B segment)
+item.KVB_2300_tail.name=KVB (B segment)
+item.BN_S1_S2_Tail.name=BN S1/S2 (B segment)
 item.3900_Middle.name=FGV 3900 (Middle)
-
 
 
 //tabs
