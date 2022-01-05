@@ -64,7 +64,7 @@ public class Entity5000Motor extends TrainBase {
                 "company.madrid3", "Old livery used in Madrid.");
     }
 
-    public String getDefaultSkin(){return "metroim:company.madrid";}
+    public String getDefaultSkin(){return "metroim:company.madrid3";}
 
     public String[][] getTankFilters() {
         return FuelHandler.DefaultTanks.ELECTRIC.value();

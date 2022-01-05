@@ -73,7 +73,7 @@ public class Entity5000_Tail extends RollingstockBase {
                 "company.madrid3", "Old livery used in Madrid.");
     }
 
-    public String getDefaultSkin(){return "metroim:company.madrid";}
+    public String getDefaultSkin(){return "metroim:company.madrid3";}
 
     @Override
     public boolean isReinforced() {

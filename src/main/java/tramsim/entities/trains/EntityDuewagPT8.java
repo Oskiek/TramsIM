@@ -111,7 +111,7 @@ public class EntityDuewagPT8 extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{2.125f,-0.11f,0},{-0.25f,-0.11f,0}};}
+        return new float[][]{{-2.25f,-0.11f,0},{0.5f,-0.11f,0}};}
     @Override
     public ModelBase[] bogieModels(){  return new ModelBase[]{ new PT8_Gelenk(), new PT8_Bogie()};}
 
