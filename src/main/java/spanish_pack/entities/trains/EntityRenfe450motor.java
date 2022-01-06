@@ -85,11 +85,11 @@ public class EntityRenfe450motor extends TrainBase {
     public float getMaxFuel(){return 1;}
 
     @Override
-    public float[][] getRiderOffsets(){return new float[][]{{2.75f,1f, 0.0625f}};}
+    public float[][] getRiderOffsets(){return new float[][]{{2.2f,1f, 0.0625f}};}
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{5.175f,1.75f,1.5f};
+        return new float[]{5.385f,1.75f,1.5f};
     }
 
     @Override
@@ -117,7 +117,7 @@ public class EntityRenfe450motor extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{1.625f,-0.04f,0},{-1.875f,-0.04f,0}};}
+        return new float[][]{{2.025f,-0.04f,0},{-1.575f,-0.04f,0}};}
     @Override
     public ModelBase[] bogieModels(){  return new ModelBase[]{ new Renfe_446_Bogie()};}
 
@@ -133,7 +133,7 @@ public class EntityRenfe450motor extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0.25f,0.1f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{-0.1f,0.1f,0f}}; }
 
     /**
      * <h2>rider sit or stand</h2>

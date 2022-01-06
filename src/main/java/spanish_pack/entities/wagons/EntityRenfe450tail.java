@@ -40,7 +40,7 @@ public class EntityRenfe450tail extends RollingstockBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{1.7875f,-0.04f,0},{-1.70f,-0.04f,0}};}
+        return new float[][]{{1.9875f,-0.04f,0},{-1.50f,-0.04f,0}};}
 
     @Override
     public ModelBase[] bogieModels(){
@@ -62,7 +62,7 @@ public class EntityRenfe450tail extends RollingstockBase {
 
     @Override
     public float[][] modelOffsets() {
-        return new float[][]{{0f,0.1f,0f}};
+        return new float[][]{{-0.25f,0.1f,0f}};
     }
 
     @Override
@@ -180,7 +180,7 @@ public class EntityRenfe450tail extends RollingstockBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{5.225f,1.75f,1.5f};
+        return new float[]{5.385f,1.75f,1.5f};
     }
 
     @Override

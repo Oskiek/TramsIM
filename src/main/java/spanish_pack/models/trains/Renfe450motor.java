@@ -1642,11 +1642,11 @@ public class Renfe450motor extends ModelBase //Same as Filename
 		bodyModel[403].addShapeBox(0F, 0F, 0F, 1, 2, 8, 0F,4F, 0F, -3F, -5F, 0F, -2F, 1F, 0F, -4F, -1F, 0F, -4F, 4F, 0.5F, -3F, -5F, 0.5F, -2F, 1.5F, 0.5F, -4F, -2F, 0.5F, -4F); // Box 405
 		bodyModel[403].setRotationPoint(42F, 4.5F, -12F);
 
-		bodyModel[404].addShapeBox(0F, 0F, 0F, 1, 2, 4, 0F,0F, -0.2F, -1.2F, -0.7F, -0.2F, -1.2F, -0.7F, -0.2F, 1F, 0F, -0.2F, 1F, 0F, 0F, -1.2F, -0.5F, 0F, -1.2F, -0.5F, 0F, 1F, 0F, 0F, 1F); // Box 410
-		bodyModel[404].setRotationPoint(44.6F, -4.5F, 3.25F);
+		bodyModel[404].addShapeBox(0F, 0F, 0F, 1, 2, 4, 0F,0F, -0.7F, -1.2F, -0.7F, -0.7F, -1.2F, -0.7F, -0.7F, 1F, 0F, -0.7F, 1F, 0F, 0F, -1.2F, -0.5F, 0F, -1.2F, -0.5F, 0F, 1F, 0F, 0F, 1F); // Box 410
+		bodyModel[404].setRotationPoint(44.4F, -5F, 3.25F);
 
-		bodyModel[405].addShapeBox(0F, 0F, 0F, 1, 2, 4, 0F,0F, -0.2F, -0.2F, -0.7F, -0.2F, -0.2F, -0.7F, -0.2F, 0F, 0F, -0.2F, 0F, 0F, 0F, -0.2F, -0.5F, 0F, -0.2F, -0.5F, 0F, 0F, 0F, 0F, 0F); // Box 411
-		bodyModel[405].setRotationPoint(44.6F, -4.5F, -8.5F);
+		bodyModel[405].addShapeBox(0F, 0F, 0F, 1, 2, 4, 0F,0F, -0.7F, -0.2F, -0.7F, -0.7F, -0.2F, -0.7F, -0.7F, 0F, 0F, -0.7F, 0F, 0F, 0F, -0.2F, -0.5F, 0F, -0.2F, -0.5F, 0F, 0F, 0F, 0F, 0F); // Box 411
+		bodyModel[405].setRotationPoint(44.4F, -5F, -8.5F);
 		this.flipAll();
 	}
 }
