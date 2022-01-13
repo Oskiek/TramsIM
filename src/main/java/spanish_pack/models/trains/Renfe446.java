@@ -19,7 +19,7 @@ public class Renfe446 extends ModelBase //Same as Filename
 
 	public Renfe446() //Same as Filename
 	{
-		bodyModel = new ModelRendererTurbo[393];
+		bodyModel = new ModelRendererTurbo[401];
 
 		initbodyModel_1();
 
@@ -424,6 +424,14 @@ public class Renfe446 extends ModelBase //Same as Filename
 		bodyModel[390] = new ModelRendererTurbo(this, 161, 97, textureX, textureY); // Box 405
 		bodyModel[391] = new ModelRendererTurbo(this, 481, 81, textureX, textureY); // Box 406
 		bodyModel[392] = new ModelRendererTurbo(this, 1, 137, textureX, textureY); // Box 392
+		bodyModel[393] = new ModelRendererTurbo(this, 1, 10, textureX, textureY); // Box 394
+		bodyModel[394] = new ModelRendererTurbo(this, 8, 10, textureX, textureY); // Box 395
+		bodyModel[395] = new ModelRendererTurbo(this, 1, 10, textureX, textureY); // Box 397
+		bodyModel[396] = new ModelRendererTurbo(this, 8, 10, textureX, textureY); // Box 398
+		bodyModel[397] = new ModelRendererTurbo(this, 12, 14, textureX, textureY); // Box 399
+		bodyModel[398] = new ModelRendererTurbo(this, 12, 14, textureX, textureY); // Box 400
+		bodyModel[399] = new ModelRendererTurbo(this, 0, 199, textureX, textureY); // Box 399
+		bodyModel[400] = new ModelRendererTurbo(this, 0, 199, textureX, textureY); // Box 400
 
 		bodyModel[0].addShapeBox(0F, 0F, 0F, 3, 3, 21, 0F,0F, 0F, -1F, -2F, 0F, -0.5F, -2F, 0F, 0.5F, 0F, 0F, 0F, -2F, 0F, -1.5F, 0F, -1F, -1F, 0F, -1F, 0F, -2F, 0F, -0.5F); // Box 0
 		bodyModel[0].setRotationPoint(-39F, 4F, -11F);
@@ -949,7 +957,7 @@ public class Renfe446 extends ModelBase //Same as Filename
 		bodyModel[173].addShapeBox(0F, 0F, 0F, 11, 5, 1, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 210
 		bodyModel[173].setRotationPoint(-1F, -1F, -10.5F);
 
-		bodyModel[174].addShapeBox(0F, 0F, 0F, 12, 3, 1, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -1F, -0.5F, 0F, -1F, -0.5F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 211
+		bodyModel[174].addShapeBox(0F, 0F, 0F, 12, 3, 1, 0F,0F, 0F, 0F, -1F, 0F, 0F, -1F, 0F, 0F, 0F, 0F, 0F, 0F, -1F, -0.5F, -1F, -1F, -0.5F, -1F, 0F, 0F, 0F, 0F, 0F); // Box 211
 		bodyModel[174].setRotationPoint(-1F, 4F, -10.5F);
 
 		bodyModel[175].addShapeBox(0F, 0F, 0F, 16, 4, 1, 0F,0F, 0F, 0F, 1F, 0F, 0F, 1F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 1F, 0F, 0F, 1F, 0F, 0F, 0F, 0F, 0F); // Box 212
@@ -1606,5 +1614,29 @@ public class Renfe446 extends ModelBase //Same as Filename
 
 		bodyModel[392].addShapeBox(0F, 0F, 0F, 68, 1, 21, 0F,0.5F, -0.75F, -8F, 5F, -0.75F, -8F, 5F, -0.75F, -6F, 0.5F, -0.75F, -6F, 1F, 0F, -2F, 5F, 0F, -2F, 5F, 0F, 0F, 1F, 0F, 0F); // Box 392
 		bodyModel[392].setRotationPoint(-33F, -20.5F, -11.5F);
+
+		bodyModel[393].addShapeBox(0F, 0F, 0F, 1, 2, 4, 0F,0F, -0.3F, -0.25F, -0.8F, -0.3F, -0.25F, -0.8F, -0.3F, 0.1F, 0F, -0.3F, 0F, 0F, 0.1F, -0.25F, -0.8F, 0.1F, -0.25F, 0F, 0.1F, 0.5F, 0F, 0.1F, 0F); // Box 394
+		bodyModel[393].setRotationPoint(-39.37F, -1.25F, 6F);
+
+		bodyModel[394].addShapeBox(0F, 0F, 0F, 1, 1, 2, 0F,0F, 0.3F, 0F, 0F, 0.3F, 0F, 0F, 0.3F, 0F, 0F, 0.3F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 395
+		bodyModel[394].setRotationPoint(-39.4F, -0.4F, -9.95F);
+
+		bodyModel[395].addShapeBox(0F, 0F, 0F, 1, 2, 4, 0F,0F, -0.3F, 0F, -0.8F, -0.3F, 0.1F, -0.8F, -0.3F, -0.25F, 0F, -0.3F, -0.25F, 0F, 0.1F, 0F, 0F, 0.1F, 0.5F, -0.8F, 0.1F, -0.25F, 0F, 0.1F, -0.25F); // Box 397
+		bodyModel[395].setRotationPoint(-39.37F, -1.25F, -10F);
+
+		bodyModel[396].addShapeBox(0F, 0F, 0F, 1, 1, 2, 0F,0F, 0.3F, 0F, 0F, 0.3F, 0F, 0F, 0.3F, 0F, 0F, 0.3F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 398
+		bodyModel[396].setRotationPoint(-39.4F, -0.4F, 8.05F);
+
+		bodyModel[397].addShapeBox(0F, 0F, 0F, 1, 1, 1, 0F,0F, 0.3F, 0F, 0F, 0.3F, 0F, 0F, 0.3F, 0.2F, 0F, 0.3F, 0.2F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0.2F, 0F, 0F, 0.2F); // Box 399
+		bodyModel[397].setRotationPoint(-39.4F, -0.4F, -7.75F);
+
+		bodyModel[398].addShapeBox(0F, 0F, 0F, 1, 1, 1, 0F,0F, 0.3F, 0F, 0F, 0.3F, 0F, 0F, 0.3F, 0.2F, 0F, 0.3F, 0.2F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0.2F, 0F, 0F, 0.2F); // Box 400
+		bodyModel[398].setRotationPoint(-39.4F, -0.4F, 6.75F);
+
+		bodyModel[399].addBox(0F, 0F, 0F, 5, 4, 18, 0F); // Box 399
+		bodyModel[399].setRotationPoint(-0.9F, 3F, -9F);
+
+		bodyModel[400].addShapeBox(0F, 0F, 0F, 5, 4, 18, 0F,0F, 0F, 0F, 0.8F, 0F, 0F, 0.8F, 0F, 0F, 0F, 0F, 0F, 0F, 0.25F, 0F, 0.8F, 0.25F, 0F, 0.8F, 0.25F, 0F, 0F, 0.25F, 0F); // Box 400
+		bodyModel[400].setRotationPoint(4.2F, 3F, -9F);
 	}
 }

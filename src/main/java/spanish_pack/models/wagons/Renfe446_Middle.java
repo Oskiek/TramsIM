@@ -11,7 +11,7 @@ public class Renfe446_Middle extends ModelBase //Same as Filename
 
 	public Renfe446_Middle() //Same as Filename
 	{
-		bodyModel = new ModelRendererTurbo[395];
+		bodyModel = new ModelRendererTurbo[397];
 
 		initbodyModel_1();
 	}
@@ -413,6 +413,8 @@ public class Renfe446_Middle extends ModelBase //Same as Filename
 		bodyModel[392] = new ModelRendererTurbo(this, 275, 174, textureX, textureY); // Box 406
 		bodyModel[393] = new ModelRendererTurbo(this, 275, 174, textureX, textureY); // Box 407
 		bodyModel[394] = new ModelRendererTurbo(this, 83, 194, textureX, textureY); // Box 392
+		bodyModel[395] = new ModelRendererTurbo(this, 0, 199, textureX, textureY); // Box 399
+		bodyModel[396] = new ModelRendererTurbo(this, 0, 199, textureX, textureY); // Box 400
 
 		bodyModel[0].addBox(0F, 0F, 0F, 17, 1, 20, 0F); // Box 21
 		bodyModel[0].setRotationPoint(-30F, 1F, -10F);
@@ -1598,5 +1600,11 @@ public class Renfe446_Middle extends ModelBase //Same as Filename
 
 		bodyModel[394].addShapeBox(0F, 0F, 0F, 68, 1, 21, 0F,-4F, -0.75F, -7F, 5F, -0.75F, -7F, 5F, -0.75F, -7F, -4F, -0.75F, -7F, -4F, 0F, -1.5F, 5F, 0F, -1.5F, 5F, 0F, -0.5F, -4F, 0F, -0.5F); // Box 392
 		bodyModel[394].setRotationPoint(-34F, -20.5F, -11F);
+
+		bodyModel[395].addBox(0F, 0F, 0F, 5, 4, 18, 0F); // Box 399
+		bodyModel[395].setRotationPoint(-0.9F, 3F, -9F);
+
+		bodyModel[396].addShapeBox(0F, 0F, 0F, 5, 4, 18, 0F,0F, 0F, 0F, 0.8F, 0F, 0F, 0.8F, 0F, 0F, 0F, 0F, 0F, 0F, 0.25F, 0F, 0.8F, 0.25F, 0F, 0.8F, 0.25F, 0F, 0F, 0.25F, 0F); // Box 400
+		bodyModel[396].setRotationPoint(4.2F, 3F, -9F);
 	}
 }

@@ -41,7 +41,7 @@ public class EntityCivia_Middle2 extends RollingstockBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{1.825f,0.0f,0}};}
+        return new float[][]{{1.875f,0.0f,0}};}
 
     @Override
     public ModelBase[] bogieModels(){
@@ -68,14 +68,14 @@ public class EntityCivia_Middle2 extends RollingstockBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/Civia_coupler.png", "textures/trams/bogies/446_bogie.png",
-                "company.renfe new", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
-        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/Civia_w_Haube.png", "textures/trams/bogies/446_bogie.png",
+        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/civia_w_haube.png", "textures/trams/bogies/446_bogie.png",
                 "renfe new", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
-        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/Civia_Original.png", "textures/trams/bogies/446_bogie.png",
+        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/civia_Original.png", "textures/trams/bogies/446_bogie.png",
                 "R.E.N.F.E.", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
-        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/Civia_Rodalies.png", "textures/trams/bogies/446_bogie.png",
+        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/civia_rodalies.png", "textures/trams/bogies/446_bogie.png",
                 "Rodalies", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in Catalonia") + ".");
+        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/civia_mt_middle.png", "textures/trams/bogies/446_bogie.png",
+                "company.invent", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
 
     }
     public String getDefaultSkin(){
