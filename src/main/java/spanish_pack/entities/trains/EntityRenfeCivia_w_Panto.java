@@ -62,8 +62,8 @@ public class EntityRenfeCivia_w_Panto extends TrainBase {
                 "company.renfe new", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
         SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/civia_w_haube.png", "textures/trams/bogies/446_bogie.png",
                 "renfe new", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
-        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/civia_Original.png", "textures/trams/bogies/446_bogie.png",
-                "R.E.N.F.E.", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
+        SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/civia_original.png", "textures/trams/bogies/446_bogie.png",
+                "renfe.old", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.spain") + ".");
         SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/civia_rodalies.png", "textures/trams/bogies/446_bogie.png",
                 "Rodalies", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in Catalonia") + ".");
         SkinRegistry.addSkin(this.getClass(), Spanish_pack.MODID, "textures/trams/civia_mt.png", "textures/trams/bogies/446_bogie.png",
@@ -73,7 +73,7 @@ public class EntityRenfeCivia_w_Panto extends TrainBase {
     }
 
     public String getDefaultSkin(){
-        return "spanish_pack:company.renfe new";
+        return "spanish_pack:renfe.old";
     }
 
     public String[][] getTankFilters() {
