@@ -185,7 +185,7 @@ public class EntityCivia_tail extends RollingstockBase {
      * <h2>Rider offsets</h2>
      */
     @Override
-    public float[][] getRiderOffsets(){return new float[][]{{0.25f,0.95f, 0.4f}};}
+    public float[][] getRiderOffsets(){return new float[][]{{0.15f,0.95f, 0.4f}};}
 
     @Override
     public float[] getHitboxSize() {

@@ -463,7 +463,7 @@ public class Renfe446 extends ModelBase //Same as Filename
 		bodyModel[9].addShapeBox(0F, 0F, 0F, 3, 1, 22, 0F,0.35F, 0F, -1.5F, -2F, 0F, -1F, -2F, 0F, 0F, 0.35F, 0F, -0.5F, 0.35F, 0F, -1.5F, -2F, 0F, -1F, -2F, 0F, 0F, 0.35F, 0F, -0.5F); // Box 9
 		bodyModel[9].setRotationPoint(-39F, -1F, -11.5F);
 
-		bodyModel[10].addShapeBox(0F, 0F, 0F, 3, 17, 22, 0F,-3.65F, 0F, -1.5F, 2F, 0F, -1F, 2F, 0F, 0F, -3.65F, 0F, -0.5F, 0.43F, 0F, -1.4F, -2F, 0F, -0.9F, -2F, 0F, 0.1F, 0.43F, 0F, -0.4F); // Box 10
+		bodyModel[10].addShapeBox(0F, 0F, 0F, 3, 17, 22, 0F,-3.65F, 0F, -1.5F, 2F, 0F, -1F, 2F, 0F, 0F, -3.65F, 0F, -0.5F, 0.5F, 0F, -1.4F, -2F, 0F, -0.9F, -2F, 0F, 0.1F, 0.5F, 0F, -0.4F); // Box 10
 		bodyModel[10].setRotationPoint(-39F, -18F, -11.5F);
 
 		bodyModel[11].addShapeBox(0F, 0F, 0F, 5, 17, 1, 0F,-3F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -3F, 0F, 0F, 1F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0.1F, 1F, 0F, 0.1F); // Box 11
@@ -1633,10 +1633,10 @@ public class Renfe446 extends ModelBase //Same as Filename
 		bodyModel[398].addShapeBox(0F, 0F, 0F, 1, 1, 1, 0F,0F, 0.3F, 0F, 0F, 0.3F, 0F, 0F, 0.3F, 0.2F, 0F, 0.3F, 0.2F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0.2F, 0F, 0F, 0.2F); // Box 400
 		bodyModel[398].setRotationPoint(-39.4F, -0.4F, 6.75F);
 
-		bodyModel[399].addBox(0F, 0F, 0F, 5, 4, 18, 0F); // Box 399
-		bodyModel[399].setRotationPoint(-0.9F, 3F, -9F);
+		bodyModel[399].addShapeBox(0F, 0F, 0F, 5, 4, 18, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 399
+		bodyModel[399].setRotationPoint(-0.9F, 4F, -9F);
 
-		bodyModel[400].addShapeBox(0F, 0F, 0F, 5, 4, 18, 0F,0F, 0F, 0F, 0.8F, 0F, 0F, 0.8F, 0F, 0F, 0F, 0F, 0F, 0F, 0.25F, 0F, 0.8F, 0.25F, 0F, 0.8F, 0.25F, 0F, 0F, 0.25F, 0F); // Box 400
+		bodyModel[400].addShapeBox(0F, 0F, 0F, 5, 4, 18, 0F,0F, 0F, 0F, 0.8F, 0F, 0F, 0.8F, 0F, 0F, 0F, 0F, 0F, 0F, 1.25F, 0F, 0.8F, 1.25F, 0F, 0.8F, 1.25F, 0F, 0F, 1.25F, 0F); // Box 400
 		bodyModel[400].setRotationPoint(4.2F, 3F, -9F);
 	}
 }
