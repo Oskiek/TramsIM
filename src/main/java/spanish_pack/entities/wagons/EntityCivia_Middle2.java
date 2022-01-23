@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import spanish_pack.Spanish_pack;
+import spanish_pack.models.bogies.Renfe_440R_bogie;
 import spanish_pack.models.bogies.Renfe_446_Bogie;
 import spanish_pack.models.wagons.Renfe465_Middle;
 import spanish_pack.models.wagons.Renfe465_Middle2;
@@ -45,7 +46,7 @@ public class EntityCivia_Middle2 extends RollingstockBase {
 
     @Override
     public ModelBase[] bogieModels(){
-        return new ModelBase[]{new Renfe_446_Bogie()};
+        return new ModelBase[]{new Renfe_440R_bogie()};
     }
 
     /**
