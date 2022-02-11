@@ -1598,7 +1598,7 @@ public class Renfe446_Middle extends ModelBase //Same as Filename
 		bodyModel[393].addBox(0F, 0F, 0F, 1, 1, 11, 0F); // Box 407
 		bodyModel[393].setRotationPoint(31.5F, -21.7F, -5.5F);
 
-		bodyModel[394].addShapeBox(0F, 0F, 0F, 68, 1, 21, 0F,-4F, -0.75F, -7F, 5F, -0.75F, -7F, 5F, -0.75F, -7F, -4F, -0.75F, -7F, -4F, 0F, -1.5F, 5F, 0F, -1.5F, 5F, 0F, -0.5F, -4F, 0F, -0.5F); // Box 392
+		bodyModel[394].addShapeBox(0F, 0F, 0F, 68, 1, 21, 0F,-4F, -0.65F, -7F, 5F, -0.65F, -7F, 5F, -0.65F, -7F, -4F, -0.65F, -7F, -4F, 0F, -1.5F, 5F, 0F, -1.5F, 5F, 0F, -0.5F, -4F, 0F, -0.5F); // Box 392
 		bodyModel[394].setRotationPoint(-34F, -20.5F, -11F);
 
 		bodyModel[395].addBox(0F, 0F, 0F, 5, 4, 18, 0F); // Box 399

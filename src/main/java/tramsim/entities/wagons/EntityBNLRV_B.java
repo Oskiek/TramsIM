@@ -44,7 +44,7 @@ public class EntityBNLRV_B extends RollingstockBase {
         return new float[][]{{1f,-0.1f,0}};}
 
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{new BNLRV_Bogie()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{new NullBogiePlaceHolder()};}
 
 
     /**
@@ -62,7 +62,7 @@ public class EntityBNLRV_B extends RollingstockBase {
 
     @Override
     public float[][] modelOffsets() {
-        return new float[][]{{0f,-0.0125f,0f}};
+        return new float[][]{{0.15f,0.075f,0f}};
     }
 
     @Override
@@ -177,11 +177,11 @@ public class EntityBNLRV_B extends RollingstockBase {
      * <h2>Rider offsets</h2>
      */
     @Override
-    public float[][] getRiderOffsets(){return new float[][]{{-1.90625f,1.1f, 0f}};}
+    public float[][] getRiderOffsets(){return new float[][]{{-1.40625f,1.1f, 0f}};}
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.95f,1.75f,1.5f};
+        return new float[]{4.8f,1.75f,1.5f};
     }
 
     @Override

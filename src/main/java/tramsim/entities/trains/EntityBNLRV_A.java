@@ -22,6 +22,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import tramsim.TramsIM;
 import tramsim.models.bogies.BNLRV_Bogie;
 import tramsim.models.bogies.BNLRV_Gelenk;
+import tramsim.models.bogies.NullBogiePlaceHolder;
 import tramsim.models.trains.BNLRV_A;
 
 import java.util.Arrays;
@@ -93,7 +94,7 @@ public class EntityBNLRV_A extends TrainBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.85f,1.75f,1.5f};
+        return new float[]{4.925f,1.75f,1.5f};
     }
 
     @Override
@@ -123,7 +124,7 @@ public class EntityBNLRV_A extends TrainBase {
     public float[][] bogieModelOffsets() {
         return new float[][]{{1f,-0.1f,0},{-2.5f,-0.1f,0}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{new BNLRV_Bogie(), new BNLRV_Gelenk()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{new NullBogiePlaceHolder()};}
 
 
     @Override
@@ -137,7 +138,7 @@ public class EntityBNLRV_A extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0f,.0125f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0.15f,0.075f,0f}}; }
 
     @Override
     public boolean shouldRiderSit(){
