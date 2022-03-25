@@ -13,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import metroim.models.wagons.Tail4300;
+import tramsim.models.bogies.NullBogiePlaceHolder;
 
 import java.util.List;
 import java.util.UUID;
@@ -42,7 +43,7 @@ public class EntityFGV4300_Tail extends RollingstockBase {
 
     @Override
     public ModelBase[] bogieModels(){
-        return new ModelBase[]{new StandardBogie()};
+        return new ModelBase[]{new NullBogiePlaceHolder()};
     }
 
     /**

@@ -20,6 +20,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import metroim.models.trains.Motor4300;
+import tramsim.models.bogies.NullBogiePlaceHolder;
 
 import java.util.Arrays;
 import java.util.List;
@@ -112,7 +113,7 @@ public class Entity4300Motor extends TrainBase {
     public float[][] bogieModelOffsets() {
         return new float[][]{{1.05f,0.0f,0},{-1.275f,0.0f,0}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{new StandardBogie2()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{new NullBogiePlaceHolder()};}
 
 
     @Override
@@ -126,7 +127,7 @@ public class Entity4300Motor extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{-0.2f,0.2f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0.1f,0.2f,0f}}; }
 
     /**
      * <h2>rider sit or stand</h2>

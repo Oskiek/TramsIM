@@ -61,7 +61,7 @@ public class EntityB80C_tail extends RollingstockBase {
 
     @Override
     public float[][] modelOffsets() {
-        return new float[][]{{0f, 0.15f,0.0f}};
+        return new float[][]{{0f, 0.075f,0.0f}};
     }
 
     @Override

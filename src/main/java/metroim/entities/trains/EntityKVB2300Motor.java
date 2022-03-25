@@ -139,7 +139,7 @@ public class EntityKVB2300Motor extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{-0.125f,0.15f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{-0.125f,0.075f,0f}}; }
 
     /**
      * <h2>rider sit or stand</h2>
