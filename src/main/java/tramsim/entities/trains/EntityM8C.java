@@ -96,7 +96,7 @@ public class EntityM8C extends TrainBase {
     public float[][] getRiderOffsets(){return new float[][]{{-1.75f,1f, 0.1f}};}
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.0f,1.75f,1.5f};
+        return new float[]{4.2f,1.75f,1.5f};
     }
     @Override
     public float transportMetricHorsePower(){return 75f;}

@@ -57,7 +57,7 @@ public class EntityM8C_Tail extends RollingstockBase {
 
     @Override
     public float[][] modelOffsets() {
-        return new float[][]{{0f,0f,0f}};
+        return new float[][]{{0.01f,0f,0f}};
     }
 
     @Override
@@ -182,7 +182,7 @@ public class EntityM8C_Tail extends RollingstockBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.1f,2,1.5f};
+        return new float[]{4.2f,2,1.5f};
     }
 
     @Override

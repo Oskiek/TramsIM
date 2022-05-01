@@ -180,7 +180,7 @@ public class EntityM8C_Middle extends RollingstockBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{2.875f,2f,1.5f};
+        return new float[]{2.475f,2f,1.5f};
     }
 
     @Override

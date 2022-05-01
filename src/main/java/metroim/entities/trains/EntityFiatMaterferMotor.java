@@ -14,38 +14,39 @@ import fexcraft.tmt.slim.ModelBase;
 import metroim.MetroIM;
 import metroim.models.bogies.StandardBogie;
 import metroim.models.trains.Motor5000;
-import metroim.models.trains.Motor5500;
+import metroim.models.trains.MotorFiatMaterfer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import tramsim.models.bogies.NullBogiePlaceHolder;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
 
-public class Entity5500Motor extends TrainBase {
+public class EntityFiatMaterferMotor extends TrainBase {
 
 
 
-    public static final Item thisItem = new ItemTransport(new Entity5500Motor(null), MetroIM.MODID,MetroIM.metroimtabvehicle);
+    public static final Item thisItem = new ItemTransport(new EntityFiatMaterferMotor(null), MetroIM.MODID,MetroIM.metroimtabvehicle);
 
 
-    public Entity5500Motor(UUID owner, World world, double xPos, double yPos, double zPos) {
+    public EntityFiatMaterferMotor(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
     }
-    public Entity5500Motor(World world){
+    public EntityFiatMaterferMotor(World world){
         super(world);
     }
 
     @Override
-    public String transportName(){return "Metro5500_Motor";}
+    public String transportName(){return "FiatMaterfer_Motor";}
     @Override
-    public String transportcountry(){return "Spain";}
+    public String transportcountry(){return "Argentina";}
     @Override
-    public String transportYear(){return "1990";}
+    public String transportYear(){return "1985";}
     @Override
     public String transportFuelType() {
         return "Electric";
@@ -57,13 +58,13 @@ public class Entity5500Motor extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/madrid_metro_5500_new.png", "textures/trams/bogies/5000_bogie.png",
-        "company.madrid", "Standard livery used in Madrid.");
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/madrid_metro_5500_old.png", "textures/trams/bogies/5000_bogie.png",
-        "company.madrid2", "Old livery used in Madrid.");
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/fiat_materfer_old.png", "textures/trams/bogies/5000_bogie.png",
+        "ferrovias old", "Old Livery used on the Subte network in Buenos Aires.");
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/fiat_materfer_new.png", "textures/trams/bogies/5000_bogie.png",
+                "ferrovias new", "New Livery used on the Subte network in Buenos Aires.");
     }
 
-    public String getDefaultSkin(){return "metroim:company.madrid";}
+    public String getDefaultSkin(){return "metroim:ferrovias old";}
 
     public String[][] getTankFilters() {
         return FuelHandler.DefaultTanks.ELECTRIC.value();
@@ -84,7 +85,7 @@ public class Entity5500Motor extends TrainBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.9f,1.75f,1.5f};
+        return new float[]{4.85f,1.75f,1.5f};
     }
 
     @Override
@@ -114,7 +115,7 @@ public class Entity5500Motor extends TrainBase {
     public float[][] bogieModelOffsets() {
         return new float[][]{{1.45f,-0.05f,0},{-1.475f,-0.05f,0}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{new StandardBogie()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{new NullBogiePlaceHolder()};}
 
 
     @Override
@@ -128,7 +129,7 @@ public class Entity5500Motor extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{-0.10f,0.0f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0.0f,0.0f,0f}}; }
 
     /**
      * <h2>rider sit or stand</h2>
@@ -177,7 +178,7 @@ public class Entity5500Motor extends TrainBase {
 
 
     @Override
-    public ModelBase[] getModel(){return new ModelBase[]{new Motor5500()};}
+    public ModelBase[] getModel(){return new ModelBase[]{new MotorFiatMaterfer()};}
 
     /**
      * <h2>sets the resource location for sounds, like horn and the sound made for the engine running</h2>
