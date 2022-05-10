@@ -1,6 +1,6 @@
 # Trams in Motion
 
-This is the internal repo for Trams in Motion, Metro in Motion and Spanish pack.
+This is the repo for Trams in Motion, Metro in Motion and Spanish pack, which are Trains in Motion content packs.
 
 ## Compiling
 
@@ -15,8 +15,8 @@ This is the internal repo for Trams in Motion, Metro in Motion and Spanish pack.
 
 ## Download
 
-Dev builds are available on the [Workspace Trello](https://trello.com/b/NVY3scVK). Public builds are available on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/trams-in-motion), [Planet Minecraft](https://www.planetminecraft.com/mod/trams-in-motion/) and [Ru-minecraft.ru](https://ru-minecraft.ru/mody-minecraft/55799-trams-in-motion.html).
+Public builds are available on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/trams-in-motion), [Planet Minecraft](https://www.planetminecraft.com/mod/trams-in-motion/) and [Ru-minecraft.ru](https://ru-minecraft.ru/mody-minecraft/55799-trams-in-motion.html). Dev builds are available on the [Workspace Trello](https://trello.com/b/NVY3scVK). 
 
 ## License
 
-http://tramsim.eu/new/license.html
+http://oskiek.eu/tramsim/license.html
