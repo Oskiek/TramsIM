@@ -12,8 +12,7 @@ import ebf.tim.utility.FuelHandler;
 import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import metroim.MetroIM;
-import metroim.models.bogies.StandardBogie;
-import metroim.models.trains.Motor5000;
+import metroim.models.trains.MotorCAFGEE;
 import metroim.models.trains.MotorFiatMaterfer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -27,26 +26,26 @@ import java.util.List;
 import java.util.UUID;
 
 
-public class EntityFiatMaterferMotor extends TrainBase {
+public class EntityCAFGEE extends TrainBase {
 
 
 
-    public static final Item thisItem = new ItemTransport(new EntityFiatMaterferMotor(null), MetroIM.MODID,MetroIM.metroimtabvehicle);
+    public static final Item thisItem = new ItemTransport(new EntityCAFGEE(null), MetroIM.MODID,MetroIM.metroimtabvehicle);
 
 
-    public EntityFiatMaterferMotor(UUID owner, World world, double xPos, double yPos, double zPos) {
+    public EntityCAFGEE(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
     }
-    public EntityFiatMaterferMotor(World world){
+    public EntityCAFGEE(World world){
         super(world);
     }
 
     @Override
-    public String transportName(){return "FiatMaterfer_Motor";}
+    public String transportName(){return "CAFGEE_motor";}
     @Override
-    public String transportcountry(){return "Argentina";}
+    public String transportcountry(){return "Spain";}
     @Override
-    public String transportYear(){return "1980";}
+    public String transportYear(){return "1959";}
     @Override
     public String transportFuelType() {
         return "Electric";
@@ -58,10 +57,13 @@ public class EntityFiatMaterferMotor extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/fiat_materfer_old.png", "textures/trams/bogies/5000_bogie.png",
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/caf_gee_old.png", "textures/trams/bogies/5000_bogie.png",
         "ferrovias old", "Old Livery used on the Subte network in Buenos Aires.");
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/fiat_materfer_new.png", "textures/trams/bogies/5000_bogie.png",
-                "ferrovias new", "New Livery used on the Subte network in Buenos Aires.");
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/caf_gee_new.png", "textures/trams/bogies/5000_bogie.png",
+                "ferrovias new", "Actual Livery used on the Subte network in Buenos Aires.");
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/caf_gee_blue.png", "textures/trams/bogies/5000_bogie.png",
+                "fabrica", "Original Livery from their early years.");
+
     }
 
     public String getDefaultSkin(){return "metroim:ferrovias old";}
@@ -81,11 +83,11 @@ public class EntityFiatMaterferMotor extends TrainBase {
     @Override
     public float getMaxFuel(){return 1;}
     @Override
-    public float[][] getRiderOffsets(){return new float[][]{{-1.8125f,0.9f, 0.40625f}};}
+    public float[][] getRiderOffsets(){return new float[][]{{-2.0f,0.9f, 0.40625f}};}
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.875f,1.75f,1.5f};
+        return new float[]{4.95f,1.75f,1.5f};
     }
 
     @Override
@@ -178,7 +180,7 @@ public class EntityFiatMaterferMotor extends TrainBase {
 
 
     @Override
-    public ModelBase[] getModel(){return new ModelBase[]{new MotorFiatMaterfer()};}
+    public ModelBase[] getModel(){return new ModelBase[]{new MotorCAFGEE()};}
 
     /**
      * <h2>sets the resource location for sounds, like horn and the sound made for the engine running</h2>

@@ -6,8 +6,7 @@ import ebf.tim.api.SkinRegistry;
 import ebf.tim.items.ItemTransport;
 import fexcraft.tmt.slim.ModelBase;
 import metroim.MetroIM;
-import metroim.models.bogies.StandardBogie;
-import metroim.models.wagons.Tail5000;
+import metroim.models.wagons.MiddleFiatMaterfer;
 import metroim.models.wagons.TailFiatMaterfer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -21,16 +20,16 @@ import java.util.UUID;
 
 import static ebf.tim.utility.CommonUtil.DefineStack;
 
-public class EntityFiatMaterferTail extends RollingstockBase {
+public class EntityFiatMaterferMiddle extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
             "\u00A77" + StatCollector.translateToLocal("menu.item.weight") +": 2 " + StatCollector.translateToLocal("menu.item.tons"),
             "\u00A77" + StatCollector.translateToLocal("menu.item.seats") +": 4 " + StatCollector.translateToLocal("menu.item.players")};
-    public static final Item thisItem = new ItemTransport(new EntityFiatMaterferTail(null), MetroIM.MODID, MetroIM.metroimtabvehicle);
+    public static final Item thisItem = new ItemTransport(new EntityFiatMaterferMiddle(null), MetroIM.MODID, MetroIM.metroimtabvehicle);
 
-    public EntityFiatMaterferTail(UUID owner, World world, double xPos, double yPos, double zPos) {
+    public EntityFiatMaterferMiddle(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
     }
-    public EntityFiatMaterferTail(World world){
+    public EntityFiatMaterferMiddle(World world){
         super(world);
     }
 
@@ -112,17 +111,17 @@ public class EntityFiatMaterferTail extends RollingstockBase {
 
     @Override
     public String transportName() {
-        return "FiatMaterfer_Tail";
+        return "FiatMaterfer_Middle";
     }
 
     @Override
     public String transportcountry() {
-        return "Spain";
+        return "Argentina";
     }
 
     @Override
     public String transportYear() {
-        return "1975";
+        return "1980";
     }
 
     @Override
@@ -189,7 +188,7 @@ public class EntityFiatMaterferTail extends RollingstockBase {
     }
 
     @Override
-    public ModelBase[] getModel(){return new ModelBase[]{new TailFiatMaterfer()};}
+    public ModelBase[] getModel(){return new ModelBase[]{new MiddleFiatMaterfer()};}
 
     /**
      * <h2>pre-asigned values</h2>

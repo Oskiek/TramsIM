@@ -161,7 +161,7 @@ public class EntityST12 extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{0.125f,-0.1f,0f},{-2.53125f,-0.1f,0f}};}
+        return new float[][]{{0.125f,-0.1f,0f},{-2.5125f,-0.1f,0f}};}
     @Override
     public ModelBase[] bogieModels(){  return new ModelBase[]{ new ST12_Bogie(), new ST12_Gelenk()};}
 

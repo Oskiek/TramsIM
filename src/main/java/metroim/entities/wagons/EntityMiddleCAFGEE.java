@@ -6,9 +6,8 @@ import ebf.tim.api.SkinRegistry;
 import ebf.tim.items.ItemTransport;
 import fexcraft.tmt.slim.ModelBase;
 import metroim.MetroIM;
-import metroim.models.bogies.StandardBogie;
-import metroim.models.wagons.Tail5000;
-import metroim.models.wagons.TailFiatMaterfer;
+import metroim.models.wagons.MiddleCAFGEE;
+import metroim.models.wagons.MiddleFiatMaterfer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -21,16 +20,16 @@ import java.util.UUID;
 
 import static ebf.tim.utility.CommonUtil.DefineStack;
 
-public class EntityFiatMaterferTail extends RollingstockBase {
+public class EntityMiddleCAFGEE extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
             "\u00A77" + StatCollector.translateToLocal("menu.item.weight") +": 2 " + StatCollector.translateToLocal("menu.item.tons"),
             "\u00A77" + StatCollector.translateToLocal("menu.item.seats") +": 4 " + StatCollector.translateToLocal("menu.item.players")};
-    public static final Item thisItem = new ItemTransport(new EntityFiatMaterferTail(null), MetroIM.MODID, MetroIM.metroimtabvehicle);
+    public static final Item thisItem = new ItemTransport(new EntityMiddleCAFGEE(null), MetroIM.MODID, MetroIM.metroimtabvehicle);
 
-    public EntityFiatMaterferTail(UUID owner, World world, double xPos, double yPos, double zPos) {
+    public EntityMiddleCAFGEE(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
     }
-    public EntityFiatMaterferTail(World world){
+    public EntityMiddleCAFGEE(World world){
         super(world);
     }
 
@@ -67,10 +66,12 @@ public class EntityFiatMaterferTail extends RollingstockBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/fiat_materfer_old.png", "textures/trams/bogies/5000_bogie.png",
-                "ferrovias old", "Standard livery used in Madrid.");
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/fiat_materfer_new.png", "textures/trams/bogies/5000_bogie.png",
-                "ferrovias new", "New Livery used on the Subte network in Buenos Aires.");
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/caf_gee_old.png", "textures/trams/bogies/5000_bogie.png",
+                "ferrovias old", "Old Livery used on the Subte network in Buenos Aires.");
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/caf_gee_new.png", "textures/trams/bogies/5000_bogie.png",
+                "ferrovias new", "Actual Livery used on the Subte network in Buenos Aires.");
+        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/caf_gee_blue.png", "textures/trams/bogies/5000_bogie.png",
+                "fabrica", "Original Livery from their early years.");
         ;
     }
 
@@ -112,17 +113,17 @@ public class EntityFiatMaterferTail extends RollingstockBase {
 
     @Override
     public String transportName() {
-        return "FiatMaterfer_Tail";
+        return "CAFGEE_Middle";
     }
 
     @Override
     public String transportcountry() {
-        return "Spain";
+        return "Argentina";
     }
 
     @Override
     public String transportYear() {
-        return "1975";
+        return "1960";
     }
 
     @Override
@@ -180,7 +181,7 @@ public class EntityFiatMaterferTail extends RollingstockBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.875f,1.75f,1.5f};
+        return new float[]{4.95f,1.75f,1.5f};
     }
 
     @Override
@@ -189,7 +190,7 @@ public class EntityFiatMaterferTail extends RollingstockBase {
     }
 
     @Override
-    public ModelBase[] getModel(){return new ModelBase[]{new TailFiatMaterfer()};}
+    public ModelBase[] getModel(){return new ModelBase[]{new MiddleCAFGEE()};}
 
     /**
      * <h2>pre-asigned values</h2>

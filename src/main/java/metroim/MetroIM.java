@@ -56,6 +56,7 @@ public class MetroIM {
 /*/Pre-release 1 blocked*/                new EntityMunichA(null),
                 /*/Pre-release 1 blocked*/                new EntityB80C(null),
                 /*/Pre-release 1 blocked*/                new EntityFiatMaterferMotor(null),
+                /*/Pre-release 1 blocked*/                new EntityCAFGEE(null),
         };
     }
     public static GenericRailTransport[] listWagonTrams() {
@@ -80,6 +81,8 @@ public class MetroIM {
                 /*/Pre-release 1 blocked*/                new EntityMunichA_tail(null),
                 /*/Pre-release 1 blocked*/                new EntityB80C_tail(null),
                 /*/Pre-release 1 blocked*/                new EntityFiatMaterferTail(null),
+                /*/Pre-release 1 blocked*/                new EntityFiatMaterferMiddle(null),
+                /*/Pre-release 1 blocked*/                new EntityMiddleCAFGEE(null),
         };
     }
 
