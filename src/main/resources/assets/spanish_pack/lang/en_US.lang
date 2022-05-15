@@ -11,7 +11,6 @@ item.Renfe440R_motor.name=Renfe 440R (Motor)
 item.Renfe465_motor.name=Renfe 465 (Motor)
 item.Renfe465_with_Panto.name=Renfe 465 (Motor with pantograph)
 
-
 item.Renfe446_Middle.name=Renfe 446 (Middle)
 item.Renfe450_Middle.name=Renfe 450 (Middle)
 item.Renfe450_tail.name=Renfe 450 (Tail)
@@ -31,27 +30,26 @@ item.talgo_IV_Endcar_1.name=Talgo IV Endcar (1 Axle)
 item.talgo_IV_Endcar_2.name=Talgo IV Endcar (2 Axle)
 item.talgo_IV_middle_standard.name=Talgo IV (Middle Standard)
 
-
 //catenary
 tile.Catenary_single_A.name=Single Catenary (A)
 tile.Catenary_single_B.name=Single Catenary (B)
 tile.Catenary_double_C.name=Double Catenary (C)
 
-
 //tabs
 item.spack_TabVeh=Spanish Pack - Vehicles
 item.spack_TabBlo=Spanish Pack - Blocks
 
-//companies
+//in regions
+in.spain=in Spain
+
+//livery descriptions
+standardlivery=Standard livery used
+oldlivery=Old livery used
+
+//company names DO NOT TRANSLATE UNLESS COMPANY NAMES ARE TRANSLATED IN YOUR LANGUAGE
 company.spain=Renfe
 company.madrid=Metro Madrid
 company.renfeCercanias=Cercanias
 company.renfeTaxi=Taxi
 company.renfe=Renfe
 company.renfeOld=Renfe (Old)
-
-standardlivery=Standard livery used
-oldlivery=Old livery used
-
-in.spain=in Spain
-

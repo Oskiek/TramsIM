@@ -25,7 +25,6 @@ item.ST12.name=ST12 (Motor)
 item.M8C.name=M8C (Motor)
 item.Citadis.name=Alstom Citadis (Head)
 
-
 item.DuewagPT8_MiddleSegment.name=Duewag PT8 (Middle)
 item.BNLRV_B.name=BN LRV (Tail)
 item.Combino_Middle.name=Siemens Combino (Middle)
@@ -84,6 +83,10 @@ tile.edge_yellowlined.name=Platform Edge (Yellow strip, lined)
 //poles
 tile.stop_pole_Orense.name=Stop Pole (Orense)
 
+//tabs
+item.tramsimTabVeh=Trams in Motion - Vehicles
+item.tramsimTabBlo=Trams in Motion - Blocks
+
 //countries
 menu.item.poland=Poland
 menu.item.czechia=Czechia
@@ -92,10 +95,6 @@ menu.item.germany=Germany
 menu.item.spain=Spain
 menu.item.usa=United States
 menu.item.russia=Russia
-
-//tabs
-item.tramsimTabVeh=Trams in Motion - Vehicles
-item.tramsimTabBlo=Trams in Motion - Blocks
 
 //in regions
 in.silesia=in Silesia
@@ -163,4 +162,3 @@ company.lviv=ЛКП «Львівелектротранс»
 company.cairo 1=هيئة النقل العام بالقاهرة
 company.cairo 2=هيئة النقل العام بالقاهرة
 company.unknown=???
-
