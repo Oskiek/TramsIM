@@ -20,7 +20,6 @@ item.FGV3900_Motor.name=FGV 3900 (Motor)
 item.FiatMaterfer_Motor.name=Fiat Materfer (Motor)
 item.CAFGEE_Motor.name=CAF GEE (Motor)
 
-
 item.FGV4300_Middle_wbogies.name=Metrovalencia FGV 4300 (Middle)
 item.FGV3700_Tail.name=Metrovalencia FGV 3700 Gen. I (Tail)
 item.FGV3700_Tail_v2.name=Metrovalencia FGV 3700 Gen. II (Tail)
@@ -41,12 +40,11 @@ item.FiatMaterfer_Middle.name=Fiat Materfer (Middle)
 item.FiatMaterfer_Tail.name=Fiat Materfer (Tail)
 item.CAFGEE_Middle.name=CAF GEE (Middle)
 
-
 //tabs
 item.metroimTabVeh=Metro in Motion - Vehicles
 item.metroimTabBlo=Metro in Motion - Blocks
 
-//companies
+//company names DO NOT TRANSLATE UNLESS COMPANY NAMES ARE TRANSLATED IN YOUR LANGUAGE
 company.valencia=Metrovalencia
 company.valencia2=Metrovalencia
 company.madrid=Metro Madrid
