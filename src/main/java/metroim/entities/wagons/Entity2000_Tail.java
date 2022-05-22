@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
+import tramsim.models.bogies.NullBogiePlaceHolder;
 
 import java.util.List;
 import java.util.UUID;
@@ -42,7 +43,7 @@ public class Entity2000_Tail extends RollingstockBase {
 
     @Override
     public ModelBase[] bogieModels(){
-        return new ModelBase[]{new Metro2000_Bogie()};
+        return new ModelBase[]{new NullBogiePlaceHolder()};
     }
 
     /**
@@ -60,17 +61,14 @@ public class Entity2000_Tail extends RollingstockBase {
 
     @Override
     public float[][] modelOffsets() {
-        return new float[][]{{0f,-0.0625f,0f}};
+        return new float[][]{{0.04f,-0.0625f,0f}};
     }
 
     @Override
     public void registerSkins(){
         SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/2000_Blue.png", "textures/trams/bogies/2000_bogie.png",
                 "skin1", "Standard livery used in Madrid.");
-        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/2000_Orange.png", "textures/trams/bogies/2000_bogie.png",
-                "skin2", "Original livery used in its first years in Madrid.");
-        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/2000_Red.png", "textures/trams/bogies/2000_bogie.png",
-                "skin3", "Old livery used in the early 2000s in Madrid.");
+
     }
 
     public String getDefaultSkin(){return "metroim:skin1";}
@@ -179,7 +177,7 @@ public class Entity2000_Tail extends RollingstockBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.75f,1.75f,1.5f};
+        return new float[]{4.4f,1.75f,1.5f};
     }
 
     @Override

@@ -19,6 +19,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import tramsim.models.bogies.NullBogiePlaceHolder;
 
 import java.util.Arrays;
 import java.util.List;
@@ -58,10 +59,7 @@ public class Entity2000Motor extends TrainBase {
     public void registerSkins(){
         SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/2000_Blue.png", "textures/trams/bogies/2000_bogie.png",
                 "skin1", "Standard livery used in Madrid.");
-        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/2000_Orange.png", "textures/trams/bogies/2000_bogie.png",
-                "skin2", "Original livery used in its first years in Madrid.");
-        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/2000_Red.png", "textures/trams/bogies/2000_bogie.png",
-                "skin3", "Old livery used in the early 2000s in Madrid.");
+
     }
 
     public String getDefaultSkin(){return "metroim:skin1";}
@@ -85,7 +83,7 @@ public class Entity2000Motor extends TrainBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.75f,1.75f,1.5f};
+        return new float[]{4.4f,1.75f,1.5f};
     }
 
     @Override
@@ -115,7 +113,7 @@ public class Entity2000Motor extends TrainBase {
     public float[][] bogieModelOffsets() {
         return new float[][]{{1.40625f,-0.05f,0},{-1.46875f,-0.05f,0}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{new Metro2000_Bogie()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{new NullBogiePlaceHolder()};}
 
     @Override
     public float[] rotationPoints() {
@@ -128,7 +126,7 @@ public class Entity2000Motor extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0f,-0.0625f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0.04f,-0.0625f,0f}}; }
 
     @Override
     public boolean shouldRiderSit(){
