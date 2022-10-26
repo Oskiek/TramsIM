@@ -12,40 +12,40 @@ import ebf.tim.utility.FuelHandler;
 import ebf.tim.utility.ItemStackSlot;
 import fexcraft.tmt.slim.ModelBase;
 import metroim.MetroIM;
-import metroim.models.bogies.BN_S1_S2_Bogie;
-import metroim.models.bogies.BN_S1_S2_Gelenk;
-import metroim.models.trains.BN_S1_S2_End;
+import metroim.models.trains.Motor2000;
+import metroim.models.trains.Motor3000;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import tramsim.models.bogies.NullBogiePlaceHolder;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
 
-public class EntityBN_S1_S2Motor extends TrainBase {
+public class Entity3000Motor extends TrainBase {
 
 
 
-    public static final Item thisItem = new ItemTransport(new EntityBN_S1_S2Motor(null), MetroIM.MODID,MetroIM.metroimtabvehicle);
+    public static final Item thisItem = new ItemTransport(new Entity3000Motor(null), MetroIM.MODID, MetroIM.metroimtabvehicle);
 
 
-    public EntityBN_S1_S2Motor(UUID owner, World world, double xPos, double yPos, double zPos) {
+    public Entity3000Motor(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
     }
-    public EntityBN_S1_S2Motor(World world){
+    public Entity3000Motor(World world){
         super(world);
     }
 
     @Override
-    public String transportName(){return "BN_S1_S2";}
+    public String transportName(){return "Metro3000_Motor";}
     @Override
-    public String transportcountry(){return "Belgium";}
+    public String transportcountry(){return "Spain";}
     @Override
-    public String transportYear(){return "1990+";}
+    public String transportYear(){return "2006";}
     @Override
     public String transportFuelType() {
         return "Electric";
@@ -57,22 +57,21 @@ public class EntityBN_S1_S2Motor extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/bns1s2_old.png", "textures/trams/bogies/bns1s2_bogie.png",
-        "default", "Old livery used in Amsterdam.");
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/bns1s2_hr.png", "textures/trams/bogies/bns1s2_bogie.png",
-                "hr", "Standard livery used in Amsterdam.");
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/bns1s2_dvv.png", "textures/trams/bogies/bns1s2_bogie.png",
-                "custom", "Placeholder for your own companies.");
+        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/3000_blue.png", "textures/trams/bogies/2000_bogie.png",
+                "skin1", "Standard livery used in Madrid.");
+
     }
+
+    public String getDefaultSkin(){return "metroim:skin1";}
 
     public String[][] getTankFilters() {
         return FuelHandler.DefaultTanks.ELECTRIC.value();
     }
 
     @Override
-    public float transportTopSpeed(){return 80f;}
+    public float transportTopSpeed(){return 70f;}
     @Override
-    public List<Double> getRenderBogieOffsets(){return  Arrays.asList(0.625, -2.575);}
+    public List<Double> getRenderBogieOffsets(){return  Arrays.asList(1.40625, -1.46875);}
     @Override
     public int getInventoryRows(){return 1;}
     @Override
@@ -84,11 +83,11 @@ public class EntityBN_S1_S2Motor extends TrainBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.6f,1.75f,1.5f};
+        return new float[]{4.75f,1.75f,1.5f};
     }
 
     @Override
-    public float transportMetricHorsePower(){return 75f;}
+    public float transportMetricHorsePower(){return 65f;}
 
     @Override
     public String[] additionalItemText() {
@@ -112,14 +111,13 @@ public class EntityBN_S1_S2Motor extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{0.825f,0.f,0},{-2.275f,0.0f,0}};}
+        return new float[][]{{1.40625f,-0.05f,0},{-1.46875f,-0.05f,0}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{new BN_S1_S2_Bogie(), new BN_S1_S2_Gelenk()};}
-
+    public ModelBase[] bogieModels(){  return new ModelBase[]{new NullBogiePlaceHolder()};}
 
     @Override
     public float[] rotationPoints() {
-        return new float[]{2.275f, -1.2375f};
+        return new float[]{1.40625f, -1.46875f};
     }
 
     @Override
@@ -128,22 +126,13 @@ public class EntityBN_S1_S2Motor extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{-0.15f,0f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0.0f,-0.0625f,0.0f}}; }
 
-    /**
-     * <h2>rider sit or stand</h2>
-     * @return true if the rider(s) should be sitting, false if the rider should be standing.
-     */
     @Override
     public boolean shouldRiderSit(){
         return true;
     }
 
-    /**
-     * <h2>reinforced transport</h2>
-     * this returns if this specific entity is reinforced (explosion proof and damage resistant).
-     * since this is a function it can be conditional as well, for instance if it has a specific skin.
-     */
     @Override
     public boolean isReinforced(){return false;}
 
@@ -170,18 +159,12 @@ public class EntityBN_S1_S2Motor extends TrainBase {
         return thisItem;
     }
 
-
     @Override
     public Bogie[] getBogieModels(){return null;}
 
-
-
     @Override
-    public ModelBase[] getModel(){return new ModelBase[]{new BN_S1_S2_End()};}
+    public ModelBase[] getModel(){return new ModelBase[]{new Motor3000()};}
 
-    /**
-     * <h2>sets the resource location for sounds, like horn and the sound made for the engine running</h2>
-     */
     @SideOnly(Side.CLIENT)
     @Override
     public ResourceLocation getHorn(){return URIRegistry.SOUND_HORN.getResource("h080brigadelok.ogg");}

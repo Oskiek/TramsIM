@@ -1,34 +1,37 @@
-package metroim.entities.wagons;
+package tramsim.entities.wagons;
 
 import ebf.tim.TrainsInMotion;
 import ebf.tim.api.RollingstockBase;
 import ebf.tim.api.SkinRegistry;
 import ebf.tim.items.ItemTransport;
+import ebf.tim.utility.CommonUtil;
 import fexcraft.tmt.slim.ModelBase;
-import metroim.MetroIM;
-import metroim.models.bogies.BN_S1_S2_Bogie;
-import metroim.models.trains.BN_S1_S2_End;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
+import tramsim.TramsIM;
+import tramsim.models.bogies.ModelKT4_Bogie;
+import tramsim.models.bogies.NullBogiePlaceHolder;
+import tramsim.models.wagons.Bw305;
+import tramsim.models.wagons.TatraB4;
 
 import java.util.List;
 import java.util.UUID;
 
 import static ebf.tim.utility.CommonUtil.DefineStack;
 
-public class EntityBN_S1_S2Tail extends RollingstockBase {
+public class EntityBeiwagen305 extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
             "\u00A77" + StatCollector.translateToLocal("menu.item.weight") +": 2 " + StatCollector.translateToLocal("menu.item.tons"),
             "\u00A77" + StatCollector.translateToLocal("menu.item.seats") +": 4 " + StatCollector.translateToLocal("menu.item.players")};
-    public static final Item thisItem = new ItemTransport(new EntityBN_S1_S2Tail(null), MetroIM.MODID, MetroIM.metroimtabvehicle);
+    public static final Item thisItem = new ItemTransport(new EntityBeiwagen305(null), TramsIM.MODID, TramsIM.tramsimtabvehicle);
 
-    public EntityBN_S1_S2Tail(UUID owner, World world, double xPos, double yPos, double zPos) {
+    public EntityBeiwagen305(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
     }
-    public EntityBN_S1_S2Tail(World world){
+    public EntityBeiwagen305(World world){
         super(world);
     }
 
@@ -38,19 +41,18 @@ public class EntityBN_S1_S2Tail extends RollingstockBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{0.825f,0f,0}};}
+        return new float[][]{{1.65f,0.075f,0f,},{-1.65f,0.075f,0f}};}
 
     @Override
-    public ModelBase[] bogieModels(){
-        return new ModelBase[]{new BN_S1_S2_Bogie()};
-    }
+    public ModelBase[] bogieModels(){  return new ModelBase[]{new NullBogiePlaceHolder()};}
+
 
     /**
      * <h2>Bogie Offset</h2>
      */
     @Override
     public float[] rotationPoints() {
-        return new float[]{2.275f, -1.2375f};
+        return new float[]{1.65f, -1.65f};
     }
 
     @Override
@@ -60,19 +62,24 @@ public class EntityBN_S1_S2Tail extends RollingstockBase {
 
     @Override
     public float[][] modelOffsets() {
-        return new float[][]{{-0.15f,0f,0f}};
+        return new float[][]{{0f,0f,0f}};
     }
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/bns1s2_old.png", "textures/trams/bogies/bns1s2_bogie.png",
-                "default", "Old livery used in Amsterdam.");
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/bns1s2_hr.png", "textures/trams/bogies/bns1s2_bogie.png",
-                "hr", "Standard livery used in Amsterdam.");
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/bns1s2_dvv.png", "textures/trams/bogies/bns1s2_bogie.png",
-                "custom", "Placeholder for your own companies.");
+        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/tw_green.png", "textures/trams/bogies/kt4_bogie.png",
+                "company.1", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("used in the early 50s") + ".");
+        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/tw_yellow.png",
+                "company.2", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("fitting with the classical wooden tram") + ".");
+        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/tw_orange.png",
+                "company.3", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("used in frankfurt") + ".");
+        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/tw_blue.png",
+                "company.4", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("used in Zurich") + ".");
     }
 
+    public String getDefaultSkin(){
+        return "tramsim:company.1";
+    }
 
     @Override
     public boolean isReinforced() {
@@ -96,7 +103,7 @@ public class EntityBN_S1_S2Tail extends RollingstockBase {
 
     @Override
     public float weightKg() {
-        return 1814.3f;
+        return 18143f;
     }
 
     @Override
@@ -110,17 +117,17 @@ public class EntityBN_S1_S2Tail extends RollingstockBase {
 
     @Override
     public String transportName() {
-        return "BN_S1_S2_Tail";
+        return "Beiwagen 305";
     }
 
     @Override
     public String transportcountry() {
-        return "Belgium";
+        return "Germany";
     }
 
     @Override
     public String transportYear() {
-        return "1990";
+        return "1947+";
     }
 
     @Override
@@ -154,11 +161,6 @@ public class EntityBN_S1_S2Tail extends RollingstockBase {
     }
 
     @Override
-    public List<TrainsInMotion.transportTypes> getTypes() {
-        return TrainsInMotion.transportTypes.PASSENGER.singleton();
-    }
-
-    @Override
     public float getMaxFuel() {
         return 0;
     }
@@ -171,21 +173,19 @@ public class EntityBN_S1_S2Tail extends RollingstockBase {
     /**
      * <h2>Type</h2>
      */
+    @Override
+    public List<TrainsInMotion.transportTypes> getTypes() {
+        return TrainsInMotion.transportTypes.PASSENGER.singleton();
+    }
     /**
      * <h2>Rider offsets</h2>
      */
-
     @Override
-    public boolean shouldRiderSit(){
-        return false;
-    }
-
-    @Override
-    public float[][] getRiderOffsets(){return new float[][]{{0f,1f, 0f}};}
+    public float[][] getRiderOffsets(){return new float[][]{{0f,1.1f, 0f}};}
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.6f,1.75f,1.6f};
+        return new float[]{4.15f,2f,1.5f};
     }
 
     @Override
@@ -194,7 +194,7 @@ public class EntityBN_S1_S2Tail extends RollingstockBase {
     }
 
     @Override
-    public ModelBase[] getModel(){return new ModelBase[]{new BN_S1_S2_End()};}
+    public ModelBase[] getModel(){return new ModelBase[]{new Bw305()};}
 
     /**
      * <h2>pre-asigned values</h2>

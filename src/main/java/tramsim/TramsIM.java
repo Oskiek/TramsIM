@@ -116,6 +116,7 @@ public class TramsIM {
                 new EntityST12(null),
                 new EntityM8C(null),
                 new EntityCitadis_front(null),
+                new EntityTriebwagen305(null),
 //2.2 blocked                new EntityM8S(null)
         };
     }
@@ -145,6 +146,7 @@ public class TramsIM {
                 new EntityST12_Middle(null),
                 new EntityM8C_Middle(null),
                 new EntityM8C_Tail(null),
+                new EntityBeiwagen305(null),
 //2.2 blocked                new EntityM8S_Middle(null),
 //2.2 blocked                new EntityM8S_Tail(null)
 

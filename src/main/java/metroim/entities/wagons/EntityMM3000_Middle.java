@@ -6,29 +6,31 @@ import ebf.tim.api.SkinRegistry;
 import ebf.tim.items.ItemTransport;
 import fexcraft.tmt.slim.ModelBase;
 import metroim.MetroIM;
-import metroim.models.bogies.BN_S1_S2_Bogie;
-import metroim.models.trains.BN_S1_S2_End;
+import metroim.models.bogies.StandardBogie;
+import metroim.models.wagons.Middle3000;
+import metroim.models.wagons.Middle3600;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
+import tramsim.models.bogies.NullBogiePlaceHolder;
 
 import java.util.List;
 import java.util.UUID;
 
 import static ebf.tim.utility.CommonUtil.DefineStack;
 
-public class EntityBN_S1_S2Tail extends RollingstockBase {
+public class EntityMM3000_Middle extends RollingstockBase {
     private static final String[] itemDescription = new String[]{
             "\u00A77" + StatCollector.translateToLocal("menu.item.weight") +": 2 " + StatCollector.translateToLocal("menu.item.tons"),
             "\u00A77" + StatCollector.translateToLocal("menu.item.seats") +": 4 " + StatCollector.translateToLocal("menu.item.players")};
-    public static final Item thisItem = new ItemTransport(new EntityBN_S1_S2Tail(null), MetroIM.MODID, MetroIM.metroimtabvehicle);
+    public static final Item thisItem = new ItemTransport(new EntityMM3000_Middle(null), MetroIM.MODID, MetroIM.metroimtabvehicle);
 
-    public EntityBN_S1_S2Tail(UUID owner, World world, double xPos, double yPos, double zPos) {
+    public EntityMM3000_Middle(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
     }
-    public EntityBN_S1_S2Tail(World world){
+    public EntityMM3000_Middle(World world){
         super(world);
     }
 
@@ -38,11 +40,11 @@ public class EntityBN_S1_S2Tail extends RollingstockBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{0.825f,0f,0}};}
+        return new float[][]{{1.35f,0f,0},{-1.35f,0f,0}};}
 
     @Override
     public ModelBase[] bogieModels(){
-        return new ModelBase[]{new BN_S1_S2_Bogie()};
+        return new ModelBase[]{new NullBogiePlaceHolder()};
     }
 
     /**
@@ -50,7 +52,7 @@ public class EntityBN_S1_S2Tail extends RollingstockBase {
      */
     @Override
     public float[] rotationPoints() {
-        return new float[]{2.275f, -1.2375f};
+        return new float[]{1.6f, -1.6f};
     }
 
     @Override
@@ -60,17 +62,13 @@ public class EntityBN_S1_S2Tail extends RollingstockBase {
 
     @Override
     public float[][] modelOffsets() {
-        return new float[][]{{-0.15f,0f,0f}};
+        return new float[][]{{-0.05f,-0.0625f,0f}};
     }
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/bns1s2_old.png", "textures/trams/bogies/bns1s2_bogie.png",
-                "default", "Old livery used in Amsterdam.");
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/bns1s2_hr.png", "textures/trams/bogies/bns1s2_bogie.png",
-                "hr", "Standard livery used in Amsterdam.");
-        SkinRegistry.addSkin(this.getClass(), MetroIM.MODID, "textures/trams/bns1s2_dvv.png", "textures/trams/bogies/bns1s2_bogie.png",
-                "custom", "Placeholder for your own companies.");
+        SkinRegistry.addSkin(this.getClass(),MetroIM.MODID, "textures/trams/3000_blue.png", "textures/trams/bogies/2000_bogie.png",
+                "skin1", "Standard livery used in Madrid.");
     }
 
 
@@ -110,17 +108,17 @@ public class EntityBN_S1_S2Tail extends RollingstockBase {
 
     @Override
     public String transportName() {
-        return "BN_S1_S2_Tail";
+        return "MetroMadrid3000_Middle";
     }
 
     @Override
     public String transportcountry() {
-        return "Belgium";
+        return "Spain";
     }
 
     @Override
     public String transportYear() {
-        return "1990";
+        return "2006";
     }
 
     @Override
@@ -154,11 +152,6 @@ public class EntityBN_S1_S2Tail extends RollingstockBase {
     }
 
     @Override
-    public List<TrainsInMotion.transportTypes> getTypes() {
-        return TrainsInMotion.transportTypes.PASSENGER.singleton();
-    }
-
-    @Override
     public float getMaxFuel() {
         return 0;
     }
@@ -171,6 +164,10 @@ public class EntityBN_S1_S2Tail extends RollingstockBase {
     /**
      * <h2>Type</h2>
      */
+    @Override
+    public List<TrainsInMotion.transportTypes> getTypes() {
+        return TrainsInMotion.transportTypes.PASSENGER.singleton();
+    }
     /**
      * <h2>Rider offsets</h2>
      */
@@ -185,7 +182,7 @@ public class EntityBN_S1_S2Tail extends RollingstockBase {
 
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.6f,1.75f,1.6f};
+        return new float[]{4.25f,1.75f,1.5f};
     }
 
     @Override
@@ -194,7 +191,7 @@ public class EntityBN_S1_S2Tail extends RollingstockBase {
     }
 
     @Override
-    public ModelBase[] getModel(){return new ModelBase[]{new BN_S1_S2_End()};}
+    public ModelBase[] getModel(){return new ModelBase[]{new Middle3000()};}
 
     /**
      * <h2>pre-asigned values</h2>
