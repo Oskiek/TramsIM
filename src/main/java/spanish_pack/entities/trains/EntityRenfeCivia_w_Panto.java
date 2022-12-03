@@ -128,7 +128,7 @@ public class EntityRenfeCivia_w_Panto extends TrainBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{1.2f,0.0f,0},{-2.625f,0.0f,0}};}
+        return new float[][]{{1.2f,0.05f,0},{-2.625f,0.05f,0}};}
     @Override
     public ModelBase[] bogieModels(){  return new ModelBase[]{ new Renfe_440R_bogie()};}
 
@@ -144,7 +144,7 @@ public class EntityRenfeCivia_w_Panto extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0.07f,0.1f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0.07f,0.05f,0f}}; }
 
     /**
      * <h2>rider sit or stand</h2>

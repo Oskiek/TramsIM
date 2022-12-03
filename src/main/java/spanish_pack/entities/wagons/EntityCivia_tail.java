@@ -42,7 +42,7 @@ public class EntityCivia_tail extends RollingstockBase {
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{1.2f,-0.0f,0}};}
+        return new float[][]{{1.2f,0.05f,0}};}
 
     @Override
     public ModelBase[] bogieModels(){
@@ -64,7 +64,7 @@ public class EntityCivia_tail extends RollingstockBase {
 
     @Override
     public float[][] modelOffsets() {
-        return new float[][]{{0.07f,0.1f,0f}};
+        return new float[][]{{0.07f,0.05f,0f}};
     }
 
     @Override

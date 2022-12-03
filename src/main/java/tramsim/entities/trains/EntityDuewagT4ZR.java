@@ -18,35 +18,35 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import tramsim.TramsIM;
-import tramsim.models.bogies.*;
-import tramsim.models.trains.DuewagPT8;
-import tramsim.models.trains.M8C_End;
+import tramsim.models.bogies.NullBogiePlaceHolder;
+import tramsim.models.trains.DuewagT4ZR;
+import tramsim.models.trains.KawasakiLRV;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
 
-public class EntityM8C extends TrainBase {
+public class EntityDuewagT4ZR extends TrainBase {
 
 
 
-    public static final Item thisItem = new ItemTransport(new EntityM8C(null), TramsIM.MODID,TramsIM.tramsimtabvehicle);
+    public static final Item thisItem = new ItemTransport(new EntityDuewagT4ZR(null), TramsIM.MODID,TramsIM.tramsimtabvehicle);
 
 
-    public EntityM8C(UUID owner, World world, double xPos, double yPos, double zPos) {
+    public EntityDuewagT4ZR(UUID owner, World world, double xPos, double yPos, double zPos) {
         super(owner, world, xPos, yPos, zPos);
     }
-    public EntityM8C(World world){
+    public EntityDuewagT4ZR(World world){
         super(world);
     }
 
     @Override
-    public String transportName(){return "M8C";}
+    public String transportName(){return "Duewag T4 ZR";}
     @Override
     public String transportcountry(){return "Germany";}
     @Override
-    public String transportYear(){return "1984+";}
+    public String transportYear(){return "1959";}
     @Override
     public String transportFuelType() {
         return "Electric";
@@ -58,53 +58,49 @@ public class EntityM8C extends TrainBase {
 
     @Override
     public void registerSkins(){
-        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/M8C_Orange.png", "textures/trams/bogies/m8c_bogie_mainz.png",
-                "Mainzer Verkehrsgesellschaft", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.mainz") + ".");
-        SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/m8c_ruhrbahn.png","textures/trams/bogies/m8c_bogie_ruhrbahn.png",
-                "Ruhrbahn", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.ruhrbahn") + ".");
-        SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/M8C_Pink.png","textures/trams/bogies/m8c_bogie_krefeld.png",
-                "SWK krefeld", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.krefeld") + ".");
-        SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/m8c_mhvg.png","textures/trams/bogies/m8c_bogie_mhvg.png",
-                "Mülheimer Verkehrsgesellschaft", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("Livery used in Mülheim a.d. Ruhr") + ".");
-        SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/m8c_evag.png","textures/trams/bogies/m8c_bogie_evag.png",
-                "EVAG Essen", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("Old livery used in Essen") + ".");
-        SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/m8c_kassel_old.png","textures/trams/bogies/m8c_bogie_kassel_old.png",
-                "KVG Kassel", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("old livery that was used in Kassel") + ".");
-        SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/M8C_Brown.png","textures/trams/bogies/m8c_bogie_kassel_old.png",
-                "Dortmunder Stadtwerke", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("old livery that was used in Dortmund") + ".");
+        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/Duewag_T4_Gray.png",
+                "Classic Bochum", CommonUtil.translate("Actual livery") + " " + CommonUtil.translate("old livery used in Bochum") + ".");
+        SkinRegistry.addSkin(this.getClass(),TramsIM.MODID, "textures/trams/Duewag_T4_Orange.png",
+                "Classic Mainz", CommonUtil.translate("Actual livery") + " " + CommonUtil.translate("old livery used in Mainz") + ".");
     }
 
-    public String getDefaultSkin(){
-        return "tramsim:Ruhrbahn";
-    }
-    @Override
     public String[][] getTankFilters() {
         return FuelHandler.DefaultTanks.ELECTRIC.value();
     }
     @Override
     public float transportTopSpeed(){return 80f;}
+
     @Override
-    public List<Double> getRenderBogieOffsets(){return  Arrays.asList(0.625, -2.1);}
+    public List<Double> getRenderBogieOffsets(){return  Arrays.asList(0.5, -2.5);}
+
     @Override
     public int getInventoryRows(){return 1;}
+
     @Override
     public List<TrainsInMotion.transportTypes> getTypes(){return TrainsInMotion.transportTypes.ELECTRIC.singleton();}
+
     @Override
     public float getMaxFuel(){return 1;}
+
     @Override
-    public float[][] getRiderOffsets(){return new float[][]{{-1.75f,1f, 0.1f}};}
+    public float[][] getRiderOffsets(){return new float[][]{{-2.20625f,1.1f, 0f}};}
+
     @Override
     public float[] getHitboxSize() {
-        return new float[]{4.2f,1.75f,1.5f};
+        return new float[]{5.35f,1.75f,1.5f};
     }
+
     @Override
     public float transportMetricHorsePower(){return 75f;}
+
     @Override
     public String[] additionalItemText() {
         return null;
     }
+
     @Override
     public float weightKg(){return 11500f;}
+
     @Override
     public ItemStack[] getRecipie() {
         return new ItemStack[]{
@@ -113,18 +109,20 @@ public class EntityM8C extends TrainBase {
                 null, null, null
         };
     }
+
     @Override
     public float getPistonOffset(){return 0f;}
 
     @Override
     public float[][] bogieModelOffsets() {
-        return new float[][]{{0.625f,0.f,0},{-2.08f,0.0f,0}};}
+        return new float[][]{{1f,-0.1f,0},{-2.5f,-0.1f,0}};}
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{ new NullBogiePlaceHolder()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{new NullBogiePlaceHolder()};}
+
 
     @Override
     public float[] rotationPoints() {
-        return new float[]{2.125f, -0.9f};
+        return new float[]{1.5f, -1.5f};
     }
 
     @Override
@@ -133,7 +131,7 @@ public class EntityM8C extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0.1f,-0.025f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0f,-0.025f,0f}}; }
 
     @Override
     public boolean shouldRiderSit(){
@@ -159,20 +157,28 @@ public class EntityM8C extends TrainBase {
         }
     }
 
+    @Override
+    public void manageFuel(){
+        this.fuelHandler.manageElectric(this);
+    }
+
     public Item getItem(){
         return thisItem;
     }
 
+
     @Override
     public Bogie[] getBogieModels(){return null;}
 
+
+
     @Override
-    public ModelBase[] getModel(){return new ModelBase[]{new M8C_End()};}
+    public ModelBase[] getModel(){return new ModelBase[]{new DuewagT4ZR()};}
 
     @SideOnly(Side.CLIENT)
     @Override
     public ResourceLocation getHorn(){return URIRegistry.SOUND_HORN.getResource("h080brigadelok.ogg");}
     @SideOnly(Side.CLIENT)
     @Override
-    public ResourceLocation getRunningSound(){return URIRegistry.SOUND_RUNNING.getResource("Roll.ogg");}
+    public ResourceLocation getRunningSound(){return URIRegistry.SOUND_RUNNING.getResource("r080brigadelok.ogg");}
 }
