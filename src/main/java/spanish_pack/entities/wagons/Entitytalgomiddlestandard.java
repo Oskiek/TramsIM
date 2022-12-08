@@ -157,7 +157,7 @@ public class Entitytalgomiddlestandard extends TrainBase {
     }
 
     @Override
-    public float[][] modelOffsets() { return new float[][]{{0f,0.05f,0f}}; }
+    public float[][] modelOffsets() { return new float[][]{{0f,0f,0f}}; }
 
     /**
      * <h2>rider sit or stand</h2>
