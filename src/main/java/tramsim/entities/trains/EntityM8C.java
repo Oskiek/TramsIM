@@ -72,6 +72,8 @@ public class EntityM8C extends TrainBase {
                 "KVG Kassel", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("old livery that was used in Kassel") + ".");
         SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/M8C_Brown.png","textures/trams/bogies/m8c_bogie_kassel_old.png",
                 "Dortmunder Stadtwerke", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("old livery that was used in Dortmund") + ".");
+        SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/M8C_Red.png","textures/trams/bogies/m8c_bogie_kassel_old.png",
+                "DSW 21", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("Last livery that was used in Dortmund until 2011") + ".");
     }
 
     public String getDefaultSkin(){

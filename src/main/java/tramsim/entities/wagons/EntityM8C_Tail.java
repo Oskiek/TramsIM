@@ -42,7 +42,7 @@ public class EntityM8C_Tail extends RollingstockBase {
     }
 
     @Override
-    public ModelBase[] bogieModels(){  return new ModelBase[]{new M8C_Bogie(), new NullBogiePlaceHolder()};}
+    public ModelBase[] bogieModels(){  return new ModelBase[]{ new NullBogiePlaceHolder()};}
 
     /**
      * <h2>Bogie Offset</h2>
@@ -57,7 +57,7 @@ public class EntityM8C_Tail extends RollingstockBase {
 
     @Override
     public float[][] modelOffsets() {
-        return new float[][]{{0.01f,-0.025f,0f}};
+        return new float[][]{{-0.05f,-0.025f,0f}};
     }
 
     @Override
@@ -76,6 +76,8 @@ public class EntityM8C_Tail extends RollingstockBase {
                 "KVG Kassel", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("old livery that was used in Kassel") + ".");
         SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/M8C_Brown.png","textures/trams/bogies/m8c_bogie_kassel_old.png",
                 "Dortmunder Stadtwerke", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("old livery that was used in Dortmund") + ".");
+        SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/M8C_Red.png","textures/trams/bogies/m8c_bogie_kassel_old.png",
+                "DSW 21", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("Last livery that was used in Dortmund until 2011") + ".");
     }
     public String getDefaultSkin(){
         return "tramsim:company.ruhrbahn";
