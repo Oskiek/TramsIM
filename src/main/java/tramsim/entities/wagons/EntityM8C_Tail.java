@@ -70,7 +70,7 @@ public class EntityM8C_Tail extends RollingstockBase {
                 "company.krefeld", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("in.krefeld") + ".");
         SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/m8c_mhvg.png","textures/trams/bogies/m8c_bogie_krefeld.png",
                 "Mülheimer Verkehrsgesellschaft", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("Livery used in Mülheim a.d. Ruhr") + ".");
-        SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/m8c_evag.png","textures/trams/bogies/m8c_bogie_evag.png",
+        SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/M8C_Yellow.png","textures/trams/bogies/m8c_bogie_evag.png",
                 "EVAG Essen", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("Livery used in Mülheim a.d. Ruhr") + ".");
         SkinRegistry.addSkin(this.getClass(), TramsIM.MODID, "textures/trams/m8c_kassel_old.png","textures/trams/bogies/m8c_bogie_kassel_old.png",
                 "KVG Kassel", CommonUtil.translate("standardlivery") + " " + CommonUtil.translate("old livery that was used in Kassel") + ".");
